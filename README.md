@@ -13,6 +13,7 @@ Our goal is to provide simple navigation of the website so that our customers ca
 
 ## ERD Diagram:
 [LucidChart ERD](https://lucid.app/lucidchart/c013de76-fea2-4861-9c69-efccf9e6f6ca/edit?invitationId=inv_27c26c18-d566-4a6a-b26c-0b9be3d8465f&page=0_0#)
+![LucidChart ERD](ERD_Diagram.png)
 
 ## Wireframes:
 ![Fine Furnishings Wireframes](http://localhost:21303/8970445693911056242/index.html#/screens/d12245cc-1680-458d-89dd-4f0d7fb22724)
@@ -64,6 +65,11 @@ Trustpilot reviews
 ### Content
 
 ### Technologies Used
+- Pexels.com (images)
+- Unsplash.com (images)
+- Adobe Express Converter (convert jpeg to png)
+- compresspng.com (compress png)
+
 
 ### Media & Layout
 
