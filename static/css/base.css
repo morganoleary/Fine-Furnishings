@@ -1,0 +1,35 @@
+/* .m-plus-rounded-1c-regular {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.italiana-regular {
+font-family: "Italiana", sans-serif;
+font-weight: 400;
+font-style: normal;
+} */
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Italiana, sans-serif;
+  margin: 0;
+  max-width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.body-color {
+  background-color: #812222;
+  opacity: 75%;
+}
+
+.header-container {
+  height: 120px;
+}
+
+.search-bar {
+  margin-top: 85px;
+}

@@ -12,21 +12,100 @@
 
     {% block corecss %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Italiana&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block corejs %}
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script
+        src="https://kit.fontawesome.com/4147796678.js"
+        crossorigin="anonymous"
+        ></script>
     {% endblock %}
 
     <title>Fine Furnishings {% block extra_title %}{% endblock %}</title>
+
   </head>
-  <body>
-    <header></header>
+  <body class="py-3 body-color">
+    <header class="container-fluid position-fixed fixed-top bg-light">
+      <!-- Title Row -->
+      <div class="row">
+        <div class="col-12 text-left ml-3 mt-3">
+          <a class="navbar-brand" href="{% url 'home' %}">
+            <h2 class="text-dark">Fine Furnishings</h2>
+          </a>
+        </div>
+      </div>
+      <!-- Navbar Row -->
+      <div class="row">
+        <nav class="navbar navbar-expand-md navbar-light w-100">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto ml-3">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sofas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Dining</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Bedding</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+              <li>
+                <img src="{'shopping-cart.ico'}" alt="Shopping cart icon">
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'member' %}">My Wishlist</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_logout' %}">Order History</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_logout' %}">Personal Details</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- Search Bar Row -->
+    <div class="container-fluid search-bar pt-5 fixed-top">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+          <form method="GET" action="">
+            <div class="input-group">
+              <input class="form-control" type="text" name="q" placeholder="Search Products">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
     {% if messages %}
-        <div class="message-container">
+        <div class="message-container"></div>
     {% endif %}
 
     {% block page_header %}

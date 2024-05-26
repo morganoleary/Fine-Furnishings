@@ -61,7 +61,7 @@ Trustpilot reviews
 ## Clone Repository
 
 # Credits
-- The Boutique Ado Walkthrough was referenced when setting up Django and Allauth
+- The Boutique Ado Walkthrough was referenced when setting up Django, Allauth and the base template.
 
 ### Content
 
