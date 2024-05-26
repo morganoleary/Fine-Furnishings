@@ -27,9 +27,33 @@ body {
 }
 
 .header-container {
-  height: 120px;
+  height: 100px;
 }
 
 .search-bar {
-  margin-top: 85px;
+  margin-top: 100px;
+}
+
+.home-page-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Media queries */
+@media (max-width: 576px) {
+  
+  .search-bar {
+    padding-top: 5px;
+    margin-top: 85px;
+    max-width: 80%;
+  }
+
+}
+
+@media (max-width: 768px) {
+  
+  .header-container {
+    margin-top: 0;
+  }
+
 }

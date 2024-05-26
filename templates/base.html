@@ -60,18 +60,22 @@
               </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-              <li>
-                <img src="{'shopping-cart.ico'}" alt="Shopping cart icon">
+              <li class="mr-5">
+                <link rel="stylesheet" href="">
+                <img src="{{ MEDIA_URL }} media/shopping-cart.ico" alt="Shopping cart icon">
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'member' %}">My Wishlist</a>
+                <a class="nav-link" href="">My Wishlist</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_logout' %}">Order History</a>
+                <a class="nav-link" href="">Order History</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_logout' %}">Personal Details</a>
+                <a class="nav-link" href="">Personal Details</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
               </li>
               {% else %}
               <li class="nav-item">
@@ -87,7 +91,7 @@
       </div>
     </header>
     <!-- Search Bar Row -->
-    <div class="container-fluid search-bar pt-5 fixed-top">
+    <div class="container-fluid search-bar pt-5 container-sm fixed-top">
       <div class="row justify-content-center">
         <div class="col-12 col-md-6">
           <form method="GET" action="">
