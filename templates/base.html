@@ -49,39 +49,39 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto ml-3">
-              <li class="nav-item">
+              <li class="nav-item ml-md-3 mr-md-3">
                 <a class="nav-link" href="#">Sofas</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item mr-md-3">
                 <a class="nav-link" href="#">Dining</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item mr-md-3">
                 <a class="nav-link" href="#">Bedding</a>
               </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-              <li class="mr-5">
+              <li class="mr-md-5">
                 <link rel="stylesheet" href="">
                 <img src="{{ MEDIA_URL }} media/shopping-cart.ico" alt="Shopping cart icon">
               </li>
               {% if user.is_authenticated %}
-              <li class="nav-item">
+              <li class="nav-item mr-md-3">
                 <a class="nav-link" href="">My Wishlist</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item mr-md-3">
                 <a class="nav-link" href="">Order History</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item mr-md-3">
                 <a class="nav-link" href="">Personal Details</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item mr-md-3">
                 <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
               </li>
               {% else %}
-              <li class="nav-item">
+              <li class="nav-item mr-md-3">
                 <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item mr-md-3">
                 <a class="nav-link" href="{% url 'account_login' %}">Login</a>
               </li>
               {% endif %}
@@ -121,5 +121,55 @@
     {% block postloadjs %}
     {% endblock %}
     
+    <!-- Footer -->
+    <footer class="mt-auto py-3 bg-light text-center">
+      <div class="card-footer container-fluid">
+        <div class="row">
+          <div class="col-sm">
+            <ul class="nav flex-column">
+              <li class="nav-item footer-link">
+                <a class="nav-link text-dark" href="#">About Us</a>
+              </li>
+              <li class="nav-item footer-link">
+                <a class="nav-link text-dark" href="#">FAQs</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <div class="social-icons">
+              <div class="social-icon">
+                <a
+                  href="https://facebook.com/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Share our studio on Facebook! (Opens in a new tab)"
+                >
+                  <i class="fa-brands fa-square-facebook text-dark"></i>
+                  <span class="text-dark"> Facebook</span>
+                </a>
+              </div>
+              <div class="social-icon">
+                <a
+                  href="https://instagram.com/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Share our studio on Instagram! (Opens in a new tab)"
+                >
+                  <i class="fa-brands fa-square-instagram text-dark"></i>
+                  <span class="text-dark"> Instagram</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm">
+            <li class="nav-item footer-link">
+              <a class="nav-link text-dark" href="#">External Links
+              </a>
+            </li>
+          </div>
+        </div>
+      </div>
+    </footer>
+
   </body>
 </html>

@@ -26,6 +26,7 @@ body {
   opacity: 75%;
 }
 
+/* Header */
 .header-container {
   height: 100px;
 }
@@ -37,6 +38,27 @@ body {
 .home-page-image {
   width: 100%;
   height: auto;
+}
+
+/* Footer */
+.footer-link {
+  list-style-type: none;
+}
+
+.social-icon {
+  margin: .5em;
+}
+
+.social-icon span {
+  text-transform: none !important;
+}
+
+.social-icon a {
+  text-transform: none !important;
+}
+
+.social-icon a:hover {
+  text-decoration: none !important;
 }
 
 /* Media queries */
