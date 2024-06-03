@@ -31,8 +31,8 @@
     <title>Fine Furnishings {% block extra_title %}{% endblock %}</title>
 
   </head>
-  <body class="py-3 body-color">
-    <header class="container-fluid position-fixed fixed-top bg-light">
+  <body class="py-3 body-color d-flex flex-column min-vh-100">
+    <header class="container-fluid bg-light fixed-top">
       <!-- Title Row -->
       <div class="row">
         <div class="col-12 text-left ml-3 mt-3">
@@ -50,7 +50,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto ml-3">
               <li class="nav-item ml-md-3 mr-md-3">
-                <a class="nav-link" href="#">All Products</a>
+                <a class="nav-link" href="{% url 'products' %}">All Products</a>
               </li>
               <li class="nav-item ml-md-3 mr-md-3">
                 <a class="nav-link" href="#">Sofas</a>
@@ -118,15 +118,17 @@
     {% block page_header %}
     {% endblock %}
 
-    {% block content %}
-    {% endblock %}
+    <main class="container-fluid main-content-wrapper mt-5">
+      {% block content %}
+      {% endblock %}
+    </main>
 
     {% block postloadjs %}
     {% endblock %}
     
     <!-- Footer -->
-    <footer class="mt-auto py-3 bg-light text-center">
-      <div class="card-footer container-fluid">
+    <footer class="container-fluid mt-auto py-3 bg-light text-center">
+      <div class="card-footer">
         <div class="row">
           <div class="col-sm">
             <ul class="nav flex-column">

@@ -41,6 +41,12 @@ body {
 }
 
 /* Footer */
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
 .footer-link {
   list-style-type: none;
 }
