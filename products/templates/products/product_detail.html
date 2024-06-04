@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+    <div class="container products-container text-white">
+        <div class="col-12 text-center">
+            <h1 class="display-6">{{ product.name }}</h1>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-6 text-center text-lg-left">
+                {% if product.image %}
+                <a href="{{ product.image.url }}" target="_blank">
+                    <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }}">
+                </a>
+                {% else %}
+                <a href="url 'product_detail' product.id">
+                    <img src="{{ MEDIA_URL }}coming-soon-placeholder-image.png" class="img-fluid" alt="{{ product.name }}">
+                </a>
+                {% endif %}
+            </div>
+            <div class="col-lg-6 d-flex flex-column pl-5 justify-content-center">
+                <div class="row mb-3">
+                    <div class="col">
+                        <h5>Price: ${{ product.price }}</h5>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <h5>Product ID: {{ product.product_id }}</h5>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <h5>Quantity: <input type="number" value="1" min="1" max="10" class="form-control d-inline-block w-auto"></h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="submit" class="btn btn-secondary">Add to Basket</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 justify-content-center">
+            <div class="col-12 text-center">
+                <p class="lead">{{ product.description }}</p>
+            </div>
+        </div>
+        <div class="row mt-4 text-center">
+            <div class="col-sm-4">
+                <h5>Height: {{ product.dimensions_height }}</h5>
+            </div>
+            <div class="col-sm-4">
+                <h5>Width: {{ product.dimensions_width }}</h5>
+            </div>
+            <div class="col-sm-4">
+                <h5>Depth: {{ product.dimensions_depth }}</h5>
+            </div>
+        </div>
+    </div>
+{% endblock %}

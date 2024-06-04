@@ -5,12 +5,21 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="container products-container">
         <div class="row">
             {% for product in products %}
-            <div class="col-4">
+            <div class="col-sm-6 col-md-4 col-lg-3 product-card">
                 <div class="card">
-                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                    {% if product.image %}
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img src="{{ product.image.url }}" class="card-img" alt="{{ product.name }}">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img src="{{ MEDIA_URL }}coming-soon-placeholder-image.png"
+                        class="card-img" alt="{{ product.name }}">
+                    </a>
+                    {% endif %}
                     <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
                         <p class="card-text">Price: ${{ product.price }}</p>
