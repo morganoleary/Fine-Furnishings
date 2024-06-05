@@ -97,7 +97,7 @@
     <div class="container-fluid search-bar pt-5 container-sm fixed-top">
       <div class="row justify-content-center">
         <div class="col-12 col-md-6">
-          <form method="GET" action="">
+          <form method="GET" action="{% url 'products' %}">
             <div class="input-group">
               <input class="form-control" type="text" name="q" placeholder="Search Products">
               <div class="input-group-append">
@@ -111,15 +111,28 @@
       </div>
     </div>
 
-    {% if messages %}
-        <div class="message-container"></div>
-    {% endif %}
 
     {% block page_header %}
     {% endblock %}
 
     <main class="container-fluid main-content-wrapper mt-5">
       {% block content %}
+        {% if messages %}
+          <div class="container mt-3">
+            <div class="row">
+              <div class="col-12">
+                  {% for message in messages %}
+                      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                          {{ message }}
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                  {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
       {% endblock %}
     </main>
 

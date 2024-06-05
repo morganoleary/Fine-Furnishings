@@ -40,6 +40,10 @@ body {
   height: auto;
 }
 
+.top-padding{
+  padding-top: 8em;
+}
+
 .products-container {
   margin-top: 8em;
 }
