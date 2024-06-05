@@ -62,6 +62,8 @@ Trustpilot reviews
 
 # Credits
 - The Boutique Ado Walkthrough was referenced when setting up Django, Allauth and the base template.
+- The ![Boutique Ado Walkthrough](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+2/courseware/eb05f06e62c64ac89823cc956fcd8191/0fb892bc636a44cf94b69d9f2aa9166a/?child=first) was referenced when creating product pages & search bar functionality.
+- [Django documention](https://docs.djangoproject.com/en/dev/ref/models/querysets/#iexact) was referenced when utilizing iexact in creating the product category links.
 
 ### Content
 

@@ -6,7 +6,7 @@ from .models import Product
 # The all_products view code was implemented with the help of the 
 # Boutique Ado project walkthrough to implement the search bar's functionality
 def all_products(request):
-    """ A view to return the all products """
+    """ A view to render all products """
 
     products = Product.objects.all()
     query = None
@@ -33,7 +33,7 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ A view to show an individual product's details """
+    """ A view to render an individual product's details """
 
     product = get_object_or_404(Product, pk=product_id)
 
@@ -42,3 +42,27 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def sofa_products(request):
+    """ A view to render the sofas category of products """
+
+    products = Product.objects.filter(categories__name__iexact='sofa')
+    context = {'products': products, 'category': 'Sofas'}
+    return render(request, 'products/products.html', context)
+
+
+def bedroom_products(request):
+    """ A view to render the bedroom category of products """
+    
+    products = Product.objects.filter(categories__name__iexact='bedroom')
+    context = {'products': products, 'category': 'Bedroom'}
+    return render(request, 'products/products.html', context)
+
+
+def dining_products(request):
+    """ A view to render the dining category of products """
+    
+    products = Product.objects.filter(categories__name__iexact='dining')
+    context = {'products': products, 'category': 'Dining'}
+    return render(request, 'products/products.html', context)

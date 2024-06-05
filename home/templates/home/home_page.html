@@ -12,9 +12,25 @@
             </div>
         </div>
     </div>
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-10 col-md-8 my-auto">
+    <div class="container top-padding">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <a href="{% url 'sofa_products' %}" class="category-block">
+                    <img src="{{ MEDIA_URL }}media/cream-round-arm-sofa.png" class="card-img" alt="Cream Sofa - Sofas Category">
+                    <span class="category-name">Sofas</span>
+                </a>
+            </div>
+            <div class="col-md-4 mb-3">
+                <a href="{% url 'bedroom_products' %}" class="category-block">
+                    <img src="{{ MEDIA_URL }}media/beige-velvet-headboard-with-buttons.png" class="card-img" alt="Beige Bedframe - Bedroom Category">
+                    <span class="category-name">Bedroom</span>
+                </a>
+            </div>
+            <div class="col-md-4 mb-3">
+                <a href="{% url 'dining_products' %}" class="category-block">
+                    <img src="{{ MEDIA_URL }}media/white-wood-rectangle-dining-table-with-oval-base.png" class="card-img" alt="Wooden Table - Dining Category">
+                    <span class="category-name">Dining</span>
+                </a>
             </div>
         </div>
     </div>
