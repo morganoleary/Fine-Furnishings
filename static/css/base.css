@@ -40,6 +40,10 @@ body {
   height: auto;
 }
 
+.dropdown-arrow::after {
+  display: none;
+}
+
 .category-block {
   width: 300px;
   height: 300px;

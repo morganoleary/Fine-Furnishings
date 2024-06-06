@@ -50,16 +50,32 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto ml-3">
               <li class="nav-item ml-md-3 mr-md-3">
-                <a class="nav-link" href="{% url 'products' %}">All Products</a>
+                  <a class="nav-link" href="{% url 'products' %}">All Products</a>
               </li>
-              <li class="nav-item ml-md-3 mr-md-3">
-                <a class="nav-link" href="{% url 'sofa_products' %}">Sofas</a>
+              <li class="nav-item ml-md-3 mr-md-3 dropdown">
+                  <a class="nav-link dropdown-toggle dropdown-arrow" href="#" id="sofa-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sofas</a>
+                  <div class="dropdown-menu" aria-labelledby="sofa-link">
+                      <a href="{% url 'products' %}?category=corner" class="dropdown-item">Corner Sofas</a>
+                      <a href="{% url 'products' %}?category=3_seater" class="dropdown-item">3 Seater Sofas</a>
+                      <a href="{% url 'products' %}?category=2_seater" class="dropdown-item">2 Seater Sofas</a>
+                      <a href="{% url 'products' %}?category=armchair" class="dropdown-item">Armchairs</a>
+                  </div>
               </li>
-              <li class="nav-item mr-md-3">
-                <a class="nav-link" href="{% url 'bedroom_products' %}">Bedroom</a>
+              <li class="nav-item mr-md-3 dropdown">
+                  <a class="nav-link dropdown-toggle dropdown-arrow" href="#" id="bedroom-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bedroom</a>
+                  <div class="dropdown-menu" aria-labelledby="bedroom-link">
+                      <a href="{% url 'products' %}?category=bedframe" class="dropdown-item">Bedframes</a>
+                      <a href="{% url 'products' %}?category=nightstand,locker" class="dropdown-item">Bedside Tables</a>
+                      <a href="{% url 'products' %}?category=storage,drawer,dresser" class="dropdown-item">Storage & Desks</a>
+                  </div>
               </li>
-              <li class="nav-item mr-md-3">
-                <a class="nav-link" href="{% url 'dining_products' %}">Dining</a>
+              <li class="nav-item mr-md-3 dropdown">
+                  <a class="nav-link dropdown-toggle dropdown-arrow" href="#" id="dining-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dining</a>
+                  <div class="dropdown-menu" aria-labelledby="dining-link">
+                      <a href="{% url 'products' %}?category=table" class="dropdown-item">Tables</a>
+                      <a href="{% url 'products' %}?category=chair" class="dropdown-item">Chairs</a>
+                      <a href="{% url 'products' %}?category=Bar_stool" class="dropdown-item">Bar Stools</a>
+                  </div>
               </li>
             </ul>
             <ul class="navbar-nav ml-auto">
