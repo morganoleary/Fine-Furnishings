@@ -14,9 +14,9 @@ def all_products(request):
     categories = None
 
     if request.GET:
-        if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
-            products = products.filter(category__name__in=categories)
+        if 'categories' in request.GET:
+            categories = request.GET['categories'].split(',')
+            products = products.filter(categories__name__in=categories).distinct()
             categories = Category.objects.filter(name__in=categories)
 
         if 'q' in request.GET:
@@ -55,7 +55,7 @@ def product_detail(request, product_id):
 def sofa_products(request):
     """ A view to render the sofas category of products """
 
-    products = Product.objects.filter(categories__name__iexact='sofa')
+    products = Product.objects.filter(categories__name__iexact='sofa').distinct()
     context = {'products': products, 'category': 'Sofas'}
     return render(request, 'products/products.html', context)
 
@@ -63,7 +63,7 @@ def sofa_products(request):
 def bedroom_products(request):
     """ A view to render the bedroom category of products """
     
-    products = Product.objects.filter(categories__name__iexact='bedroom')
+    products = Product.objects.filter(categories__name__iexact='bedroom').distinct()
     context = {'products': products, 'category': 'Bedroom'}
     return render(request, 'products/products.html', context)
 
@@ -71,6 +71,6 @@ def bedroom_products(request):
 def dining_products(request):
     """ A view to render the dining category of products """
     
-    products = Product.objects.filter(categories__name__iexact='dining')
+    products = Product.objects.filter(categories__name__iexact='dining').distinct()
     context = {'products': products, 'category': 'Dining'}
     return render(request, 'products/products.html', context)
