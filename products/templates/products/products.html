@@ -23,10 +23,10 @@
     </div>
     {% endif %}
     <div class="container products-container">
-        <div class="row">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
             {% for product in products %}
-            <div class="col-sm-6 col-md-4 col-lg-3 product-card">
-                <div class="card">
+            <div class="col mb-4">
+                <div class="card h-100">
                     {% if product.image %}
                     <a href="{% url 'product_detail' product.id %}">
                         <img src="{{ product.image.url }}" class="card-img" alt="{{ product.name }}">
@@ -38,7 +38,12 @@
                     </a>
                     {% endif %}
                     <div class="card-body">
-                        <h5 class="card-title">{{ product.name }}</h5>
+                        <h5 class="card-title">
+                            {{ product.name }}
+                            <a href="{% url 'add_to_wishlist' product.id %}">
+                                <img src="{% static 'wishlist-heart.ico' %}" alt="Wishlist Heart icon">
+                            </a>
+                        </h5>
                         <p class="card-text">Price: ${{ product.price }}</p>
                         <p class="card-text">{{ product.description }}</p>
                     </div>

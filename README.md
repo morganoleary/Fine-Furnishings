@@ -64,6 +64,7 @@ Trustpilot reviews
 - The Boutique Ado Walkthrough was referenced when setting up Django, Allauth and the base template.
 - The ![Boutique Ado Walkthrough](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+2/courseware/eb05f06e62c64ac89823cc956fcd8191/0fb892bc636a44cf94b69d9f2aa9166a/?child=first) was referenced when creating product pages & search bar functionality.
 - [Django documention](https://docs.djangoproject.com/en/dev/ref/models/querysets/#iexact) was referenced when utilizing iexact in creating the product category links.
+- [Stack Overflow](https://stackoverflow.com/questions/35796195/how-to-redirect-to-previous-page-in-django-after-post-request) helped me redirect users to the previous page without using the 'back' button on the browser.
 
 ### Content
 
@@ -72,6 +73,7 @@ Trustpilot reviews
 - Unsplash.com (images)
 - Adobe Express Converter (convert jpeg to png)
 - compresspng.com (compress png)
+- Fonticon
 
 
 ### Media & Layout

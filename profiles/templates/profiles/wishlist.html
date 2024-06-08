@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Wishlist{% endblock %}
+
+{% block search_bar %}
+{% endblock %}
+
+{% block content %}
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h2 class="text-center mb-4 pt-5 text-white">Wishlist</h2>
+            {% if wishlist %}
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
+                {% for product in wishlist %}
+                <div class="col mb-4">
+                    <div class="card h-100 product_card">
+                        {% if product.image %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="{{ product.image.url }}" class="card-img-top card-img" alt="{{ product.name }}">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="{{ MEDIA_URL }}coming-soon-placeholder-image.png"
+                            class="card-img-top card-img" alt="{{ product.name }}">
+                        </a>
+                        {% endif %}
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title">
+                                {{ product.name }}
+                            </h5>
+                            <p class="card-text">Price: ${{ product.price }}</p>
+                            <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-danger remove-button">
+                                <img src="{% static 'trash-bin.ico' %}" alt="Trash Bin icon" class="trash-bin-icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="text-center text-white">Your wishlist is empty.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-secondary">
+                        <a href="{% url 'products' %}" class="dropdown-item">Continue Shopping</a>
+                    </button>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -22,6 +22,9 @@
                 {% endif %}
             </div>
             <div class="col-lg-6 d-flex flex-column pl-5 justify-content-center">
+                <a href="{% url 'add_to_wishlist' product.id %}">
+                    <img src="{% static 'wishlist-heart.ico' %}" alt="Wishlist Heart icon">
+                </a>
                 <div class="row mb-3">
                     <div class="col">
                         <h5>Price: ${{ product.price }}</h5>

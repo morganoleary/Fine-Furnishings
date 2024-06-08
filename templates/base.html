@@ -115,7 +115,7 @@
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item mr-md-3">
-                <a class="nav-link" href="#">My Wishlist</a>
+                <a class="nav-link" href="{% url 'user_wishlist' %}">My Wishlist</a>
               </li>
               <li class="nav-item mr-md-3">
                 <a class="nav-link" href="#">Order History</a>
