@@ -1,0 +1,14 @@
+{% load crispy_forms_tags %}
+
+<!-- Edit Profile Form -->
+<form method="post">
+    {% csrf_token %}
+    {{ form.first_name|as_crispy_field }}
+    {{ form.last_name|as_crispy_field }}
+    {{ form.email|as_crispy_field }}
+    {{ form.phone|as_crispy_field }}
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary">Save Changes</button>
+    </div>
+</form>

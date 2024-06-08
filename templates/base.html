@@ -54,7 +54,7 @@
               </li>
               <li class="nav-item ml-md-3 mr-md-3">
                 <a class="nav-link dropdown-toggle dropdown-arrow" href="#" id="sofa-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sofas</a>
-                <ul class="dropdown-menu ml-5" aria-labelledby="sofa-link">
+                <ul class="dropdown-menu ml-5 mr-5" aria-labelledby="sofa-link">
                     <li class="nav-item ml-md-3 mr-md-3 dropdown">
                       <a href="{% url 'sofa_products' %}" class="dropdown-item">All Sofas</a>
                     </li>
@@ -72,26 +72,26 @@
                     </li>
                 </ul>
               </li>
-              <li class="nav-item mr-md-3 dropdown">
-                  <a class="nav-link dropdown-toggle dropdown-arrow" href="#" id="bedroom-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bedroom</a>
-                  <ul class="dropdown-menu" aria-labelledby="bedroom-link">
-                      <li class="nav-item ml-md-3 mr-md-3 dropdown">
-                        <a href="{% url 'bedroom_products' %}" class="dropdown-item">All Bedroom</a>
-                      </li>
-                      <li class="nav-item ml-md-3 mr-md-3 dropdown">
-                        <a href="{% url 'products' %}?categories=Bedframe" class="dropdown-item">Bedframes</a>
-                      </li>
-                      <li class="nav-item ml-md-3 mr-md-3 dropdown">
-                        <a href="{% url 'products' %}?categories=Nightstand,Locker" class="dropdown-item">Bedside Tables</a>
-                      </li>
-                      <li class="nav-item ml-md-3 mr-md-3 dropdown">
-                        <a href="{% url 'products' %}?categories=Storage,Drawer,Dresser" class="dropdown-item">Storage & Desks</a>
-                      </li>
-                  </ul>
+              <li class="nav-item ml-md-3 mr-md-3">
+                <a class="nav-link dropdown-toggle dropdown-arrow" href="#" id="bedroom-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bedroom</a>
+                <ul class="dropdown-menu ml-5" aria-labelledby="sofa-link">
+                    <li class="nav-item ml-md-3 mr-md-3 dropdown">
+                      <a href="{% url 'bedroom_products' %}" class="dropdown-item">All Bedroom</a>
+                    </li>
+                    <li class="nav-item ml-md-3 mr-md-3 dropdown">
+                      <a href="{% url 'products' %}?categories=Bedframe" class="dropdown-item">Bedframes</a>
+                    </li>
+                    <li class="nav-item ml-md-3 mr-md-3 dropdown">
+                      <a href="{% url 'products' %}?categories=Nightstand,Locker" class="dropdown-item">Bedside Tables</a>
+                    </li>
+                    <li class="nav-item ml-md-3 mr-md-3 dropdown">
+                      <a href="{% url 'products' %}?categories=Storage,Drawer,Dresser" class="dropdown-item">Storage & Desks</a>
+                    </li>
+                </ul>
               </li>
-              <li class="nav-item mr-md-3 dropdown">
+              <li class="nav-item ml-md-3 mr-md-3">
                   <a class="nav-link dropdown-toggle dropdown-arrow" href="#" id="dining-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dining</a>
-                  <ul class="dropdown-menu" aria-labelledby="dining-link">
+                  <ul class="dropdown-menu ml-5" aria-labelledby="dining-link">
                       <li class="nav-item ml-md-3 mr-md-3 dropdown">
                         <a href="{% url 'dining_products' }" class="dropdown-item">All Dining</a>
                       </li>
@@ -109,8 +109,9 @@
             </ul>
             <ul class="navbar-nav ml-auto">
               <li class="mr-md-5">
-                <link rel="stylesheet" href="">
-                <img src="{{ MEDIA_URL }} media/shopping-cart.ico" alt="Shopping cart icon">
+                <a href="#">
+                  <img src="{% static 'shopping-cart.ico' %}" alt="Shopping cart icon">
+                </a>
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item mr-md-3">
@@ -139,6 +140,7 @@
       </div>
     </header>
     <!-- Search Bar Row -->
+    {% block search_bar %}
     <div class="container-fluid search-bar pt-5 container-sm fixed-top">
       <div class="row justify-content-center">
         <div class="col-12 col-md-6">
@@ -155,6 +157,7 @@
         </div>
       </div>
     </div>
+    {% endblock %}
 
 
     {% block page_header %}
