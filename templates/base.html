@@ -52,33 +52,59 @@
               <li class="nav-item ml-md-3 mr-md-3">
                   <a class="nav-link" href="{% url 'products' %}">All Products</a>
               </li>
-              <li class="nav-item ml-md-3 mr-md-3 dropdown">
-                  <a class="nav-link dropdown-toggle dropdown-arrow" href="#" id="sofa-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sofas</a>
-                  <div class="dropdown-menu" aria-labelledby="sofa-link">
+              <li class="nav-item ml-md-3 mr-md-3">
+                <a class="nav-link dropdown-toggle dropdown-arrow" href="#" id="sofa-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sofas</a>
+                <ul class="dropdown-menu ml-5" aria-labelledby="sofa-link">
+                    <li class="nav-item ml-md-3 mr-md-3 dropdown">
                       <a href="{% url 'sofa_products' %}" class="dropdown-item">All Sofas</a>
+                    </li>
+                    <li class="nav-item ml-md-3 mr-md-3 dropdown">
                       <a href="{% url 'products' %}?categories=Corner" class="dropdown-item">Corner Sofas</a>
+                    </li>
+                    <li class="nav-item ml-md-3 mr-md-3 dropdown">
                       <a href="{% url 'products' %}?categories=3_Seater" class="dropdown-item">3 Seater Sofas</a>
+                    </li>
+                    <li class="nav-item ml-md-3 mr-md-3 dropdown">
                       <a href="{% url 'products' %}?categories=2_Seater" class="dropdown-item">2 Seater Sofas</a>
+                    </li>
+                    <li class="nav-item ml-md-3 mr-md-3 dropdown">
                       <a href="{% url 'products' %}?categories=Armchair" class="dropdown-item">Armchairs</a>
-                  </div>
+                    </li>
+                </ul>
               </li>
               <li class="nav-item mr-md-3 dropdown">
                   <a class="nav-link dropdown-toggle dropdown-arrow" href="#" id="bedroom-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bedroom</a>
-                  <div class="dropdown-menu" aria-labelledby="bedroom-link">
-                      <a href="{% url 'bedroom_products' %}" class="dropdown-item">All Bedroom</a>
-                      <a href="{% url 'products' %}?categories=Bedframe" class="dropdown-item">Bedframes</a>
-                      <a href="{% url 'products' %}?categories=Nightstand,Locker" class="dropdown-item">Bedside Tables</a>
-                      <a href="{% url 'products' %}?categories=Storage,Drawer,Dresser" class="dropdown-item">Storage & Desks</a>
-                  </div>
+                  <ul class="dropdown-menu" aria-labelledby="bedroom-link">
+                      <li class="nav-item ml-md-3 mr-md-3 dropdown">
+                        <a href="{% url 'bedroom_products' %}" class="dropdown-item">All Bedroom</a>
+                      </li>
+                      <li class="nav-item ml-md-3 mr-md-3 dropdown">
+                        <a href="{% url 'products' %}?categories=Bedframe" class="dropdown-item">Bedframes</a>
+                      </li>
+                      <li class="nav-item ml-md-3 mr-md-3 dropdown">
+                        <a href="{% url 'products' %}?categories=Nightstand,Locker" class="dropdown-item">Bedside Tables</a>
+                      </li>
+                      <li class="nav-item ml-md-3 mr-md-3 dropdown">
+                        <a href="{% url 'products' %}?categories=Storage,Drawer,Dresser" class="dropdown-item">Storage & Desks</a>
+                      </li>
+                  </ul>
               </li>
               <li class="nav-item mr-md-3 dropdown">
                   <a class="nav-link dropdown-toggle dropdown-arrow" href="#" id="dining-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dining</a>
-                  <div class="dropdown-menu" aria-labelledby="dining-link">
-                      <a href="{% url 'dining_products' }" class="dropdown-item">All Dining</a>
-                      <a href="{% url 'products' %}?categories=Table" class="dropdown-item">Tables</a>
-                      <a href="{% url 'products' %}?categories=Chair" class="dropdown-item">Chairs</a>
-                      <a href="{% url 'products' %}?categories=Bar_stool" class="dropdown-item">Bar Stools</a>
-                  </div>
+                  <ul class="dropdown-menu" aria-labelledby="dining-link">
+                      <li class="nav-item ml-md-3 mr-md-3 dropdown">
+                        <a href="{% url 'dining_products' }" class="dropdown-item">All Dining</a>
+                      </li>
+                      <li class="nav-item ml-md-3 mr-md-3 dropdown">
+                        <a href="{% url 'products' %}?categories=Table" class="dropdown-item">Tables</a>
+                      </li>
+                      <li class="nav-item ml-md-3 mr-md-3 dropdown">
+                        <a href="{% url 'products' %}?categories=Chair" class="dropdown-item">Chairs</a>
+                      </li>
+                      <li class="nav-item ml-md-3 mr-md-3 dropdown">
+                        <a href="{% url 'products' %}?categories=Bar_stool" class="dropdown-item">Bar Stools</a>
+                      </li>
+                  </ul>
               </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -88,13 +114,13 @@
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item mr-md-3">
-                <a class="nav-link" href="">My Wishlist</a>
+                <a class="nav-link" href="#">My Wishlist</a>
               </li>
               <li class="nav-item mr-md-3">
-                <a class="nav-link" href="">Order History</a>
+                <a class="nav-link" href="#">Order History</a>
               </li>
               <li class="nav-item mr-md-3">
-                <a class="nav-link" href="">Personal Details</a>
+                <a class="nav-link {% if request.path == profiles_url %}active" aria-current="page{% endif %}" href="{% url 'user_profile' %}">Personal Details</a>
               </li>
               <li class="nav-item mr-md-3">
                 <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>

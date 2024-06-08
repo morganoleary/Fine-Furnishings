@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Success message -->
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-success" role="alert">
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+
+<!-- User Profile page -->
+<div class="container top-padding text-white">
+    <div class="row col-md-12">
+        <div class="col-md-6">
+          <h4 class="text-center">Personal Details</h4>
+          <!-- Display current user's details -->
+          <div class="container">
+              <div class="col-md-6">
+                  <article class="m-2"><strong>First Name :</strong> {{ user_profile.user_id.first_name }}</article>
+                  <article class="m-2"><strong>Last Name :</strong> {{ user_profile.user_id.last_name }}</article>
+                  <article class="m-2"><strong>Email :</strong> {{ user_profile.user_id.email }}</article>
+                  <article class="m-2"><strong>Phone :</strong> {{ user_profile.phone }}</article>
+              </div>
+          </div>
+          <!-- Edit profile modal button -->
+          <div class="container">
+              <div class="col-md-6 m-2">
+                  <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editProfileModal">
+                      Edit Profile
+                  </button>
+              </div>
+          </div>
+          <div class="container">
+            <div class="col-md-12">
+              <p class="m-5">Delete Profile</p>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
