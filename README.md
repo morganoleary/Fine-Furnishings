@@ -10,6 +10,7 @@ Our goal is to provide simple navigation of the website so that our customers ca
 ## User Stories:
 **Planning of user stories completed in Google sheets:
 [Google sheet](https://docs.google.com/spreadsheets/d/1xrrFyjqHdzZsPyJ-DnGmsfV3z4rvsZ0ZD8F23ye3utk/edit#gid=0)
+- Link to my [GitHub Project](https://github.com/users/morganoleary/projects/5)
 
 ## ERD Diagram:
 [LucidChart ERD](https://lucid.app/lucidchart/c013de76-fea2-4861-9c69-efccf9e6f6ca/edit?invitationId=inv_27c26c18-d566-4a6a-b26c-0b9be3d8465f&page=0_0#)
@@ -65,6 +66,8 @@ Trustpilot reviews
 - The ![Boutique Ado Walkthrough](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+2/courseware/eb05f06e62c64ac89823cc956fcd8191/0fb892bc636a44cf94b69d9f2aa9166a/?child=first) was referenced when creating product pages & search bar functionality.
 - [Django documention](https://docs.djangoproject.com/en/dev/ref/models/querysets/#iexact) was referenced when utilizing iexact in creating the product category links.
 - [Stack Overflow](https://stackoverflow.com/questions/35796195/how-to-redirect-to-previous-page-in-django-after-post-request) helped me redirect users to the previous page without using the 'back' button on the browser.
+- The contact app, was largely taken from my previous project [Sould Base Studio Booking Site](https://github.com/morganoleary/studio-booking-site)
+- [Bootstrap Collapse Documentation](https://getbootstrap.com/docs/4.6/components/collapse/) was used to implement the dropdown answers on the FAQs page.
 
 ### Content
 
