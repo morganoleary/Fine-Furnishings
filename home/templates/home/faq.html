@@ -8,7 +8,7 @@
 
 <!-- FAQ page -->
 <div class="container top-padding mb-3">
-    <div class="row justify-content-center top-padding">
+    <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="card mb-4 mb-lg-0">
                 <div class="card-body">
@@ -54,10 +54,20 @@
                                 Unfortunately, no. We can only deliver within the island of Ireland. Stay tuned, as we will be looking to expand in the near future!
                             </div>
                         </div>
+                        <p>
+                            <button class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                How much is your delivery fee?
+                            </button>
+                        </p>
+                        <div class="collapse" id="collapseFive">
+                            <div class="card card-body">
+                                We have a standard delivery fee on all orders of €{{ delivery }}.
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="text-white text-center"> Still have questions? 
+            <div class="text-white text-center m-3"> Still have questions? 
                 <ul class="list-unstyled">
                     <li>
                         <a href="{% url 'contact' %}" class="text-white">Contact Us</a>

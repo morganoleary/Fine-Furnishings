@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container products-container text-white">
+    <div class="container products-container text-white pb-5 pt-5">
         <div class="col-12 text-center">
             <h1 class="display-6">{{ product.name }}</h1>
         </div>
@@ -22,7 +22,7 @@
                 {% endif %}
             </div>
             <div class="col-lg-6 d-flex flex-column pl-5 justify-content-center">
-                <a href="{% url 'add_to_wishlist' product.id %}">
+                <a href="{% url 'add_to_wishlist' product.id %}" class="mb-3">
                     <img src="{% static 'wishlist-heart.ico' %}" alt="Wishlist Heart icon">
                 </a>
                 <div class="row mb-3">
@@ -35,16 +35,31 @@
                         <h5>Product ID: {{ product.product_id }}</h5>
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <h5>Quantity: <input type="number" value="1" min="1" max="10" class="form-control d-inline-block w-auto"></h5>
+                <form action="{% url 'add_to_cart' product.id %}" method="POST" class="form">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="row mb-3">
+                            <div class="col">
+                                <h5>Quantity:</h5>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="number" name="quantity" value="1" min="1" max="50" class="form-control d-inline-block w-auto" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <button type="submit" class="btn btn-secondary">Add to Basket</button>
+                    <div class="form-row">
+                        <div class="row">
+                            <div class="col">
+                                <input type="submit" class="btn btn-secondary" value="Add to Cart">
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </form>
             </div>
         </div>
         <div class="row mt-4 justify-content-center">
