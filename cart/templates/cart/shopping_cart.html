@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block search_bar %}
+{% endblock %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+    <div class="container text-white top-padding mb-3">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-sm-12 text-center">
+                <h1 class="text-center">My Basket</h1>
+                <div class="d-flex justify-content-center">
+                    <a href="{% url 'products' %}">
+                        <button>Continue Shopping</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-sm-12 text-center">
+                {% if cart_items %}
+                    <div class="table-responsive">
+
+                    </div>
+                {% else %}
+                    <h5 class="text-center mt-5">Your basket is empty.</h5>
+                    <div class="d-flex justify-content-center">
+                        Click the button above to begin shopping!
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
