@@ -9,10 +9,10 @@
 
 {% block content %}
     <div class="container text-white top-padding mb-3">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-3">
             <div class="col-md-8 col-sm-12 text-center">
                 <h1 class="text-center">My Shopping Cart</h1>
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center mt-3 mb-5">
                     <a href="{% url 'products' %}">
                         <button>Continue Shopping</button>
                     </a>
@@ -23,7 +23,70 @@
             <div class="col-md-8 col-sm-12 text-center">
                 {% if cart_items %}
                     <div class="table-responsive">
-
+                        <table class="table table-sm table-borderless">
+                            <thead class="text-white">
+                                <tr>
+                                    <th scope="col">Items</th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in cart_items %}
+                                    <tr class="flex-sm-row align-items-center">
+                                        <td class="p-3 w-25">
+                                            <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                                        </td>
+                                        <td class="py-3 text-white">
+                                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                            <p class="my-0 small">Product ID: {{ item.product.product_id }}</p>
+                                        </td>
+                                        <td class="py-3 text-white">
+                                            <p class="my-0">${{ item.product.price }}</p>
+                                        </td>
+                                        <td class="py-3 w-15 text-white">
+                                            <div class="row mb-3">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <input type="number" name="quantity" value="1" min="1" max="50" class="form-control d-inline-block w-auto" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <a href="" class="btn btn-danger remove-button mr-3">
+                                                <img src="{% static 'trash-bin.ico' %}" alt="Trash Bin icon" class="trash-bin-icon">
+                                            </a>
+                                        </td>
+                                        <td class="py-3 text-white">
+                                            <p class="my-0">${{ item.product.price }}</p>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                <tr>
+                                    <td colspan="5" class="text-white pt-5 text-right">
+                                        <h6><strong>Product Total: ${{ total|floatformat:2 }}</strong></h6>
+                                        <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
+                                        <h4 class="mt-4"><strong>Total: ${{ order_total|floatformat:2 }}</strong></h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5" class="text-right text-white">
+                                        <a href="" class="btn btn-black rounded-0 btn-lg">
+                                            <span class="text-uppercase text-white">Secure Checkout</span>
+                                            <span class="icon text-white">
+                                                <i class="fas fa-lock"></i>
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 {% else %}
                     <h5 class="text-center mt-5">Your cart is empty.</h5>

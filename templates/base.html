@@ -109,8 +109,18 @@
             </ul>
             <ul class="navbar-nav ml-auto">
               <li class="mr-md-5">
-                <a class="nav-link" href="{% url 'cart' %}">
-                  <img src="{% static 'shopping-cart.ico' %}" alt="Shopping cart icon">
+                <a class="{% if total %}text-secondary font-weight-bold{% else %}text-dark{% endif %}nav-link" href="{% url 'cart' %}">
+                  <div class="text-center">
+                    <div><img src="{% static 'shopping-cart.ico' %}" alt="Shopping cart icon">
+                      <p class="my-0">
+                        {% if total %}
+                            ${{ total|floatformat:2 }}
+                        {% else %}
+                            €0.00
+                        {% endif %}
+                      </p>
+                    </div>
+                  </div>
                 </a>
               </li>
               {% if user.is_authenticated %}
