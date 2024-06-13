@@ -37,6 +37,20 @@
                 </div>
                 <form action="{% url 'add_to_cart' product.id %}" method="POST" class="form">
                     {% csrf_token %}
+                    {% with product.bedframe_sizes as s %}
+                        {% if s %}
+                            <div class="col-12">
+                                <p><strong>Size:</strong></p>
+                                <select class="form-control rounded-0 w-50" name="bedframe_size" id='id_bedframe_size'>
+                                    <option value="3ft">3'</option>
+                                    <option value="4ft">4'</option>
+                                    <option value="4ft6in">4'6"</option>
+                                    <option value="5ft">5'</option>
+                                    <option value="6ft">6'</option>
+                                </select>
+                            </div>
+                        {% endif %}
+                    {% endwith %}
                     <div class="form-row">
                         <div class="row mb-3">
                             <div class="col">

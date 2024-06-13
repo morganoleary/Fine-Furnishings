@@ -7,23 +7,43 @@ Our goal is to provide simple navigation of the website so that our customers ca
 
 # User Experience (UX)
 
-## User Stories:
+## Project Planning 
+
+<details>
+
+<summary>User Stories</summary>
 **Planning of user stories completed in Google sheets:
 [Google sheet](https://docs.google.com/spreadsheets/d/1xrrFyjqHdzZsPyJ-DnGmsfV3z4rvsZ0ZD8F23ye3utk/edit#gid=0)
 - Link to my [GitHub Project](https://github.com/users/morganoleary/projects/5)
 
-## ERD Diagram:
+<summary>ERD Diagram</summary>
 [LucidChart ERD](https://lucid.app/lucidchart/c013de76-fea2-4861-9c69-efccf9e6f6ca/edit?invitationId=inv_27c26c18-d566-4a6a-b26c-0b9be3d8465f&page=0_0#)
-![LucidChart ERD](ERD_Diagram.png)
+![LucidChart ERD](ERD_Diagram.png) # update
 
-## Wireframes:
-![Fine Furnishings Wireframes](http://localhost:21303/8970445693911056242/index.html#/screens/d12245cc-1680-458d-89dd-4f0d7fb22724)
+<summary>Wireframes</summary>
 
-## Design:
+
+<summary>Design</summary>
 - Using the color Red - psychology of color
-- Muted colors for a more peaceful experience
+     I used the color Red as it has been proven to boost online sales. While the site has a red overall color, I created a more muted version to keep the site classy and more elegant for a more peaceful shopping experience. 
+[Crazy Egg](https://www.crazyegg.com/blog/colors-proven-to-boost-sales/)
 
-## External links that will be found on the site:
+</details>
+
+## Marketing:
+<details>
+
+<summary>Facebook Screenshots</summary>
+
+![Facebook Screenshot #1](static/readme_images/facebook-1-min.png)
+![Facebook Screenshot #2](static/readme_images/facebook-2-min.png)
+![Facebook Screenshot #3](static/readme_images/facebook-3-min.png)
+![Facebook Screenshot #4](static/readme_images/facebook-4-min.png)
+![Facebook Screenshot #5](static/readme_images/facebook-5-min.png)
+
+</details>
+
+## External link ideas that will be found on the site:
 - Blogs:
 Home Furnishing Blog
 Psychology of Design
@@ -34,34 +54,62 @@ mywaste.ie
 kollect.ie
 wiseireland.ie
 
-- Social Media:
-Facebook (will create a Facebook page)
-Instagram
-
-- Reviews:
-Trustpilot reviews
-
 # Existing Features
 
 ## Future Features
 
 # Testing
+<details>
 
-## Validator Testing:
+<summary>Validator Testing</summary>
 
-## Manual Testing:
+<summary>Manual Testing</summary>
 
-## Bugs/Unfixed Bugs:
+<summary>Bugs/Unfixed Bugs</summary>
+
+</details>
 
 # Deployment
+<details>
 
-## Steps taken to deploy on Heroku:
+<summary>Steps taken to deploy on Heroku</summary>
+WILL UPDATE:
 
-## Fork Repository
+Set up the workspace:
+1. Install gunicorn in workspace for Heroku deployment
+2. Add to requirements.txt and create Procfile
+3. In settings.py set DEBUG = False
+4. Git add, commit and push changes to GitHub
+Deploy on Heroku:
+5. Create the app on Heroku and connect to GitHub project
+6. Set the Config Vars in the "Settings" Tab
+7. Navigate to the "Deploy" tab and scroll down to click on "Deploy Branch" in the "Manual deploy" section
 
-## Clone Repository
+<summary>Fork Repository</summary>
+
+Forking a repository allows you to create a copy to GitHub, and any changes made will not affect the original repository:
+
+- Within GitHub, navigate to the repository page you are going to fork
+- Click "Fork" on the top right corner of the page
+- Wait for the copy to be created and you are then redirected to the forked repository
+
+<summary>Clone Repository</summary>
+
+Cloning a repository allows you to create a local copy of a repository on your machine:
+
+- Within GitHub, navigate to the repository you are wanting to clone
+- Click the green "<>Code" button
+- Within the "Local" tab, copy the HTTPS url
+- In your IDE, open Git Bash and type in 'git clone' followed by the pasted url just copied from GitHub. Ex: git clone https://example.com/repository/project
+- The clone has been created on your local machine
+
+</details>
 
 # Credits
+
+<details>
+
+<summary>Content</summary>
 - The Boutique Ado Walkthrough was referenced when setting up Django, Allauth and the base template.
 - The ![Boutique Ado Walkthrough](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+2/courseware/eb05f06e62c64ac89823cc956fcd8191/0fb892bc636a44cf94b69d9f2aa9166a/?child=first) was referenced when creating product pages & search bar functionality.
 - [Django documention](https://docs.djangoproject.com/en/dev/ref/models/querysets/#iexact) was referenced when utilizing iexact in creating the product category links.
@@ -69,17 +117,17 @@ Trustpilot reviews
 - The contact app, was largely taken from my previous project [Sould Base Studio Booking Site](https://github.com/morganoleary/studio-booking-site)
 - [Bootstrap Collapse Documentation](https://getbootstrap.com/docs/4.6/components/collapse/) was used to implement the dropdown answers on the FAQs page.
 - [FreePik.com](https://www.freepik.com/free-photos-vectors/ff-logo) was used to create a mockup of a logo for the company for the Facebook page.
+- Updating the shopping cart with quantities & size options for the bedframes was implemented with a great help from the [Boutique Ado Walkthrough - Adding Products](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+2/courseware/eb05f06e62c64ac89823cc956fcd8191/f324de58c90e47bd9497bf5839cf1859/)
 
-### Content
-
-### Technologies Used
+<summary>Technologies Used</summary>
 - Pexels.com (images)
 - Unsplash.com (images)
 - Adobe Express Converter (convert jpeg to png)
 - compresspng.com (compress png)
 - Fonticon
 
+<summary>Media & Layout</summary>
 
-### Media & Layout
+<summary>Acknowledgements</summary>
 
-## Acknowledgements
+</details>

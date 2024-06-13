@@ -42,6 +42,9 @@
                                         </td>
                                         <td class="py-3 text-white">
                                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                            {% if item.product.bedframe_sizes %}
+                                                <p class="my-0"><strong>Size: </strong>{{ item.size|upper }}</p>
+                                            {% endif %}
                                             <p class="my-0 small">Product ID: {{ item.product.product_id }}</p>
                                         </td>
                                         <td class="py-3 text-white">
