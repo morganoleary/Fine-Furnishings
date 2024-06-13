@@ -117,14 +117,13 @@ Cloning a repository allows you to create a local copy of a repository on your m
 - The contact app, was largely taken from my previous project [Sould Base Studio Booking Site](https://github.com/morganoleary/studio-booking-site)
 - [Bootstrap Collapse Documentation](https://getbootstrap.com/docs/4.6/components/collapse/) was used to implement the dropdown answers on the FAQs page.
 - [FreePik.com](https://www.freepik.com/free-photos-vectors/ff-logo) was used to create a mockup of a logo for the company for the Facebook page.
-- Updating the shopping cart with quantities & size options for the bedframes was implemented with a great help from the [Boutique Ado Walkthrough - Adding Products](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+2/courseware/eb05f06e62c64ac89823cc956fcd8191/f324de58c90e47bd9497bf5839cf1859/)
+- Updating the shopping cart with quantity functionality & size options for the bedframes was implemented with a great help from the [Boutique Ado Walkthrough - Adding Products](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+2/courseware/eb05f06e62c64ac89823cc956fcd8191/f324de58c90e47bd9497bf5839cf1859/)
 
 <summary>Technologies Used</summary>
-- Pexels.com (images)
-- Unsplash.com (images)
-- Adobe Express Converter (convert jpeg to png)
-- compresspng.com (compress png)
-- Fonticon
+- Images for the products and site were found on [Pexels.com](https://www.pexels.com/) as well as [Unsplash.com](https://unsplash.com/)
+- [Adobe Express Converter](https://www.adobe.com/express/feature/image/convert/jpg-to-png) was used to convert all jpg images to png.
+- [Compress PNG](https://compresspng.com/#google_vignette) was used to compress all png images for the project.
+- [Fonticon](https://gauger.io/fonticon/) was used to download the shopping cart, trash bin and wishlist heart icons. 
 
 <summary>Media & Layout</summary>
 
