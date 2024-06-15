@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
 
 {% block search_bar %}
 {% endblock %}
@@ -51,7 +52,7 @@
                                             <p class="my-0">${{ item.product.price }}</p>
                                         </td>
                                         <td class="py-3 w-25 text-white align-items-center">
-                                            <form class="form update-form" method="POST" action="{% url 'update_cart' item.product.product_id %}">
+                                            <form class="form update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
                                                 {% csrf_token %}
                                                 <div class="form-group">
                                                     <div class="input-group">
@@ -64,7 +65,7 @@
                                                             </button>
                                                         </div>
                                                         <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="50" 
-                                                        class="form-control form-control-sm rounded-0 text-center w-auto" data-item_id="{{ item.product.product_id }}" id="id_quantity_{{ item.product.product_id }}">
+                                                        class="form-control form-control-sm quantity_input rounded-0 text-center w-auto" data-item_id="{{ item.product.product_id }}" id="id_quantity_{{ item.product.product_id }}">
                                                         <div class="input-group-append">
                                                             <button class="increment-qty btn btn-sm btn-outline-secondary rounded-0" 
                                                                 data-item_id="{{ item.product.product_id }}" id="increment-qty_{{ item.product.product_id }}">
@@ -82,12 +83,12 @@
                                             <a class="update-link text-white"><small>Update</small></a>
                                         </td>
                                         <td>
-                                            <a href="" class="btn btn-danger remove-product mt-2 ml-3 mr-3" id="remove_{{ item.product.product_id }}" data-size="{{ item.size }}">
+                                            <a class="btn btn-danger remove-product mt-2 ml-3 mr-3" id="remove_{{ item.item_id }}" data-bedframe_size="{{ item.size }}">
                                                 <img src="{% static 'trash-bin.ico' %}" alt="Trash Bin icon" class="trash-bin-icon">
                                             </a>
                                         </td>
                                         <td class="py-3 text-white w-25">
-                                            <p class="my-0">${{ item.product.price }}</p>
+                                            <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                                         </td>
                                     </tr>
                                 {% endfor %}
@@ -137,9 +138,9 @@
     $('.remove-product').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('size');
-        var url = `/cart/remove/${itemId}`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+        var size = $(this).data('bedframe_size');
+        var url = `/cart/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'bedframe_size': size};
 
         $.post(url, data)
          .done(function() {
