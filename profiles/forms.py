@@ -1,6 +1,6 @@
 
 from django import forms
-from .models import UserProfile
+from .models import UserProfile, UserAddress
 
 
 class UserProfileForm(forms.ModelForm):
@@ -36,3 +36,13 @@ class UserProfileForm(forms.ModelForm):
             user.save()
             user_profile.save()
         return user_profile
+
+
+class UserAddressForm(forms.ModelForm):
+    """
+    Form for updating user profile address(es).
+    """
+
+    class Meta:
+        model = UserAddress
+        fields = ['address_name', 'street_address_1', 'street_address_2', 'town_city', 'county', 'post_code', 'country']

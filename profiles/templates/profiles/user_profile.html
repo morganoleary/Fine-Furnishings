@@ -32,7 +32,9 @@
                         </div>
                         <div class="col-md-6">
                             <article class="card-text"><strong>Delivery Address:</strong></article>
-                            <!-- Include delivery addresses here -->
+                            {% for address in user_profile.addresses.all %}
+                                <p>{{ address.address_name }}: {{ address.street_address_1 }}, {{ address.town_city }}, {{ address.country }}</p>
+                            {% endfor %}
                         </div>
                     </div>
                     <!-- Buttons -->
