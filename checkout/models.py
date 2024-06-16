@@ -31,7 +31,7 @@ class Order(models.Model):
         Update the order total each time a line item is added,
         including the delivery fee.
         """
-        self.product_total = self.order_items.aggregate(Sum('order_items_total'))['order_items_total__sum']
+        self.product_total = self.order_items.aggregate(Sum('order_items_total'))['order_items_total__sum'] or 0
         self.delivery_charge = settings.STANDARD_DELIVERY_FEE / 100
 
         self.order_total = self.product_total + self.delivery_charge

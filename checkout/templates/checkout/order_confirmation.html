@@ -1,28 +1,32 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
 
 {% block search_bar %}
 {% endblock %}
 
-{% block content %}
+{% block page_header %}
+{% endblock %}
 
-<!-- Order Confirmation page -->
-<div class="container top-padding mb-3">
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
-            <div class="card mb-4 mb-lg-0">
-                <div class="card-body">
-                    <h1>Order Confirmation</h1>
+{% block content %}
+    <div class="container text-white top-padding mb-3">
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-8 col-sm-12 text-center">
+                <h1 class="text-center text-white">Thank you for your order!</h1>
+                <p class="text-center text-white">Your order details are below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+                <div class="d-flex justify-content-center mt-3 mb-5">
+                    <a href="{% url 'products' %}">
+                        <button>Keep Shopping!</button>
+                    </a>
                 </div>
             </div>
-            <div class="text-white text-center m-3"> Have any questions? 
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="{% url 'contact' %}" class="text-white">Contact Us</a>
-                    </li>
-                </ul>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-12 mb-5 text-white">
             </div>
         </div>
     </div>
-</div>
-
 {% endblock %}
