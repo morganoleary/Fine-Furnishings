@@ -17,7 +17,7 @@ def user_profile(request):
     """
 
     if request.user.is_authenticated:
-        user_profile = UserProfile.objects.get(user_id=request.user)
+        user_profile, created = UserProfile.objects.get_or_create(user_id=request.user)
         # Returns the address formset for the User Address model
         AddressFormSet = modelformset_factory(UserAddress, form=UserAddressForm, extra=1, can_delete=True, max_num=5)
 
@@ -60,7 +60,7 @@ def user_wishlist(request):
     View to render the user's wishlist.
     """
     try:
-        profile = UserProfile.objects.get(user_id=request.user)
+        profile, created = UserProfile.objects.get_or_create(user_id=request.user)
     except UserProfile.DoesNotExist:
         messages.error(request, 'You need to be logged in to view your wishlist. Please log in or register.')
         return redirect('account_login')
@@ -75,7 +75,7 @@ def add_to_wishlist(request, product_id):
     View to add a product from the user's wishlist.
     """
     try:
-        profile = UserProfile.objects.get(user_id=request.user)
+        profile, created = UserProfile.objects.get_or_create(user_id=request.user)
     except UserProfile.DoesNotExist:
         messages.error(request, 'You need to be logged in to view your wishlist. Please log in or register.')
         return redirect('account_login')
@@ -123,6 +123,7 @@ def delete_user_profile(request):
     if request.method == 'POST':
         # Delete the user profile and log the user out
         user_profile.delete()
+        request.user.delete()
         logout(request)
         messages.success(request, "Your profile has been deleted successfully.")
         return redirect('home')
