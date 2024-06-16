@@ -7,23 +7,22 @@ Our goal is to provide simple navigation of the website so that our customers ca
 
 # User Experience (UX)
 
-## Project Planning 
-
 <details>
 
-<summary>User Stories</summary>
+<summary>Project Planning</summary> 
+
+### User Stories
 **Planning of user stories completed in Google sheets:
 [Google sheet](https://docs.google.com/spreadsheets/d/1xrrFyjqHdzZsPyJ-DnGmsfV3z4rvsZ0ZD8F23ye3utk/edit#gid=0)
 - Link to my [GitHub Project](https://github.com/users/morganoleary/projects/5)
 
-<summary>ERD Diagram</summary>
-[LucidChart ERD](https://lucid.app/lucidchart/c013de76-fea2-4861-9c69-efccf9e6f6ca/edit?invitationId=inv_27c26c18-d566-4a6a-b26c-0b9be3d8465f&page=0_0#)
-![LucidChart ERD](ERD_Diagram.png) # update
+### ERD Diagram - Lucidchart
+![LucidChart ERD](static/readme_images/erd-diagram-min.png)
 
-<summary>Wireframes</summary>
+### Wireframes
 
 
-<summary>Design</summary>
+### Design
 - Using the color Red - psychology of color
      I used the color Red as it has been proven to boost online sales. While the site has a red overall color, I created a more muted version to keep the site classy and more elegant for a more peaceful shopping experience. 
 [Crazy Egg](https://www.crazyegg.com/blog/colors-proven-to-boost-sales/)
