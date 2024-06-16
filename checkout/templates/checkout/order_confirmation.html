@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block search_bar %}
+{% endblock %}
+
+{% block content %}
+
+<!-- Order Confirmation page -->
+<div class="container top-padding mb-3">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card mb-4 mb-lg-0">
+                <div class="card-body">
+                    <h1>Order Confirmation</h1>
+                </div>
+            </div>
+            <div class="text-white text-center m-3"> Have any questions? 
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="{% url 'contact' %}" class="text-white">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

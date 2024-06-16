@@ -42,6 +42,7 @@
                         <fieldset class="px-3 mb-5 text-white">
                             <legend class="fieldset-label small text-white px-2 w-auto">Delivery</legend>
                             {{ order_form.phone_number | as_crispy_field }}
+                            {{ order_form.address }}
                             {{ order_form.street_address1 | as_crispy_field }}
                             {{ order_form.street_address2 | as_crispy_field }}
                             {{ order_form.town_or_city | as_crispy_field }}

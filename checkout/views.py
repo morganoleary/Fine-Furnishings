@@ -40,8 +40,6 @@ def checkout(request):
             # Fixed delivery charge
             order.delivery_charge = 30
 
-            order.save()
-
             # If the "save-info" checkbox is checked, update the user's address details
             if request.POST.get('save-info'):
                 address, created = UserAddress.objects.get_or_create(
@@ -63,6 +61,9 @@ def checkout(request):
                     address.post_code = form.cleaned_data['postcode']
                     address.country = form.cleaned_data['country']
                     address.save()
+                    
+            order.address = address
+            order.save()
 
             messages.success(request, 'Order successfully placed!')
             return redirect('order_confirmation', order_number=order.order_number)
@@ -78,8 +79,17 @@ def checkout(request):
     template = 'checkout/checkout.html'
     context = {
         'order_form': form,
-        'stripe_public_key': 'stripe_public_key',
+        'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)
+
+
+def order_confirmation(request, order_number):
+    """ A view to return the order confirmation page """
+
+    context = {
+        'order_number': order_number,
+    }
+    return render(request, 'checkout/order_confirmation.html', context)

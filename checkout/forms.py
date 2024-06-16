@@ -12,7 +12,7 @@ class OrderForm(forms.ModelForm):
     county = forms.CharField(max_length=100, required=True)
     postcode = forms.CharField(max_length=20, required=True)
     country = forms.CharField(max_length=100, required=True)
-
+    
     class Meta:
         model = Order
         fields = (
