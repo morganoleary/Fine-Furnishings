@@ -27,8 +27,7 @@ class OrderForm(forms.ModelForm):
             'country',
         )
 
-    def __init__(self, *args, **kwargs):
-        user_profile = kwargs.pop('user_profile', None)
+    def __init__(self, user_profile=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         if user_profile:

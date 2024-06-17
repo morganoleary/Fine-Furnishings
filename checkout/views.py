@@ -16,60 +16,53 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
+    intent = None
+    user_profile = request.user.userprofile  # Assuming user is logged in and has a profile
+
     if request.method == 'POST':
-        cart = request.session.get('cart', {})
-        form_data = {
-            'full_name': request.POST['full_name'],
-            'email': request.POST['email'],
-            'phone_number': request.POST['phone_number'],
-            'street_address_1': request.POST['street_address1'],
-            'street_address_2': request.POST['street_address2'],
-            'town_city': request.POST['town_or_city'],
-            'county': request.POST['county'],
-            'post_code': request.POST['postcode'],
-            'country': request.POST['country'],
-        }
-        form = OrderForm(form_data)
+        form = OrderForm(data=request.POST, user_profile=user_profile)
         if form.is_valid():
             order = form.save(commit=False)
-            user_profile = request.user.userprofile
             order.user_profile = user_profile
             order.delivery_charge = 30
+
+            # Handle address
+            address_data = {
+                'street_address_1': form.cleaned_data['street_address1'],
+                'street_address_2': form.cleaned_data['street_address2'],
+                'town_city': form.cleaned_data['town_or_city'],
+                'county': form.cleaned_data['county'],
+                'post_code': form.cleaned_data['postcode'],
+                'country': form.cleaned_data['country'],
+            }
+
+            user_address, created = UserAddress.objects.update_or_create(
+                user_profile=user_profile,
+                defaults=address_data,
+            )
+            order.address = user_address
             order.save()
 
-            if request.POST.get('save-info'):
-                address_data = {
-                    'street_address_1': form.cleaned_data['street_address1'],
-                    'street_address_2': form.cleaned_data['street_address2'],
-                    'town_city': form.cleaned_data['town_or_city'],
-                    'county': form.cleaned_data['county'],
-                    'post_code': form.cleaned_data['postcode'],
-                    'country': form.cleaned_data['country'],
-                }
-                UserAddress.objects.update_or_create(
-                    user_profile=user_profile,
-                    defaults=address_data,
-                )
-
+            cart = request.session.get('cart', {})
             for item_id, product_data in cart.items():
                 try:
                     product = Product.objects.get(id=item_id)
                     if isinstance(product_data, int):
-                        order_items = OrderItems(
+                        order_item = OrderItems(
                             order=order,
                             product=product,
                             quantity=product_data,
                         )
-                        order_items.save()
+                        order_item.save()
                     else:
                         for size, quantity in product_data['bedframes_by_size'].items():
-                            order_items = OrderItems(
+                            order_item = OrderItems(
                                 order=order,
                                 product=product,
                                 quantity=quantity,
                                 size=size,
                             )
-                            order_items.save()
+                            order_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your shopping cart wasn't found in our database. "
@@ -81,7 +74,7 @@ def checkout(request):
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('order_confirmation', args=[order.order_number]))
         else:
-            messages.error(request, 'There was an error with your form. Please double check your information.')
+            messages.error(request, 'There was an error with your order. Please double check your information.')
     else:
         cart = request.session.get('cart', {})
         if not cart:
@@ -97,26 +90,24 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        user_profile = request.user.userprofile
+        initial_data = {
+            'full_name': request.user.get_full_name(),
+            'email': request.user.email,
+            'phone_number': user_profile.phone,
+        }
+
         user_address = UserAddress.objects.filter(user_profile=user_profile).first()
         if user_address:
-            form = OrderForm(initial={
-                'full_name': request.user.get_full_name(),
-                'email': request.user.email,
-                'phone_number': user_profile.phone,
-                'street_address_1': user_address.street_address_1,
-                'street_address_2': user_address.street_address_2,
-                'town_city': user_address.town_city,
+            initial_data.update({
+                'street_address1': user_address.street_address_1,
+                'street_address2': user_address.street_address_2,
+                'town_or_city': user_address.town_city,
                 'county': user_address.county,
-                'post_code': user_address.post_code,
+                'postcode': user_address.post_code,
                 'country': user_address.country,
             })
-        else:
-            form = OrderForm(initial={
-                'full_name': request.user.get_full_name(),
-                'email': request.user.email,
-                'phone_number': user_profile.phone,
-            })
+
+        form = OrderForm(initial=initial_data, user_profile=user_profile)
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. Did you forget to set it in your environment?')
@@ -125,16 +116,20 @@ def checkout(request):
     context = {
         'order_form': form,
         'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret,
+        'client_secret': intent.client_secret if intent else '',
     }
 
     return render(request, template, context)
 
 
 def order_confirmation(request, order_number):
+    """
+    View to handle successful order checkouts
+    """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    messages.success(request, f'Order successfully processed! Your order number is {order_number}. A confirmation email will be sent to {order.email}.')
+    email = order.user_profile.user_id.email
+    messages.success(request, f'Order successfully processed! Your order number is {order_number}. A confirmation email will be sent to {email}.')
 
     if 'cart' in request.session:
         del request.session['cart']

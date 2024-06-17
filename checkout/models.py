@@ -32,7 +32,7 @@ class Order(models.Model):
         including the delivery fee.
         """
         self.product_total = self.order_items.aggregate(Sum('order_items_total'))['order_items_total__sum'] or 0
-        self.delivery_charge = settings.STANDARD_DELIVERY_FEE / 100
+        self.delivery_charge = settings.STANDARD_DELIVERY_FEE
 
         self.order_total = self.product_total + self.delivery_charge
         self.save()
