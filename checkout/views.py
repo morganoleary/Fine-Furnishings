@@ -98,17 +98,25 @@ def checkout(request):
         )
 
         user_profile = request.user.userprofile
-        form = OrderForm(initial={
-            'full_name': user_profile.user.get_full_name(),
-            'email': user_profile.user.email,
-            'phone_number': user_profile.default_phone_number,
-            'street_address_1': user_profile.default_street_address_1,
-            'street_address_2': user_profile.default_street_address_2,
-            'town_city': user_profile.default_town_city,
-            'county': user_profile.default_county,
-            'post_code': user_profile.default_post_code,
-            'country': user_profile.default_country,
-        })
+        user_address = UserAddress.objects.filter(user_profile=user_profile).first()
+        if user_address:
+            form = OrderForm(initial={
+                'full_name': request.user.get_full_name(),
+                'email': request.user.email,
+                'phone_number': user_profile.phone,
+                'street_address_1': user_address.street_address_1,
+                'street_address_2': user_address.street_address_2,
+                'town_city': user_address.town_city,
+                'county': user_address.county,
+                'post_code': user_address.post_code,
+                'country': user_address.country,
+            })
+        else:
+            form = OrderForm(initial={
+                'full_name': request.user.get_full_name(),
+                'email': request.user.email,
+                'phone_number': user_profile.phone,
+            })
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. Did you forget to set it in your environment?')
