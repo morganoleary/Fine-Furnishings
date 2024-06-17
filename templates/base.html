@@ -130,9 +130,6 @@
                 <a class="nav-link" href="{% url 'user_wishlist' %}">My Wishlist</a>
               </li>
               <li class="nav-item mr-md-3">
-                <a class="nav-link" href="#">Order History</a>
-              </li>
-              <li class="nav-item mr-md-3">
                 <a class="nav-link {% if request.path == profiles_url %}active" aria-current="page{% endif %}" href="{% url 'user_profile' %}">Personal Details</a>
               </li>
               <li class="nav-item mr-md-3">
@@ -205,9 +202,6 @@
         <div class="row">
           <div class="col-sm">
             <ul class="nav flex-column">
-              <li class="nav-item footer-link">
-                <a class="nav-link text-dark" href="#">About Us</a>
-              </li>
               <li class="nav-item footer-link">
                 <a class="nav-link text-dark" href="{% url 'faq' %}">FAQs</a>
               </li>

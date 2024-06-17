@@ -137,5 +137,6 @@ def order_confirmation(request, order_number):
     template = 'checkout/order_confirmation.html'
     context = {
         'order_number': order_number,
+        'email': email,
     }
     return render(request, template, context)
