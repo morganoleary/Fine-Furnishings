@@ -30,7 +30,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '8000-morganolear-finefurnish-xa0we9ox1hq.ws.codeinstitute-ide.net', 'fine-furnishings-1e63b49cdd1f.herokuapp.com']
 
@@ -88,7 +89,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # 'django.template.context_processors.media',
+                'django.template.context_processors.media',
                 'cart.contexts.cart_contents',
             ],
             'builtins': [
@@ -175,6 +176,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -184,14 +188,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STANDARD_DELIVERY_FEE = 30
-STRIPE_CURRENCY = 'eur'
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
-STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
 # Cloudinary configuration
 CLOUDINARY_URL = os.getenv('CLOUDINARY_URL', '')
 
@@ -200,3 +196,30 @@ cloudinary.config(
   api_key = os.getenv('CLOUDINARY_API_KEY'),
   api_secret = os.getenv('CLOUDINARY_API_SECRET')
 )
+
+# Stripe
+STANDARD_DELIVERY_FEE = 30
+STRIPE_CURRENCY = 'eur'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+
+# DJANGO DEBUG LOGGER
+LOGGING = {
+'version': 1,
+'disable_existing_loggers': False,
+'handlers': {
+'file': {
+'level': 'DEBUG',
+'class': 'logging.FileHandler',
+'filename': 'debug.log',
+},
+},
+'loggers': {
+'django': {
+'handlers': ['file'],
+'level': 'DEBUG',
+'propagate': True,
+},
+},
+}

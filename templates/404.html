@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block search_bar %}
+{% endblock %}
+
+{% block content %}
+
+<!-- FAQ page -->
+<div class="container top-padding mb-3">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="row justify-content-center top-padding">
+                <div class="card mb-4 mb-lg-0 ">
+                    <div class="card-body">
+                        Sorry, this page doesn't exist. 
+                    </div>
+                    <div class="text-white text-center m-3">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="{% url 'home' %}" class="text-white">Go back to the home page.</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="text-white text-center m-3"> Have any questions for us? 
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="{% url 'contact' %}" class="text-white">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
