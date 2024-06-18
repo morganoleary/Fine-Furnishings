@@ -30,18 +30,18 @@
                     <div class="card-body">
                         <h4 class="card-title text-center mb-4">Order Details</h4>
                         <div class="row">
-                            <div class="col-md-6">
-                                <article class="card-text"><strong>Order Number :</strong> {{ order_number }}</article>
-                                <article class="card-text"><strong>Order Date :</strong> {{ order.order_date }}</article>
+                            <div class="col-md-6 p-3">
+                                <article class="card-text pb-3"><strong>Order Number :</strong> {{ order.order_number }}</article>
+                                <article class="card-text pb-3"><strong>Order Date :</strong> {{ order.order_date }}</article>
                                 {% for item in order.order_items.all %}
-                                    <article class="card-text"><strong>Items Purchased :</strong> {{ item.product.name }}{% if item.product.bedframe_sizes %} - Size {{ item.product.bedframe_sizes|upper }}{% endif %}</article>
-                                    <article class="card-text"><strong>Quantity :</strong> {{ quantity }}</article>
+                                    <article class="card-text pb-3"><strong>Items Purchased :</strong> {{ item.product.name }}{% if item.bedframe_size %} - Size {{ item.bedframe_size|upper }}{% endif %}</article>
+                                    <article class="card-text pb-3"><strong>Quantity :</strong> {{ item.quantity }}</article>
                                 {% endfor %}
                             </div>
-                            <div class="col-md-6">
-                                <article class="card-text"><strong>Delivery to:</strong></article>
-                                {% for address in user_profile.addresses.all %}
-                                    <p>{{ user_profile.user_id.first_name }} {{ user_profile.user_id.last_name }}</p>
+                            <div class="col-md-6 p-3">
+                                <article class="card-text pb-3"><strong>Delivery to:</strong></article>
+                                {% for address in addresses %}
+                                    <p>{{ order.user_profile.user_id.first_name }} {{ order.user_profile.user_id.last_name }}</p>
                                     <p>{{ address.address_name }}: {{ address.street_address_1 }}, {{ address.town_city }}, {{ address.country }}</p>
                                 {% endfor %}
                             </div>

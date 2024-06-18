@@ -129,6 +129,9 @@ def order_confirmation(request, order_number):
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     email = order.user_profile.user_id.email
+    user_profile = order.user_profile
+    addresses = user_profile.addresses.all()
+
     messages.success(request, f'Order successfully processed! Your order number is {order_number}. A confirmation email will be sent to {email}.')
 
     if 'cart' in request.session:
@@ -136,7 +139,9 @@ def order_confirmation(request, order_number):
 
     template = 'checkout/order_confirmation.html'
     context = {
+        'order': order,
         'order_number': order_number,
         'email': email,
+        'addresses': addresses,
     }
     return render(request, template, context)
