@@ -8,7 +8,9 @@ Django==3.2.9
 django-allauth==0.63.2
 django-cloudinary-storage==0.3.0
 django-crispy-forms==1.14.0
+gunicorn==22.0.0
 idna==3.7
+packaging==24.1
 pillow==10.3.0
 psycopg2==2.9.9
 pytz==2024.1

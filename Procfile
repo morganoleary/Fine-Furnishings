@@ -1,0 +1,1 @@
+web: gunicorn fine_furnishings.wsgi:application
