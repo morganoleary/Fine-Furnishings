@@ -13,6 +13,9 @@ import stripe
 
 @login_required
 def checkout(request):
+    """ 
+    A view to handle the checkout process using Stripe payments
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -60,7 +63,7 @@ def checkout(request):
                                 order=order,
                                 product=product,
                                 quantity=quantity,
-                                size=size,
+                                bedframe_size=size,
                             )
                             order_item.save()
                 except Product.DoesNotExist:
@@ -132,7 +135,7 @@ def order_confirmation(request, order_number):
     user_profile = order.user_profile
     addresses = user_profile.addresses.all()
 
-    messages.success(request, f'Order successfully processed! Your order number is {order_number}. A confirmation email will be sent to {email}.')
+    messages.success(request, f'Order successfully processed! Your order number is {order_number}.')
 
     if 'cart' in request.session:
         del request.session['cart']

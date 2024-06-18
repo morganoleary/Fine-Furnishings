@@ -3,6 +3,9 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Category(models.Model):
+    """
+    Model representing product categories
+    """
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -13,6 +16,9 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    """
+    Model representing individual product details
+    """
     categories = models.ManyToManyField('Category')
     product_id = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)

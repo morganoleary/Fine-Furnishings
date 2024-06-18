@@ -12,8 +12,6 @@ from django.forms import modelformset_factory
 def user_profile(request):
     """
     View to display the profile of a logged in user.
-    Displays an individual instance of
-        :model: `UserProfile`
     """
 
     if request.user.is_authenticated:

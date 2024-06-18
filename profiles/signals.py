@@ -6,5 +6,8 @@ from .models import UserProfile
 # Create a user profile for each new user
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
+    """
+    Create a user profile for each new user
+    """
     if created:
         UserProfile.objects.create(user_id=instance)

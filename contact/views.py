@@ -4,15 +4,9 @@ from .forms import ContactForm
 
 # Create your views here.
 
-
 def contact_form(request):
     """
     View to handle contact form submission.
-    **Context**
-    ``contact_form``
-        An instance of :form: `contact.ContactForm`
-    **Template**
-    :template: `contact/contact_form.html`
     """
     if request.method == 'POST':
         form = ContactForm(data=request.POST)

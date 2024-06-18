@@ -3,6 +3,9 @@ from .models import Order
 from profiles.models import UserAddress, UserProfile
 
 class OrderForm(forms.ModelForm):
+    """ 
+    A form to allow the user to fill out their details during checkout
+    """
     full_name = forms.CharField(max_length=100, required=True)
     email = forms.EmailField(max_length=100, required=True)
     phone_number = forms.CharField(max_length=20, required=True)

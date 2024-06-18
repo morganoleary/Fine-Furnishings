@@ -13,7 +13,7 @@ DROPDOWN_CHOICES = [
 
 class ContactRequest(models.Model):
     """
-    Model representing contact request details. :model: `ContactRequest`
+    Model representing contact request details.
     """
 
     name = models.CharField(max_length=200)
