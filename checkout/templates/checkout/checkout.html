@@ -102,7 +102,7 @@
                                     {% if item.product.image %}
                                         <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
                                     {% else %}
-                                        <img class="w-100" src="{{ MEDIA_URL }}coming-soon-placeholder-image.png" alt="{{ product.name }}">
+                                        <img class="w-100" src="{% static 'images/coming-soon-placeholder-image.png' %}" alt="{{ product.name }}">
                                     {% endif %}
                                 </a>
                             </div>

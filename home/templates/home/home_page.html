@@ -8,7 +8,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-12 pt-5">
-                <img src="{{ MEDIA_URL }}media/cover-main-page.png" alt="Image of living room with green sofa" class="img-fluid home-page-image">
+                <img src="{% static 'images/cover-main-page.png' %}" alt="Image of living room with green sofa" class="img-fluid home-page-image">
             </div>
         </div>
     </div>
@@ -16,19 +16,19 @@
         <div class="row">
             <div class="col-md-4 mb-3">
                 <a href="{% url 'sofa_products' %}" class="category-block">
-                    <img src="{{ MEDIA_URL }}media/cream-round-arm-sofa.png" class="card-img" alt="Cream Sofa - Sofas Category">
+                    <img src="{% static 'images/cream-round-arm-sofa.png' %}" class="card-img" alt="Cream Sofa - Sofas Category">
                     <span class="category-name">Sofas</span>
                 </a>
             </div>
             <div class="col-md-4 mb-3">
                 <a href="{% url 'bedroom_products' %}" class="category-block">
-                    <img src="{{ MEDIA_URL }}media/beige-velvet-headboard-with-buttons.png" class="card-img" alt="Beige Bedframe - Bedroom Category">
+                    <img src="{% static 'images/beige-velvet-headboard-with-buttons.png' %}" class="card-img" alt="Beige Bedframe - Bedroom Category">
                     <span class="category-name">Bedroom</span>
                 </a>
             </div>
             <div class="col-md-4 mb-3">
                 <a href="{% url 'dining_products' %}" class="category-block">
-                    <img src="{{ MEDIA_URL }}media/white-wood-rectangle-dining-table-with-oval-base.png" class="card-img" alt="Wooden Table - Dining Category">
+                    <img src="{% static 'images/white-wood-rectangle-dining-table-with-oval-base.png' %}" class="card-img" alt="Wooden Table - Dining Category">
                     <span class="category-name">Dining</span>
                 </a>
             </div>
