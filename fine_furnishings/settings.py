@@ -16,9 +16,11 @@ import dj_database_url
 import cloudinary
 
 # Import and execute the env.py file
-env_path = Path(__file__).resolve().parent / 'env.py'
-if env_path.exists():
-    exec(open(env_path).read())
+# env_path = Path(__file__).resolve().parent / 'env.py'
+# if env_path.exists():
+#     exec(open(env_path).read())
+if os.path.isfile('env.py'):
+    import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,9 +33,10 @@ SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = 'DEVELOPMENT' in os.environ
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '8000-morganolear-finefurnish-xa0we9ox1hq.ws.codeinstitute-ide.net', 'fine-furnishings-1e63b49cdd1f.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '8000-morganolear-finefurnish-5tmqomrr3vx.ws.codeinstitute-ide.net', 'fine-furnishings-1e63b49cdd1f.herokuapp.com']
 
 
 # Application definition
@@ -173,15 +176,23 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -203,23 +214,3 @@ STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
-
-# DJANGO DEBUG LOGGER
-LOGGING = {
-'version': 1,
-'disable_existing_loggers': False,
-'handlers': {
-'file': {
-'level': 'DEBUG',
-'class': 'logging.FileHandler',
-'filename': 'debug.log',
-},
-},
-'loggers': {
-'django': {
-'handlers': ['file'],
-'level': 'DEBUG',
-'propagate': True,
-},
-},
-}

@@ -30,6 +30,15 @@ Our goal is to provide simple navigation of the website so that our customers ca
 </details>
 
 ## Marketing:
+
+<details>
+
+<summary>E-Commerce Business Model</summary>
+
+- Fine Furnishings uses a business to consumer (B2C) business model. This is a furniture company that provides quality furniture to customers throughout the island of Ireland. The value of the company's services is huge as it provides a better well-being to everyone's day-to-day living within their homes. The business supplies furniture for consumers, customers are able to make purchases of the furniture on the Fine Furnishings website and the company is able to process orders via the website to complete each order placed.
+
+</details>
+
 <details>
 
 <summary>Facebook Screenshots</summary>
