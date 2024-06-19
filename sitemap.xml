@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/sofas/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/?categories=Corner</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/?categories=3_Seater</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/?categories=2_Seater</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/?categories=Armchair</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/bedroom/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/?categories=Bedframe</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/?categories=Nightstand,Locker</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/?categories=Storage,Drawer,Dresser</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/dining/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/?categories=Table</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/?categories=Chair</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/?categories=Bar_stool</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/cart/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/faq/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/contact/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/2/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/2/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/1/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/1/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/4/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/4/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/5/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/5/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/6/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/6/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/7/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/7/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/9/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/9/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/10/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/10/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/11/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/11/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/12/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/12/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/13/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/13/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/14/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/14/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/15/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/15/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/17/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/17/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/18/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/18/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/19/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/19/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/20/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/20/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/21/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/21/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/22/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/22/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/23/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/23/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/24/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/24/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/3/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/3/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/16/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/16/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/25/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/25/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/26/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/26/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/27/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/27/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/28/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/28/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/29/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/29/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/30/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/30/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/31/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/31/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/32/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/32/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/33/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/33/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/34/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/34/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/35/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/35/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/36/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/36/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/37/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/37/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/38/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/38/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/products/39/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=/profiles/wishlist/add/39/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F2%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F1%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F4%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F5%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F6%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F7%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F9%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F10%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F11%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F12%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F13%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F14%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F15%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F17%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F18%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F19%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F20%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F21%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F22%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F23%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F24%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F3%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F16%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F25%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F26%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F27%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F28%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F29%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F30%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F31%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F32%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F33%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F34%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F35%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F36%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F37%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F38%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/signup/?next=%2Fprofiles%2Fwishlist%2Fadd%2F39%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F2%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F1%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F4%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F5%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F6%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F7%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F9%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F10%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F11%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F12%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F13%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F14%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F15%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F17%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F18%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F19%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F20%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F21%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F22%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F23%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F24%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F3%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F16%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F25%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F26%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F27%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F28%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F29%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F30%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F31%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F32%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F33%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F34%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F35%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F36%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F37%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F38%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fine-furnishings-1e63b49cdd1f.herokuapp.com/accounts/login/?next=%2Fprofiles%2Fwishlist%2Fadd%2F39%2F</loc>
+  <lastmod>2024-06-18T23:29:16+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+
+
+</urlset>

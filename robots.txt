@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /profiles/
+Sitemap: https://fine-furnishings-1e63b49cdd1f.herokuapp.com/sitemap.xml

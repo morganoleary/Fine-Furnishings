@@ -75,9 +75,9 @@ I used the color Red as it has been proven to boost online sales. While the site
 
 <summary>SEO Implementations</summary>
 
-- Descriptive meta tags & keywords were used throughout the site. In particular, the product descriptions and image file names.
-- sitemap.xml
-- robots.txt
+- Descriptive meta tags & keywords were used throughout the site. In particular, the product descriptions and image file names. More keywords and meta tags will be used in future as the site content will bulk up about the business. 
+- [sitemap.xml](https://www.xml-sitemaps.com/) was used to create and add the sitemap.xml file to the root directory.
+- A robots.txt was added to the root directory of the project.
 
 </details>
 
@@ -99,21 +99,74 @@ I used the color Red as it has been proven to boost online sales. While the site
 
 <summary>Existing Features</summary>
 
-- Home page
-- Navbar
-- User login/registration
-- User Wishlist
-- User Personal Details
-- Product Search Bar
-- Product Categories & Filtered pages
-- Home page product category blocks
-- Product Detail page for each product
-- Shopping Cart page to view before purchasing
-- Secure Checkout page for the user to checkout with Stripe
-- Footer links
+- Home page - this page was created to draw the users attention to a calm yet exciting color of site as well as an eye-catching image of the possibilities when shopping on this site.
+![Home Page Desktop](static/readme_images/d-home-page.png)
+![Home Page Tablet](static/readme_images/t-home-page.png)
+![Home Page Mobile](static/readme_images/m-home-page-content.png)
+- Home page product category blocks were added on the home page to allow users to navigate to specific furniture categories instead of using the navbar or search bar. This was first implemented with the idea that the home page will eventually contain much more content so that as the user scrolls through, they don't have the need of scrolling back to the top to search for products.
+![Home Page Category Blocks Desktop](static/readme_images/d-home-page-category-blocks.png)
+![Home Page Category Blocks Mobile](static/readme_images/m-home-page-category-blocks.png)
+- Navbar - the navbar was designed for an easy user experience. On desktop and tablet, the text remains for easy navigation and on dropdown this shrinks to a hamburger menu with the same dropdown options. 
+![Navbar Desktop & Tablet](static/readme_images/d-navbar.png)
+![Mobile Navbar Closed](static/readme_images/m-navbar-closed.png)
+![Mobile Navbar Open](static/readme_images/m-navbar-open.png)
+- User login/registration was implemented using Django AllAuth. These links can easily be found in the main navigation bar of the site on all pages.
+![User Login/SignIn](static/readme_images/d-user-login.png)
+![User Registration](static/readme_images/d-user-registration.png)
+- When a user logs in or registers a new account, the menu options change to provide the user with a link to their personal wishlist, their personal details and a logout option.
+![Logged in Menu Options](static/readme_images/logged-in-menu-options.png)
+- User Wishlist - this page can only be accessed when a user is logged in. If a user tries to add a product to the wishlist, they are prompted to register an account or login. On this page, the user can either navigate into each product page to read more and add to their cart, or delete the item from their wishlist.
+![Wishlist Desktop](static/readme_images/d-wishlist.png)
+![Wishlist Tablet](static/readme_images/t-wishlist.png)
+![Wishlist Mobile](static/readme_images/m-wishlist.png)
+- User Personal Details - this page can only be accessed by a logged in user and autopopulates any saved details the user has previously added that is stored on the admin panel. From this page, the user has the option to edit their details and save or delete their account. 
+![Personal Details Desktop](static/readme_images/d-personal-details.png)
+![Personal Details Tablet](static/readme_images/t-personal-details.png)
+![Personal Details Mobile](static/readme_images/m-personal-details.png)
+- Edit personal details - this modal pop up gives the user the option to add a second delivery address to save to their account if they wish. The save button is found at the bottom of the modal **see in bugs section of readme - the multiple address function is not working 100% and while a user can enter a second address, this does not yet save correctly.
+![Edit Personal Details](static/readme_images/edit-profile-1.png)
+![Edit Personal Details - Save](static/readme_images/edit-profile-2.png)
+- Delete account - from the personal details page, the user is able to delete their account. A pop up modal is in place to have the user verify this action should be completed before proceeding with deletion.
+![Delete Account](static/readme_images/delete-account.png)
+- Product Search Bar - the search bar can be found on all product pages of the site and allows users to filter searches if the word is found in the name of the product or within the description. Further search criteria to be expanded in the future.
+![Search Bar Desktop](static/readme_images/d-search-bar.png)
+![Search Bar Mobile](static/readme_images/m-search-bar.png)
+- Product Categories & Filtered pages - the navbar provides an "All Products" option to view all products on the page as well as the three main categories of "Sofas" "Bedroom" and "Dining" that provide dropdown menus to filter each category further to specific types of items. Users are able to add items to their wishlist from these product pages.
+![Product Categories Desktop](static/readme_images/product-categories-navbar.png)
+![Product Categories Filtered](static/readme_images/product-categories-armchairs.png)
+![Product Categories Mobile Dropdown](static/readme_images/product-categories-mobile.png)
+- Product Detail page for each product - each product contains the following details: Name, Image, option to add to wishlist, Price, Product ID, Quantity Selector, Add to Cart option, Description and Dimensions. Bedframes also have a Size selector option of 3', 4', 4'6", 5' and 6', as well as all sizes of dimensions listed.
+![Product Details - 1](static/readme_images/d-pd-1.png)
+![Product Details - 2](static/readme_images/d-pd-2.png)
+![Product Details - bedframe](static/readme_images/d-pd-bedframe.png)
+![Tablet Product Details](static/readme_images/t-pd.png)
+![Mobile Product Details](static/readme_images/m-pd.png)
+- Shopping Cart page to view before purchasing - this page allows the user to view the products added to the basket and adjust items and quantities before continuing to checkout to purchase. Within the cart, the user is able to delete items from the cart as well as adjust quantities and see the price adjust with the changes.
+![Cart - 1](static/readme_images/cart-1.png)
+![Cart - 2](static/readme_images/cart-2.png)
+- Secure Checkout page for the user to checkout with Stripe - the checkout page provides the user with an Order Summary of what they are about to purchase, a form to fill in any details - if not already suppled in the personal details page - and a card input to pay securely with Stripe's payment system. **see bugs for the incorrect layout on mobile screens, in future developments the order summary will be visible before checkout is possible.
+![Checkout - 1](static/readme_images/checkout-1.png)
+![Checkout - 2](static/readme_images/checkout-2.png)
+![Checkout Mobile - 1](static/readme_images/m-checkout-1.png)
+![Checkout Mobile -2](static/readme_images/m-checkout-2.png)
+![Stripe payment success](static/readme_images/stripe-payment-succeed.png)
+- Order Confirmation - upon a successful purchase, the user is taken to an order confirmation page to show their order number and details. At this stage, the cart is emptied and the balance reverts to 0.
+![Order Confirmation](static/readme_images/order-confirmation.png)
+- FAQs page - this page can be found in the footer of the site and provides dropdown questions and answers for frequently asked questions the business is expecting a user to ask. This page also provides a link to the contact form page in case a user's question is not answered in the FAQs provided.
+![FAQs](static/readme_images/faqs.png)
+- Contact Us page - this page can be found in the footer of the site and can be accessed by both registered & unregistered users. The form requires fields to be field out before it can be submitted and provides a dropdown for the possible reasons a user may be sending a query to the business: General Queries, Return an Order, Complaints & Feedback.
+![Contact Form - 1](static/readme_images/contact-form-1.png)
+![Contact Form - 2](static/readme_images/contact-form-2.png)
+- Footer links - the footer is visible on all pages of the site and provides links to the following: FAQs page, Contact Us page, Social medial links for Facebook & Instagram (opening in a separate window), two external site links and a newsletter signup form:
+![Footer Desktop](static/readme_images/d-footer.png)
+![Footer Tablet](static/readme_images/t-footer.png)
+![Footer Mobile](static/readme_images/m-footer.png)
 - Mailchimp Subscription form working to store contact emails on Mailchimp:
+![Mailchimp Mobile](static/readme_images/m-mailchimp.png)
 ![Mailchimp - successful emails added](static/readme_images/mailchimp-success.png)
-- Custom 404 page
+- A custom 404 page has been created - this page includes a link back to the home page OR to the contact form for the user to send any queries about why a certain page was not found.
+![404 page](static/readme_images/custom-404.png)
+
 
 #### External Links in Footer
 
@@ -155,6 +208,11 @@ I used the color Red as it has been proven to boost online sales. While the site
 
 - Success messages are showing after the user navigates to a new page on the site. The message should be appearing on the page the user remains on or is redirected to, if called for. This will be fixed/updated in future features and was unfixed due to time constraints.
 - I wanted the user to be able to save multiple addresses to their user profile and select a specific address when placing an order. Maybe they save a 'Home' address, 'Office' address, etc. Unfortunately, I implemented the model correctly with the Address name and the form allows for a second address to be added, however in future fixes, this will work correctly as any added addresses are not saved to the profile or admin panel. This was not fixed due to time constraints with submission.
+- The search bar works as it should, however I noticed that a user is unable to search for the multiple description of an item such as 'tables' or 'sofas' and only the singular works. In future implementations I will learn more on how to expand the search criteria.
+- On mobile screens, the search bar remains in place when the hamburger menu is expanded. This should be hidden behind the menu on mobile devices. 
+- There are some styling issues between device sizes that have not been fixed as I ran out of time for submission. 
+- On the checkout page, the Stripe card input is not styled correctly and I struggled to find a solution as I did not want the background to be the dark red but a card instead to match the rest of the form fields. This will be fixed in future developments.
+- On the checkout page, the order summary is below the payment input on mobile screens. In future, the order summary will come before the user can submit a payment. 
 
 </details>
 
@@ -222,6 +280,7 @@ Cloning a repository allows you to create a local copy of a repository on your m
 - [Django Docs - forloop.counter](https://docs.djangoproject.com/en/3.1/ref/templates/builtins/#for) & [Django Docs - modelformset_factory¶](https://docs.djangoproject.com/en/5.0/ref/forms/models/#:~:text=modelformset_factory%20%C2%B6&text=Returns%20a%20FormSet%20class%20for,passed%20through%20to%20modelform_factory()%20.) were utilized when implementing the functionality of the users addresses and being able to add multiple to the same account. 
 - [w3things.com](https://w3things.com/blog/rel-noopener-noreferrer/) was referenced when implementing the rel attributes on external site links in my project.
 - Implementing Mailchimp as a newsletter signup in the footer of the site was implemented by following along with Code Institute's [Web Marketing Video - Newsletter Marking with Mailchimp](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DRWM101+2021_T1/courseware/2b2a6057abf44272955637c09687ab43/acc4b7d56e3a400ebe110e5d734ce767/).
+- The Code Institue [Intro to SEO video](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+SEO101+2021_T1/courseware/8602519909ff453c8d6e03d3169f92ac/213de39016ca41fdb2b93aa2e0283c51/) was followed when implementing the sitemap.xml and robots.txt file. 
 
 </details>
 
