@@ -100,74 +100,117 @@ I used the color Red as it has been proven to boost online sales. While the site
 <summary>Existing Features</summary>
 
 - Home page - this page was created to draw the users attention to a calm yet exciting color of site as well as an eye-catching image of the possibilities when shopping on this site.
+
 ![Home Page Desktop](static/readme_images/d-home-page.png)
 ![Home Page Tablet](static/readme_images/t-home-page.png)
 ![Home Page Mobile](static/readme_images/m-home-page-content.png)
+
 - Home page product category blocks were added on the home page to allow users to navigate to specific furniture categories instead of using the navbar or search bar. This was first implemented with the idea that the home page will eventually contain much more content so that as the user scrolls through, they don't have the need of scrolling back to the top to search for products.
+
 ![Home Page Category Blocks Desktop](static/readme_images/d-home-page-category-blocks.png)
 ![Home Page Category Blocks Mobile](static/readme_images/m-home-page-category-blocks.png)
+
 - Navbar - the navbar was designed for an easy user experience. On desktop and tablet, the text remains for easy navigation and on dropdown this shrinks to a hamburger menu with the same dropdown options. 
+
 ![Navbar Desktop & Tablet](static/readme_images/d-navbar.png)
 ![Mobile Navbar Closed](static/readme_images/m-navbar-closed.png)
 ![Mobile Navbar Open](static/readme_images/m-navbar-open.png)
+
 - User login/registration was implemented using Django AllAuth. These links can easily be found in the main navigation bar of the site on all pages.
+
 ![User Login/SignIn](static/readme_images/d-user-login.png)
 ![User Registration](static/readme_images/d-user-registration.png)
+
 - When a user logs in or registers a new account, the menu options change to provide the user with a link to their personal wishlist, their personal details and a logout option.
+
 ![Logged in Menu Options](static/readme_images/logged-in-menu-options.png)
+
 - User Wishlist - this page can only be accessed when a user is logged in. If a user tries to add a product to the wishlist, they are prompted to register an account or login. On this page, the user can either navigate into each product page to read more and add to their cart, or delete the item from their wishlist.
+
 ![Wishlist Desktop](static/readme_images/d-wishlist.png)
 ![Wishlist Tablet](static/readme_images/t-wishlist.png)
 ![Wishlist Mobile](static/readme_images/m-wishlist.png)
+
 - User Personal Details - this page can only be accessed by a logged in user and autopopulates any saved details the user has previously added that is stored on the admin panel. From this page, the user has the option to edit their details and save or delete their account. 
+
 ![Personal Details Desktop](static/readme_images/d-personal-details.png)
 ![Personal Details Tablet](static/readme_images/t-personal-details.png)
 ![Personal Details Mobile](static/readme_images/m-personal-details.png)
+
 - Edit personal details - this modal pop up gives the user the option to add a second delivery address to save to their account if they wish. The save button is found at the bottom of the modal **see in bugs section of readme - the multiple address function is not working 100% and while a user can enter a second address, this does not yet save correctly.
+
 ![Edit Personal Details](static/readme_images/edit-profile-1.png)
 ![Edit Personal Details - Save](static/readme_images/edit-profile-2.png)
+
 - Delete account - from the personal details page, the user is able to delete their account. A pop up modal is in place to have the user verify this action should be completed before proceeding with deletion.
+
 ![Delete Account](static/readme_images/delete-account.png)
+
 - Product Search Bar - the search bar can be found on all product pages of the site and allows users to filter searches if the word is found in the name of the product or within the description. Further search criteria to be expanded in the future.
+
 ![Search Bar Desktop](static/readme_images/d-search-bar.png)
 ![Search Bar Mobile](static/readme_images/m-search-bar.png)
+
 - Product Categories & Filtered pages - the navbar provides an "All Products" option to view all products on the page as well as the three main categories of "Sofas" "Bedroom" and "Dining" that provide dropdown menus to filter each category further to specific types of items. Users are able to add items to their wishlist from these product pages.
+
 ![Product Categories Desktop](static/readme_images/product-categories-navbar.png)
 ![Product Categories Filtered](static/readme_images/product-categories-armchairs.png)
 ![Product Categories Mobile Dropdown](static/readme_images/product-categories-mobile.png)
+
 - Product Detail page for each product - each product contains the following details: Name, Image, option to add to wishlist, Price, Product ID, Quantity Selector, Add to Cart option, Description and Dimensions. Bedframes also have a Size selector option of 3', 4', 4'6", 5' and 6', as well as all sizes of dimensions listed.
+
 ![Product Details - 1](static/readme_images/d-pd-1.png)
 ![Product Details - 2](static/readme_images/d-pd-2.png)
 ![Product Details - bedframe](static/readme_images/d-pd-bedframe.png)
 ![Tablet Product Details](static/readme_images/t-pd.png)
 ![Mobile Product Details](static/readme_images/m-pd.png)
+
 - Shopping Cart page to view before purchasing - this page allows the user to view the products added to the basket and adjust items and quantities before continuing to checkout to purchase. Within the cart, the user is able to delete items from the cart as well as adjust quantities and see the price adjust with the changes.
+
 ![Cart - 1](static/readme_images/cart-1.png)
 ![Cart - 2](static/readme_images/cart-2.png)
+
 - Secure Checkout page for the user to checkout with Stripe - the checkout page provides the user with an Order Summary of what they are about to purchase, a form to fill in any details - if not already suppled in the personal details page - and a card input to pay securely with Stripe's payment system. **see bugs for the incorrect layout on mobile screens, in future developments the order summary will be visible before checkout is possible.
+
 ![Checkout - 1](static/readme_images/checkout-1.png)
 ![Checkout - 2](static/readme_images/checkout-2.png)
 ![Checkout Mobile - 1](static/readme_images/m-checkout-1.png)
 ![Checkout Mobile -2](static/readme_images/m-checkout-2.png)
 ![Stripe payment success](static/readme_images/stripe-payment-succeed.png)
+
 - Order Confirmation - upon a successful purchase, the user is taken to an order confirmation page to show their order number and details. At this stage, the cart is emptied and the balance reverts to 0.
+
 ![Order Confirmation](static/readme_images/order-confirmation.png)
+
 - FAQs page - this page can be found in the footer of the site and provides dropdown questions and answers for frequently asked questions the business is expecting a user to ask. This page also provides a link to the contact form page in case a user's question is not answered in the FAQs provided.
 - Logout - this option is only available to logged in users. When clicked, the user receives a prompt to ensure the user wants to continue logging out.
+
 ![Logout](static/readme_images/logout.png)
 ![FAQs](static/readme_images/faqs.png)
+
 - Contact Us page - this page can be found in the footer of the site and can be accessed by both registered & unregistered users. The form requires fields to be field out before it can be submitted and provides a dropdown for the possible reasons a user may be sending a query to the business: General Queries, Return an Order, Complaints & Feedback.
+
 ![Contact Form - 1](static/readme_images/contact-form-1.png)
 ![Contact Form - 2](static/readme_images/contact-form-2.png)
+
 - Footer links - the footer is visible on all pages of the site and provides links to the following: FAQs page, Contact Us page, Social medial links for Facebook & Instagram (opening in a separate window), two external site links and a newsletter signup form:
+
 ![Footer Desktop](static/readme_images/d-footer.png)
 ![Footer Tablet](static/readme_images/t-footer.png)
 ![Footer Mobile](static/readme_images/m-footer.png)
+
 - Mailchimp Subscription form working to store contact emails on Mailchimp:
+
 ![Mailchimp Mobile](static/readme_images/m-mailchimp.png)
 ![Mailchimp - successful emails added](static/readme_images/mailchimp-success.png)
+
 - A custom 404 page has been created - this page includes a link back to the home page OR to the contact form for the user to send any queries about why a certain page was not found.
+
 ![404 page](static/readme_images/custom-404.png)
+
+- The Admin Dashboard is fully functional for the site owner to navigate through user accounts - including email addresses, personal details, wishlist items, saved addresses (see more in bugs on addresses) & orders placed. The admin dashboard also includes a place for the site owner to add, update and delete, products, product details and product categories. A section is also included to store contact requests from the site's contact request form.
+
+![Admin Dashboard](static/readme_images/admin-site.png)
 
 
 #### External Links in Footer
@@ -196,12 +239,15 @@ I used the color Red as it has been proven to boost online sales. While the site
 
 <summary>Validator Testing</summary>
 
-- HTML of each page on the deployed site was checked with [W3C-Markup Validation Service](https://validator.w3.org/#validate_by_input):
+- **HTML** of each page on the deployed site was checked with [W3C-Markup Validation Service](https://validator.w3.org/#validate_by_input):
+All pages were tested with no errors. The only warnings showing are from the script text for the footer Mailchimp newsletter signup javascript code. As these were only warnings, I thought it would be best to leave the code as is since this was taken direcly from Mailchimp's instructions:
+![HTML validation](static/readme_images/w3c-html.png)
+![HTML mailchimp error](static/readme_images/w3c-mailchimp-error.png)
 
-- CSS of the deployed site was checked with [W3C-The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) and no errors were found:
+- **CSS** of the deployed site was checked with [W3C-The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) and no errors were found:
 ![CSS validation](static/readme_images/css-validator.png)
 
-- Javascript of the deployed site was checked with [JSHint](https://jshint.com/):
+- **Javascript** of the deployed site was checked with [JSHint](https://jshint.com/):
 On the Product app's quantity_input_script.html a few warning were listed, however when the template literatls were changed to regular '' (to remove the error) the functionality of the quantity selector did not work. This was implemented using the Boutique Ado walkthrough:
 ![JSHhint quantity](static/readme_images/jshint.png)
 On the Checkout app's stripe_elements.js, a few warnings were thrown, but the code is working perfectly. This was implemented with the help of the Boutiqe Ado walkthrough.
@@ -209,7 +255,7 @@ On the Checkout app's stripe_elements.js, a few warnings were thrown, but the co
 On the Cart app's shopping_cart.html, the javascript at the bottom of the file was checked with minor warnings. This was implemented using the Boutique Ado walkthrough:
 ![JSHint shopping cart](static/readme_images/jshint-cart.png)
 
-- Python was checked with the [CI Python Linter](https://pep8ci.herokuapp.com/)
+- **Python** was checked with the [CI Python Linter](https://pep8ci.herokuapp.com/)
 As I was checking the Python code of the base.html file - the checker was throwing many errors of missing whitespace and unexpected indentations on all lines. From going through this course and following along with the content, I have matched the expected indentations and have continued coding the same way and have never had these issues. I have fixed all lines that are too long, but did not want to change the code and remove all indentations as that would make everything messy and unreadable.
 ![Python linter](static/readme_images/plinter-basehtml.png)
 Going through each page is causing the same errors - I am fixing an lines that are too long and any lines that have trailing white space, but I can not fix all the missing white space around operator and take out all the indentations as that will muddle the code and is far too time consuming with the submissiong deadline. I would like to know if this is a fluke in the linter? Here are some examples:
@@ -219,11 +265,168 @@ Going through each page is causing the same errors - I am fixing an lines that a
 ![p-linter-contact](static/readme_images/plinter-contact.png)
 ![p-linter-checkout](static/readme_images/plinter-checkout.png)
 
+- **LightHouse** Report:
+The lighthouse report was checked and although performance is marked at a 56, the SEO and accessibility ratings are much better. On this project, I made sure to resize all my images to make them smaller and speed up site speed and feel this is a good report for the level of understanding I have. Unfortunately, there is no time to look into the performance rating more, but this will be further investigated in future features to ensure I am putting out the best work possible.
+![Lighthouse Report](static/readme_images/lighthouse-report.png)
+
 </details>
 
 <details>
 
 <summary>Manual Testing</summary>
+
+#### Testing the Home page & Navigation Bar:
+
+- Expected: Upon loading the home page and navigating to this page from different pages throughout the site, the navigation bar, images, search bar, category blocks and footer are all expected to be visibly apealing and functional. 
+- Testing: While testing the page, I ensured to log in and log out of the site to make sure all home page and navigation features are working as expected. All images are populating and links are working correctly in all areas of the home page. 
+- Outcome: The navigation bar populates correctly depending on if the user is logged in or logged out. 
+
+Logged out menu:
+![Logged out menu](static/readme_images/test-logged-out-menu.png)
+Logged in menu:
+![Logged in menu](static/readme_images/test-logged-in-menu.png)
+The screenshot below shows that the category blocks on the home page navigate to the correct categories. There is a bug (see bugs) where the success message of logging in/out appears on the next page the user navigates to. 
+![Bug success message](static/readme_images/bug-success-message.png)
+As you can see, the category blocks are navigating to the correct page from the home page:
+![Category blocks working](static/readme_images/category-block.png)
+
+#### Testing the Register, Login & Logout functions with Wishlists & Personal Details:
+
+- Expected: When a user clicks on the register button, they will be prompted to register their details for a new account. A user who already has an account should be able to use their store username/email and password to login to the site with no issues. When a logged in user is ready to log out, they will be able to do so with no issues and will be prompted to confirm their log out request. 
+- Testing: While testing the registration button, I tried to break the registrations by not providing all the requested details. 
+- Outcome: For registrations, users are taken to a page to add their details and double check both the email and passwords are correct before registering. They are not allowed to register without completing all fields:
+
+![Regsitration test](static/readme_images/register-test.png)
+The same success message applies here (see bugs) as the user should be shown a message of successful registration at the top of the page.
+
+- Expected: For new users, the personal details and wishlist menu options appear but the content should be empty.
+- Testing: I registered a new account and navigated to both the wishlist page and personal details pages to ensure all are working properly. I added details to the personal details page and saved. I added products to the wishlist a saved. 
+- Outcome: The personal details page only populates the new user's email as expected and upon adding more details, the user can see their updates once clicking 'save'. There is a bug with the user address field (see bugs) as in future developments, I want the user to be able to save multiple addresses, however, only one address appears and saves at a time. The wishlist works as expected and is empty until products are added. Slight styling issues will be fixed in future. 
+
+Empty when first navigating to 'Personal Details':
+![New user details](static/readme_images/personal-details-new.png)
+Completed when new user adds details:
+![New details saved](static/readme_images/new-details-saved.png)
+The wishlist is empty when a user first registers:
+![Empty wishlist](static/readme_images/new-user-wishlist-empty.png)
+Products added to wishlist:
+![Wishlist products added](static/readme_images/wishlist-added-products.png)
+
+- Expected: When a user is ready to log out, they should receive a confirmation pop-up to confirm logging out. 
+- Testing: As a logged in user, I clicked the logout button in the menu. 
+- Outcome: A pop up modal appears for the customer to confirm logging out and the menu resets as no user is logged in anymore
+
+![Sign out confirmation](static/readme_images/sign-out-confirmation.png)
+When logging back in as this newly registered user, all personal details and wishlist items are saved. 
+
+#### Testing the FAQs page:
+
+- Expected: The FAQs page should be accessible and a working link in the footer of all pages. 
+- Testing: I tested to ensure the FAQs page worked whether a user is logged in or logged out. I tested each dropdown menu to make sure each is populating the answer correctly and I test the link to the contact page from the FAQs page. 
+- Outcome: The FAQs page works as expected, all dropdown choices work and the link to the contact page redirects the user to the Contact Form page.
+
+![FAQs test](static/readme_images/faqs-test.png)
+
+#### Testing the Contact Us page:
+
+- Expected: The Contact Us page should be accessible from the footer to both logged in and logged out users. The form should require users to fill out all required fields. The submit button should be clickable and send the contact form to the admin site. A success message should appear to the user that the message has been sent. 
+- Testing: I navigated to the contact page as both a logged in and logged out user. I tried submitting a form that did not have all fields filled out. I submitted a completed form and checked that the form was reflected on the admin panel.
+- Outcome: The contact page is accessible to all users from the footer, the FAQs page and the 404 page. The form will not allow a user to submit without completing all required fields. Once submitted, the contact request form is documented on the admin dashboard. There is a success message bug here where the success message is visible upon submitting the form but the styling is off and does not look appealing to the user. This will be fixed in future developments. 
+
+![Test contact](static/readme_images/test-contact.png)
+![Contact success message](static/readme_images/contact-success-message.png)
+![Admin contact received](static/readme_images/admin-contact.png)
+
+#### Testing the footer links:
+
+- Expected: The footer links for social media and external sites are expected to open in a new window. 
+- Testing: I clicked on each link - Facebook, Instagram, psychology of design blog and the disposal site. 
+- Outcome: All links worked properly and opened in separate windows:
+
+![Footer links working](static/readme_images/test-footer-links.png)
+
+- Expected: The Mailchimp newsletter signup form works and registers the new email address on the businesses Mailchimp account. 
+- Testing: I tried to submit the form without adding an email. I submitted an accurate email into the form. 
+- Outcome: The form cannot be submitted without an email address being entered. Once submitted with a correct email, the form shows the success and the new email is registerd on the Mailchimp account.
+
+![Mailchimp field required](static/readme_images/mailchimp-field-required.png)
+![Mailchimp signup success](static/readme_images/mailchimp-signup-success.png)
+![Mailchimp updated account](static/readme_images/mailchimp-account.png)
+
+#### Testing the product search pages, product details pages and search bar.
+
+- Expected: The product category pages should be accessible from the navigation menu dropdown options and filter correctly to the products selected. 
+- Testing: I tested all links in the main navigation menu to ensure they opened to the filtered categories. 
+- Outcome: All product categories work correctly from the dropdown and filter the products whether the user selects 'all products', 'all sofas', 'all bedroom', 'all dining' and their respective subcategories. 
+
+![Bedside tables category](static/readme_images/bedside-table-category.png)
+![Barstool category](static/readme_images/barstool-category.png)
+
+- Expected: The search bar should filter through all products if the search criteria exists within the product name or description. 
+- Testing: I searched for colors and products within the database. I also searched for products that I know do not exist as well as searching for the plural of 'tables' etc. 
+- Outcome: The products are filtered correctly when the search criteria exists, however when searching for the plural of a word, the search does not work (see bugs). This search criteria will be further expanded in future and especially as more products are added to the shop.
+
+![Search blue](static/readme_images/search-blue.png)
+![Search plural](static/readme_images/search-tables.png)
+The search for 'chair' correctly populates any 'sofa' chair or 'dining' chair on the site:
+![Search chair](static/readme_images/search-chair.png)
+
+- Expected: Each product should have a product detail page the is accessible by clicking on the individual products from the filtered category pages. The product detail page should include the name of the product, the option to add the item to the wishlist, the price, the product id, a quantity selector, the option to add the product to the cart to purchase, an image, a description and dimensions for the chosen product. Bedframes should have size options available in a dropdown to choose 3', 4', 4'6", 5' & 6'
+- Testing: All products have been tested to ensure each product contains the relevant details. I added the products to the wishlist to ensure the heart icon link is working. I increased and decreased the quantities and added the item to the basket. For bedframes, I added different sized to the cart. 
+- Outcome: All products are able to be added to the wishlist (when a user is logged in) and the products can be added to the cart. The quantity selector works correctly and the user cannot choose below 1 or above 50. Bedframes have size selectors and the correct size gets added to the cart. 
+
+![Product page test](static/readme_images/pp-test.png)
+![Bedframe size test](static/readme_images/bedframe-test.png)
+
+
+#### Testing the shopping cart:
+
+- Expected: Only a logged in user can add items to the cart. Within the cart the user should be able to adjust quantities of products, remove products entirely and navigate to the checkout page. The total of the order should adjust with each change and be reflected on the cart icon in the menu as well. Delivery should be automatically added to the product total.
+- Testing: I tried adding a product to the cart when not logged in. When logged in, I added products to the cart, including a bedframe with a specified size. I tested the quantity selector on the cart and deleted an item from the cart. I navigated to the checkout page. 
+- Outcome: When not logged in, the user is redirected to the log in page to either log in or register a new account. Selected quantities of an item transferred correclty to the cart. Bedframes and select sizes transferred correctly to the cart. I was able to delete items and adjust quantities of items in the cart. I was able to navigate to the checkout page from the cart. Product totals were adjusted correctly with the changes and the delivery charge was added before navigating to checkout.
+
+Items added to cart with quantities and sizes:
+![Items added to cart](static/readme_images/items-added-to-cart.png)
+Item deleted from cart:
+![Deleted item](static/readme_images/cart-deleted-item.png)
+Quantity of chairs adjusted in cart:
+![Quantity adjusted in cart](static/readme_images/cart-adjust-quantity.png)
+Products from cart added to checkout page:
+![Cart transfer to checkout](static/readme_images/go-to-checkout.png)
+
+#### Testing the secure checkout page:
+
+- Expected: Only logged in users can navigate to the checkout. The products and order summary total will carry over from the user's cart. Any saved details will be autopopulated in the checkout form. A Stripe card input will be available for the user to checkout and a note with the amount to be charged will be clearly visible. The user will be able to submit the payment OR navigate back to the cart to make changes to the order before purchasing. 
+- Testing: As a logged in user, I tried updating the details on the checkout form and added Stripe test card details to submit the order. I tried using the 'Update Cart' button to go back to the cart. I tried submitting the payment with details not added to the form. 
+- Outcome: From following the above steps and add the items to the cart to proceed to checkout. I was not able to submit the checkout form without all required details input. There is a styling bug here in the Stripe card input field that I did not have time to fix before submission (see bugs). This will be more visually appealing and clear to the user in future developments.
+
+As I was logged in and updated the form fiels again, I clicked the chouckout button and it gave me a Server 500 error. I am not sure if this is because I edited the form on the checkout page, but the payment was showing as succeeded on the Stripe events dashboard (I just couldn't see the confirmation page for the order placed). Navigating back to the cart with the 'update cart' button worked and after refreshing the page, going back to checkout and submitting the payment again (without) updating the form, the server still showed a 500 error, yet the payment succeeded on Stripe. 
+
+I logged out and logged back in as the last newly registered user I had created, added new items to the cart (including a bedframe with size selected), and was able to checkout sucessfully and was sent to the order confirmation page. 
+
+Checkout field required:
+![Field required](static/readme_images/checkout-field-required.png)
+Stripe test card details added:
+![Test card](static/readme_images/test-card-details.png)
+Upon successful checkout, the confirmation page appeared with the order details:
+![Order success confirmation](static/readme_images/order-confirmation-success.png)
+Upon successful checkout, the Stripe events were updated with the successful payment. As you can see, there were no failed payments for the previous order attempted (before logging out and back in). This is the first time I had this issue.
+![Stripe Success](static/readme_images/stripe-succeed.png)
+I was able to click the 'keep shopping' button to navigate back to all products. Here you can see another example of the bug (see bugs) with the success message not appearing until the next page is rendered. This will be fixed in future developments:
+![Keep shopping](static/readme_images/keep-shopping-success-message.png)
+The admin panel was updated with the new order details
+![Order updated on Admin](static/readme_images/admin-order-updated.png)
+![Admin order details](static/readme_images/admin-order-details-updated.png)
+
+I went logged out and back in again and attempted a few more checkouts that were all successful. I updated the checkout form fields with no issues. From the above 'server 500' error, I was not able to replicate the error againa and everything is working as expected.
+![checkout fields changed](static/readme_images/change-checkout-fields.png)
+![fields updated success](static/readme_images/fields-updated-success.png)
+
+The 404 page was also tested by typing random letters after the deployed url and appears correctly. 
+
+The buttons work as expected to navigate the user back to the home page OR to the contact us page to submit a query:
+![Test 404](static/readme_images/test-404.png)
+
 
 </details>
 
@@ -239,6 +442,7 @@ Going through each page is causing the same errors - I am fixing an lines that a
 - On the checkout page, the Stripe card input is not styled correctly and I struggled to find a solution as I did not want the background to be the dark red but a card instead to match the rest of the form fields. This will be fixed in future developments.
 - On the checkout page, the order summary is below the payment input on mobile screens. In future, the order summary will come before the user can submit a payment. 
 - The python validatore showed quite a few errors of missing spaces and unexpected indentations, however I don't believe these things are actually meant to be updated? Documented in the Validator testing portion above. There were a few lines of code that were marked as too long, but as the lines contain functions and class strings, to my knowledge, there is no simple fix for this. In future I will look further in these lines marked "too long" and will learn how to negate the warning. Due to time constraints, I did not have enough time to fix these for submission.
+- I accidentally deployed the project with debug set to True after fixing the minor spacing issues from validator testing. I'm not sure if this is a huge issue as long as the submissed version has debug set to 'False' so I wanted to be sure to document that I understand this was an incorrect action.
 
 </details>
 
