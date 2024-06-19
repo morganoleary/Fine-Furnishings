@@ -39,70 +39,141 @@
                                 {% for item in cart_items %}
                                     <tr class="flex-sm-row align-items-center">
                                         <td class="p-3 w-25">
-                                            <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                                            <img class="img-fluid rounded"
+                                            src="{{ item.product.image.url }}">
                                         </td>
                                         <td class="py-3 w-25 text-white">
-                                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                            <p class="my-0">
+                                            <strong>
+                                            {{ item.product.name }}
+                                            </strong>
+                                            </p>
                                             {% if item.product.bedframe_sizes %}
-                                                <p class="my-0"><strong>Size: </strong>{{ item.size|upper }}</p>
+                                                <p class="my-0">
+                                                <strong>Size: </strong>
+                                                {{ item.size|upper }}
+                                                </p>
                                             {% endif %}
-                                            <p class="my-0 small">Product ID: {{ item.product.product_id }}</p>
+                                            <p class="my-0 small">
+                                            Product ID:
+                                                {{ item.product.product_id }}
+                                            </p>
                                         </td>
                                         <td class="py-3 w-25 text-white mr-3">
-                                            <p class="my-0">${{ item.product.price }}</p>
+                                            <p class="my-0">
+                                            ${{ item.product.price }}
+                                            </p>
                                         </td>
-                                        <td class="py-3 w-25 text-white align-items-center">
-                                            <form class="form update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
+                                        <td class=
+                                        "py-3 w-25 text-white align-items-center">
+                                            <form class="form update-form"
+                                            method="POST"
+                                            action=
+                                            "{% url 'update_cart' item.item_id %}">
                                                 {% csrf_token %}
                                                 <div class="form-group">
                                                     <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <button class="decrement-qty btn btn-sm btn-outline-secondary rounded-0" 
-                                                                data-item_id="{{ item.product.product_id }}" id="decrement-qty_{{ item.product.product_id }}">
+                                                        <div
+                                                        class="input-group-prepend">
+                                                            <button
+                                                            class=
+                                                            "decrement-qty btn btn-sm btn-outline-secondary rounded-0" 
+                                                            data-item_id=
+                                                            "{{ item.product.product_id }}"
+                                                            id=
+                                                            "decrement-qty_{{ item.product.product_id }}">
                                                                 <span>
-                                                                    <i class="fas fa-minus fa-sm"></i>
+                                                                    <i class=
+                                                                    "fas fa-minus fa-sm"
+                                                                    >
+                                                                    </i>
                                                                 </span>
                                                             </button>
                                                         </div>
-                                                        <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="50" 
-                                                        class="form-control form-control-sm quantity_input rounded-0 text-center w-auto" data-item_id="{{ item.product.product_id }}" id="id_quantity_{{ item.product.product_id }}">
-                                                        <div class="input-group-append">
-                                                            <button class="increment-qty btn btn-sm btn-outline-secondary rounded-0" 
-                                                                data-item_id="{{ item.product.product_id }}" id="increment-qty_{{ item.product.product_id }}">
+                                                        <input type="number"
+                                                        name="quantity"
+                                                        value=
+                                                        "{{ item.quantity }}"
+                                                        min="1"
+                                                        max="50"
+                                                        class=
+                                                        "form-control form-control-sm quantity_input rounded-0 text-center w-auto"
+                                                        data-item_id=
+                                                        "{{ item.product.product_id }}"
+                                                        id=
+                                                        "id_quantity_{{ item.product.product_id }}">
+                                                        <div class=
+                                                        "input-group-append">
+                                                            <button class=
+                                                            "increment-qty btn btn-sm btn-outline-secondary rounded-0" 
+                                                            data-item_id=
+                                                            "{{ item.product.product_id }}"
+                                                            id=
+                                                            "increment-qty_{{ item.product.product_id }}">
                                                                 <span>
-                                                                    <i class="fas fa-plus fa-sm"></i>
+                                                                    <i class=
+                                                                    "fas fa-plus fa-sm">
+                                                                    </i>
                                                                 </span>
                                                             </button>
                                                         </div>
                                                         {% if item.product.bedframe_sizes %}
-                                                            <input type="hidden" name="bedframe_size" value="{{ item.size }}">
+                                                            <input type="hidden"
+                                                            name="bedframe_size"
+                                                            value="{{ item.size }}">
                                                         {% endif %}
                                                     </div>
                                                 </div>
                                             </form>
-                                            <a class="update-link text-white"><small>Update</small></a>
+                                            <a class="update-link text-white">
+                                            <small>Update</small></a>
                                         </td>
                                         <td>
-                                            <a class="btn btn-danger remove-product mt-2 ml-3 mr-3" id="remove_{{ item.item_id }}" data-bedframe_size="{{ item.size }}">
-                                                <img src="{% static 'trash-bin.ico' %}" alt="Trash Bin icon" class="trash-bin-icon">
+                                            <a class=
+                                            "btn btn-danger remove-product mt-2 ml-3 mr-3"
+                                            id="remove_{{ item.item_id }}"
+                                            data-bedframe_size=
+                                            "{{ item.size }}">
+                                                <img
+                                                src=
+                                                "{% static 'trash-bin.ico' %}"
+                                                alt="Trash Bin icon"
+                                                class="trash-bin-icon">
                                             </a>
                                         </td>
                                         <td class="py-3 text-white w-25">
-                                            <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                            <p class="my-0">
+                                            ${{ item.product.price | calc_subtotal:item.quantity }}
+                                            </p>
                                         </td>
                                     </tr>
                                 {% endfor %}
                                 <tr>
-                                    <td colspan="5" class="text-white pt-5 text-right">
-                                        <h6><strong>Product Total: ${{ total|floatformat:2 }}</strong></h6>
-                                        <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
-                                        <h4 class="mt-4"><strong>Total: ${{ order_total|floatformat:2 }}</strong></h4>
+                                    <td colspan="5"
+                                    class="text-white pt-5 text-right">
+                                        <h6><strong>
+                                        Product Total:
+                                            ${{ total|floatformat:2 }}
+                                        </strong></h6>
+                                        <h6>Delivery:
+                                            ${{ delivery|floatformat:2 }}
+                                        </h6>
+                                        <h4 class="mt-4">
+                                        <strong>
+                                        Total: ${{ order_total|floatformat:2 }}
+                                        </strong>
+                                        </h4>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="5" class="text-right text-white">
-                                        <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                                            <span class="text-uppercase text-white">Secure Checkout</span>
+                                    <td colspan="5"
+                                    class="text-right text-white">
+                                        <a href="{% url 'checkout' %}"
+                                        class="btn btn-black rounded-0 btn-lg">
+                                            <span class=
+                                            "text-uppercase text-white">
+                                            Secure Checkout
+                                            </span>
                                             <span class="icon text-white">
                                                 <i class="fas fa-lock"></i>
                                             </span>

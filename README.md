@@ -153,6 +153,8 @@ I used the color Red as it has been proven to boost online sales. While the site
 - Order Confirmation - upon a successful purchase, the user is taken to an order confirmation page to show their order number and details. At this stage, the cart is emptied and the balance reverts to 0.
 ![Order Confirmation](static/readme_images/order-confirmation.png)
 - FAQs page - this page can be found in the footer of the site and provides dropdown questions and answers for frequently asked questions the business is expecting a user to ask. This page also provides a link to the contact form page in case a user's question is not answered in the FAQs provided.
+- Logout - this option is only available to logged in users. When clicked, the user receives a prompt to ensure the user wants to continue logging out.
+![Logout](static/readme_images/logout.png)
 ![FAQs](static/readme_images/faqs.png)
 - Contact Us page - this page can be found in the footer of the site and can be accessed by both registered & unregistered users. The form requires fields to be field out before it can be submitted and provides a dropdown for the possible reasons a user may be sending a query to the business: General Queries, Return an Order, Complaints & Feedback.
 ![Contact Form - 1](static/readme_images/contact-form-1.png)
@@ -193,6 +195,29 @@ I used the color Red as it has been proven to boost online sales. While the site
 <details>
 
 <summary>Validator Testing</summary>
+
+- HTML of each page on the deployed site was checked with [W3C-Markup Validation Service](https://validator.w3.org/#validate_by_input):
+
+- CSS of the deployed site was checked with [W3C-The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) and no errors were found:
+![CSS validation](static/readme_images/css-validator.png)
+
+- Javascript of the deployed site was checked with [JSHint](https://jshint.com/):
+On the Product app's quantity_input_script.html a few warning were listed, however when the template literatls were changed to regular '' (to remove the error) the functionality of the quantity selector did not work. This was implemented using the Boutique Ado walkthrough:
+![JSHhint quantity](static/readme_images/jshint.png)
+On the Checkout app's stripe_elements.js, a few warnings were thrown, but the code is working perfectly. This was implemented with the help of the Boutiqe Ado walkthrough.
+![JSHint checkout stripe](static/readme_images/jshint-checkout.png)
+On the Cart app's shopping_cart.html, the javascript at the bottom of the file was checked with minor warnings. This was implemented using the Boutique Ado walkthrough:
+![JSHint shopping cart](static/readme_images/jshint-cart.png)
+
+- Python was checked with the [CI Python Linter](https://pep8ci.herokuapp.com/)
+As I was checking the Python code of the base.html file - the checker was throwing many errors of missing whitespace and unexpected indentations on all lines. From going through this course and following along with the content, I have matched the expected indentations and have continued coding the same way and have never had these issues. I have fixed all lines that are too long, but did not want to change the code and remove all indentations as that would make everything messy and unreadable.
+![Python linter](static/readme_images/plinter-basehtml.png)
+Going through each page is causing the same errors - I am fixing an lines that are too long and any lines that have trailing white space, but I can not fix all the missing white space around operator and take out all the indentations as that will muddle the code and is far too time consuming with the submissiong deadline. I would like to know if this is a fluke in the linter? Here are some examples:
+![p-linter-404](static/readme_images/plinter-404.png)
+![p-linter-wishlist](static/readme_images/plinter-wishlist.png)
+![p-linter-home](static/readme_images/plinter-home.png)
+![p-linter-contact](static/readme_images/plinter-contact.png)
+![p-linter-checkout](static/readme_images/plinter-checkout.png)
 
 </details>
 

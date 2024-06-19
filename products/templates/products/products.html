@@ -11,9 +11,12 @@
         <div class="row">
             <div class="col-12">
                 {% for message in messages %}
-                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                <div
+                class="alert alert-{{ message.tags }} alert-dismissible fade show"
+                role="alert">
                     {{ message }}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="alert"
+                    aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -29,11 +32,13 @@
                 <div class="card h-100">
                     {% if product.image %}
                     <a href="{% url 'product_detail' product.id %}">
-                        <img src="{{ product.image.url }}" class="card-img" alt="{{ product.name }}">
+                        <img src="{{ product.image.url }}"
+                        class="card-img" alt="{{ product.name }}">
                     </a>
                     {% else %}
                     <a href="{% url 'product_detail' product.id %}">
-                        <img src="{% static 'images/coming-soon-placeholder-image.png' %}"
+                        <img
+                        src="{% static 'images/coming-soon-placeholder-image.png' %}"
                         class="card-img" alt="{{ product.name }}">
                     </a>
                     {% endif %}
@@ -41,7 +46,8 @@
                         <h5 class="card-title">
                             {{ product.name }}
                             <a href="{% url 'add_to_wishlist' product.id %}">
-                                <img src="{% static 'wishlist-heart.ico' %}" alt="Wishlist Heart icon">
+                                <img src="{% static 'wishlist-heart.ico' %}"
+                                alt="Wishlist Heart icon">
                             </a>
                         </h5>
                         <p class="card-text">Price: ${{ product.price }}</p>
@@ -52,4 +58,5 @@
             {% endfor %}
         </div>
     </div>
+
 {% endblock %}
