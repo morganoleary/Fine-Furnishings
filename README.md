@@ -238,6 +238,7 @@ Going through each page is causing the same errors - I am fixing an lines that a
 - There are some styling issues between device sizes that have not been fixed as I ran out of time for submission. 
 - On the checkout page, the Stripe card input is not styled correctly and I struggled to find a solution as I did not want the background to be the dark red but a card instead to match the rest of the form fields. This will be fixed in future developments.
 - On the checkout page, the order summary is below the payment input on mobile screens. In future, the order summary will come before the user can submit a payment. 
+- The python validatore showed quite a few errors of missing spaces and unexpected indentations, however I don't believe these things are actually meant to be updated? Documented in the Validator testing portion above. There were a few lines of code that were marked as too long, but as the lines contain functions and class strings, to my knowledge, there is no simple fix for this. In future I will look further in these lines marked "too long" and will learn how to negate the warning. Due to time constraints, I did not have enough time to fix these for submission.
 
 </details>
 
