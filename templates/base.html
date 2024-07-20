@@ -52,7 +52,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto ml-3">
+            <ul class="navbar-nav mr-auto">
               <li class="nav-item ml-md-3 mr-md-3">
                   <a class="nav-link" href="{% url 'products' %}">All Products</a>
               </li>
@@ -109,75 +109,79 @@
                         <a href="{% url 'products' %}?categories=Bar_stool" class="dropdown-item">Bar Stools</a>
                       </li>
                   </ul>
-              </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-              <li class="mr-md-5">
-                <a class="{% if total %}text-secondary font-weight-bold{% else %}text-dark{% endif %}nav-link" href="{% url 'cart' %}">
-                  <div class="text-center">
-                    <div><img src="{% static 'shopping-cart.ico' %}" alt="Shopping cart icon">
-                      <p class="my-0">
-                        {% if total %}
-                            ${{ total|floatformat:2 }}
-                        {% else %}
-                            €0.00
-                        {% endif %}
-                      </p>
+                </li>
+              </ul>
+            <div class="col-sm"></div>
+            <div class="ml-lg-5">
+              <ul class="navbar-nav align-items-center ml-lg-5">
+                <li class="nav-item ml-md-3 mr-md-3">
+                  <a class="{% if total %}text-secondary font-weight-bold{% else %}text-dark{% endif %}nav-link" href="{% url 'cart' %}">
+                    <div class="text-center">
+                      <div class="col-sm">
+                        <img src="{% static 'shopping-cart.ico' %}" alt="Shopping cart icon">
+                        <p class="my-0">
+                          {% if total %}
+                              ${{ total|floatformat:2 }}
+                          {% else %}
+                              €0.00
+                          {% endif %}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-              </li>
-              {% if user.is_authenticated %}
-              <li class="nav-item mr-md-3">
-                <a class="nav-link" href="{% url 'user_wishlist' %}">My Wishlist</a>
-              </li>
-              <li class="nav-item mr-md-3">
-                <a class="nav-link {% if request.path == profiles_url %}active" aria-current="page{% endif %}" href="{% url 'user_profile' %}">Personal Details</a>
-              </li>
-              <li class="nav-item mr-md-3">
-                <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-              </li>
-              {% else %}
-              <li class="nav-item mr-md-3">
-                <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-              </li>
-              <li class="nav-item mr-md-3">
-                <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-              </li>
-              {% endif %}
-            </ul>
+                  </a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item ml-lg-3">
+                  <a class="nav-link" href="{% url 'user_wishlist' %}">My Wishlist</a>
+                </li>
+                <li class="nav-item ml-lg-3">
+                  <a class="nav-link {% if request.path == profiles_url %}active" aria-current="page{% endif %}" href="{% url 'user_profile' %}">Personal Details</a>
+                </li>
+                <li class="nav-item ml-lg-3">
+                  <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item ml-lg-3">
+                  <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                </li>
+                <li class="nav-item ml-lg-3">
+                  <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                </li>
+                {% endif %}
+              </ul>
+            </div>
           </div>
         </nav>
       </div>
     </header>
-    <!-- Search Bar Row -->
-    {% block search_bar %}
-    <div class="container-fluid search-bar pt-5 container-sm fixed-top">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-6">
-          <form method="GET" action="{% url 'products' %}">
-            <div class="input-group">
-              <input class="form-control" type="text" name="q" placeholder="Search Products">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="submit">
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    {% endblock %}
-
 
     {% block page_header %}
     {% endblock %}
 
-    <main class="container-fluid main-content-wrapper mt-5">
+    <main class="container-fluid main-content-wrapper">
+      <!-- Search Bar Row -->
+      {% block search_bar %}
+      <div class="container-fluid search-bar container-sm fixed-top">
+        <div class="row justify-content-center">
+          <div class="col-sm">
+            <form method="GET" action="{% url 'products' %}">
+              <div class="input-group">
+                <input class="form-control" type="text" name="q" placeholder="Search Products">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      {% endblock %}
+
       {% block content %}
         {% if messages %}
-          <div class="container mt-3 top-padding">
+          <div class="container top-padding">
             <div class="row">
               <div class="col-12">
                   {% for message in messages %}
