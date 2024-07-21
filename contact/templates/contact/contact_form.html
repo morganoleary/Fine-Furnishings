@@ -16,16 +16,16 @@
 {% endif %}
 
 <!-- Contact page -->
-<div class="container text-white top-padding mb-3">
+<div class="container text-white mb-3">
     <div class="row justify-content-center">
-        <div class="col-md-8 col-sm-12 mt-5 mb-5">
-            <h1 class="text-center">Contact Us</h1>
+        <div class="col-md-8 col-sm-12 mt-md-5 mt-sm-0 mb-5">
+            <h1 class="text-center wishlist-text">Contact Us</h1>
             <!-- Contact Us form-->
-            <form method="post">
+            <form method="post" class="form-text">
                 {% csrf_token %}
                 {{ contact_form|crispy }}
                 <button type="submit"
-                class="btn btn-secondary pr-3 pl-3">
+                class="btn btn-outline-secondary submit-button btn-block pr-3 pl-3">
                 Submit
                 </button>
             </form>

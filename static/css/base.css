@@ -3,21 +3,58 @@ html {
 }
 
 body {
-  font-family: Italiana, sans-serif;
+  font-family: "Sarabun", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   margin: 0;
   max-width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+  font-size: 100%;
+}
+
+.title-row {
+  max-width: 100%;
+  max-height: 50px;
+  margin-bottom: 1em;
+}
+
+.title-name {
+  font-family: Italiana, sans-serif;
+  font-size: 3em;
+}
+
+.navbar-links {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 .body-color {
-  background-color: rgb(129, 34, 34);
-  opacity: 75%;
+  background-color: rgb(75, 17, 17);
+  opacity: 85%;
 }
 
 /* Header */
 .header-container {
-  height: 100px;
+  max-height: 100px;
+}
+
+.header-color {
+  background-color: rgb(251, 248, 248);
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand,
+.navbar .navbar-toggler,
+.navbar .dropdown-item {
+  color: #000 !important;
+  font-weight: 400;
+  font-size: medium;
+}
+
+.header-text {
+  color: black;
 }
 
 .home-page-image {
@@ -83,6 +120,24 @@ main {
   object-fit: contain;
 }
 
+.card-body {
+  color: #000 !important;
+}
+
+.faq-text {
+  font-size: large;
+}
+
+.form-text {
+  font-size: larger;
+}
+
+.submit-button {
+  color: #fff;
+  font-weight: 500;
+  font-size: larger;
+}
+
 .product-page-img {
   max-width: 100%;
   height: auto;
@@ -103,6 +158,11 @@ main {
   height: 20px;
 }
 
+.wishlist-text {
+  font-family: Italiana, sans-serif;
+  font-size: 3em;
+}
+
 /* Footer */
 footer {
   display: flex;
@@ -114,6 +174,8 @@ footer {
 
 .footer-link {
   list-style-type: none;
+  color: #000 !important;
+  font-weight: 400;
 }
 
 .social-icon {
@@ -134,6 +196,10 @@ footer {
 
 /* Media queries */
 @media (max-width: 576px) {
+  .title-name {
+    font-size: 2em;
+  }
+
   .search-bar {
     position: fixed;
     max-width: 80%;
@@ -155,6 +221,11 @@ footer {
 @media (max-width: 768px) {
   .header-container {
     margin-top: 0;
+  }
+
+  .navbar {
+    margin-top: 3px;
+    padding-bottom: 0;
   }
 }
 

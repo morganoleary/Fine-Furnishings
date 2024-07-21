@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 offset-md-2 mb-5">
-            <h2 class="text-center mb-5 text-white">Wishlist</h2>
+            <h2 class="text-center mb-5 text-white wishlist-text">My Wishlist</h2>
             {% if wishlist %}
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 justify-content-center">
                 {% for product in wishlist %}
@@ -30,7 +30,7 @@
                                 {{ product.name }}
                             </h5>
                             <p class="card-text">Price: ${{ product.price }}</p>
-                            <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-danger remove-button">
+                            <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-outline-danger remove-button">
                                 <img src="{% static 'trash-bin.ico' %}" alt="Trash Bin icon" class="trash-bin-icon">
                             </a>
                         </div>
