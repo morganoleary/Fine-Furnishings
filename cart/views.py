@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import messages
+
+from products.models import Product
 
 # Create your views here.
 def cart(request):
@@ -10,6 +13,7 @@ def cart(request):
 def add_to_cart(request, item_id):
     """ A view to add a specific quantity of a specific product to the cart """
 
+    product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     size = None
     if 'bedframe_size' in request.POST:
@@ -29,6 +33,7 @@ def add_to_cart(request, item_id):
             cart[item_id] += quantity
         else:
             cart[item_id] = quantity
+            messages.success(request, f'Added {product.name} to your cart!')
 
     request.session['cart'] = cart
     return redirect(reverse('cart'))
@@ -64,6 +69,7 @@ def update_cart(request, item_id):
 def remove_from_cart(request, item_id):
     """ A view to remove a specific product from the cart """
 
+    product = Product.objects.get(pk=item_id)
     try:
         size = None
         if 'bedframe_size' in request.POST:
@@ -76,6 +82,7 @@ def remove_from_cart(request, item_id):
                 cart.pop(item_id)
         else:
             cart.pop(item_id)
+            messages.success(request, f'Removed {product.name} from your cart.')
 
         request.session['cart'] = cart
         return HttpResponse(status=200)

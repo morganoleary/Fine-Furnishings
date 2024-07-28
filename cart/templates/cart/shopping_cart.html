@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container text-white top-padding mb-3">
+    <div class="container text-white mb-3">
         <div class="row justify-content-center mt-3">
             <div class="col-md-8 col-sm-12 text-center">
                 <h1 class="text-center">My Shopping Cart</h1>
@@ -63,7 +63,7 @@
                                         </td>
                                         <td class="py-3 w-25 text-white mr-3">
                                             <p class="my-0">
-                                            ${{ item.product.price }}
+                                            €{{ item.product.price }}
                                             </p>
                                         </td>
                                         <td class=
@@ -145,7 +145,7 @@
                                         </td>
                                         <td class="py-3 text-white w-25">
                                             <p class="my-0">
-                                            ${{ item.product.price | calc_subtotal:item.quantity }}
+                                            €{{ item.product.price | calc_subtotal:item.quantity }}
                                             </p>
                                         </td>
                                     </tr>
@@ -155,14 +155,14 @@
                                     class="text-white pt-5 text-right">
                                         <h6><strong>
                                         Product Total:
-                                            ${{ total|floatformat:2 }}
+                                            €{{ total|floatformat:2 }}
                                         </strong></h6>
                                         <h6>Delivery:
-                                            ${{ delivery|floatformat:2 }}
+                                            €{{ delivery|floatformat:2 }}
                                         </h6>
                                         <h4 class="mt-4">
                                         <strong>
-                                        Total: ${{ order_total|floatformat:2 }}
+                                        Total: €{{ order_total|floatformat:2 }}
                                         </strong>
                                         </h4>
                                     </td>

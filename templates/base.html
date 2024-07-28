@@ -122,7 +122,7 @@
                         <img src="{% static 'shopping-cart.ico' %}" alt="Shopping cart icon">
                         <p class="my-0">
                           {% if total %}
-                              ${{ total|floatformat:2 }}
+                              €{{ total|floatformat:2 }}
                           {% else %}
                               €0.00
                           {% endif %}
@@ -156,6 +156,24 @@
       </div>
     </header>
 
+    {% if messages %}
+      <div class="message-container">
+        {% for message in messages %}
+          {% with message.level as level %}
+            {% if level == 40 %}
+                {% include 'includes/toasts/toast_error.html' %}
+            {% elif level == 30 %}
+                {% include 'includes/toasts/toast_warning.html' %}
+            {% elif level == 25 %}
+                {% include 'includes/toasts/toast_success.html' %}
+            {% else %}
+                {% include 'includes/toasts/toast_info.html' %}
+            {% endif %}
+          {% endwith %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
     {% block page_header %}
     {% endblock %}
 
@@ -181,26 +199,13 @@
       {% endblock %}
 
       {% block content %}
-        {% if messages %}
-          <div class="container top-padding">
-            <div class="row">
-              <div class="col-12">
-                  {% for message in messages %}
-                      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                          {{ message }}
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                          </button>
-                      </div>
-                  {% endfor %}
-              </div>
-            </div>
-          </div>
-        {% endif %}
       {% endblock %}
     </main>
 
     {% block postloadjs %}
+    <script type="text/javascript">
+      $('.toast').toast('show');
+    </script>
     {% endblock %}
     
     <!-- Footer -->
