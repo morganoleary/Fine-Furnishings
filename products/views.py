@@ -29,7 +29,7 @@ def all_products(request):
             products = products.filter(queries).distinct()
 
             if not products.exists():
-                messages.info(request, f'No products found for "{query}"')
+                messages.info(request, f'No products found for "{query}".')
 
     context = {
         'products': products,

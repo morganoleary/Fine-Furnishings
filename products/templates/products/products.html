@@ -9,23 +9,12 @@
 {% block content %}
     <!-- Messages block -->
     {% if messages %}
-    <div class="container mt-3 top-padding">
-        <div class="row">
-            <div class="col-12">
-                {% for message in messages %}
-                <div
-                class="alert alert-{{ message.tags }} alert-dismissible fade show"
-                role="alert">
-                    {{ message }}
-                    <button type="button" class="close" data-dismiss="alert"
-                    aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                {% endfor %}
+        <div class="container">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
             </div>
         </div>
-    </div>
     {% endif %}
     <div class="container products-container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">

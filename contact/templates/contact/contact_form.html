@@ -8,13 +8,14 @@
 
 {% block content %}
 
-<!-- Success message -->
+<!-- Messages block -->
 {% if messages %}
-{% for message in messages %}
-<div class="alert alert-success top-padding" role="alert">
-    {{ message }}
-</div>
-{% endfor %}
+  <div class="container">
+      {% for message in messages %}
+          {{ message }}
+      {% endfor %}
+      </div>
+  </div>
 {% endif %}
 
 <!-- Contact page -->
