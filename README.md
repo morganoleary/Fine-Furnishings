@@ -511,6 +511,7 @@ Cloning a repository allows you to create a local copy of a repository on your m
 - [w3things.com](https://w3things.com/blog/rel-noopener-noreferrer/) was referenced when implementing the rel attributes on external site links in my project.
 - Implementing Mailchimp as a newsletter signup in the footer of the site was implemented by following along with Code Institute's [Web Marketing Video - Newsletter Marking with Mailchimp](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DRWM101+2021_T1/courseware/2b2a6057abf44272955637c09687ab43/acc4b7d56e3a400ebe110e5d734ce767/).
 - The Code Institue [Intro to SEO video](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+SEO101+2021_T1/courseware/8602519909ff453c8d6e03d3169f92ac/213de39016ca41fdb2b93aa2e0283c51/) was followed when implementing the sitemap.xml and robots.txt file. 
+- [Seobility - Meta Description](https://www.seobility.net/en/wiki/Meta_Description?utm_id=8783357192_87472061486&utm_source=google&utm_medium=cpc&utm_cid=8783357192&utm_agid=87472061486&utm_campaign=geoEN-Wiki&utm_dev=c&utm_devicemodel=&utm_mt=p&utm_term=meta%20description&gad_source=1&gclid=CjwKCAjw74e1BhBnEiwAbqOAjJcEmDVRAzc9jjXaEWVd6gRPL_EEVM71JSMEC9f2e-j1pcTF37Zv0RoCBJIQAvD_BwE) was used to research implementing meta descriptions for each page of the site. The [snippet generator](https://www.seobility.net/en/serp-snippet-generator/?url=&platform=desktop) was used to check that the meta descriptions created are viewed well on desktop and mobile previews.
 
 </details>
 
