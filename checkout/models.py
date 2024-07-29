@@ -13,7 +13,7 @@ class Order(models.Model):
     A model representing a user's order
     """
     order_number = models.CharField(max_length=50, null=False, editable=False)
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='orders')
     address = models.ForeignKey(UserAddress, on_delete=models.PROTECT)
     product_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     delivery_charge = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=30)
