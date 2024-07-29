@@ -13,12 +13,15 @@ class Order(models.Model):
     A model representing a user's order
     """
     order_number = models.CharField(max_length=50, null=False, editable=False)
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='orders')
+    user_profile = models.ForeignKey(UserProfile, null=True, on_delete=models.SET_NULL, related_name='orders')
     address = models.ForeignKey(UserAddress, on_delete=models.PROTECT)
     product_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     delivery_charge = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=30)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     order_date = models.DateTimeField(auto_now_add=True)
+    user_name = models.CharField(max_length=255, blank=True, null=True)
+    user_email = models.EmailField(blank=True, null=True)
+    user_phone = models.CharField(max_length=50, blank=True, null=True)
 
     def _generate_order_number(self):
         """

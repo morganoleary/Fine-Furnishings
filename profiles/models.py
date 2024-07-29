@@ -22,7 +22,7 @@ class UserAddress(models.Model):
     """
     Model representing the authenticated user's address(es)
     """
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='addresses')
+    user_profile = models.ForeignKey(UserProfile, null=True, on_delete=models.SET_NULL, related_name='addresses')
     address_name = models.CharField(max_length=50)
     street_address_1 = models.CharField(max_length=255)
     street_address_2 = models.CharField(max_length=255, blank=True, null=True)

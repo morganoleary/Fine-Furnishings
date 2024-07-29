@@ -17,11 +17,14 @@ class OrderAdmin(admin.ModelAdmin):
     fields = ('order_number', 'user_profile',
               'address', 'order_date',
               'delivery_charge', 'product_total',
-              'order_total',)
+              'order_total', 'user_name',
+              'user_email', 'user_phone',)
     
     list_display = ('order_number', 'user_profile',
-                    'order_date', 'delivery_charge',
-                    'product_total', 'order_total',)
+                    'user_name', 'user_email',
+                    'user_phone', 'order_date',
+                    'delivery_charge', 'product_total',
+                    'order_total',)
     
     ordering = ('-order_date',)
 

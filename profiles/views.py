@@ -120,12 +120,30 @@ def delete_user_profile(request):
     user_profile = get_object_or_404(UserProfile, user_id=request.user)
 
     if request.method == 'POST':
-        # Delete the user profile and log the user out
-        user_profile.delete()
-        request.user.delete()
-        logout(request)
-        messages.success(request, "Your profile has been deleted successfully.")
-        return redirect('home')
+        try:
+            # Retain addresses but remove from user's profile
+            user_profile.addresses.all().update(user_profile=None)
+            # Store necessary user details in orders before deleting user
+            orders = Order.objects.filter(user_profile=user_profile)
+            for order in orders:
+                order.user_name = request.user.get_full_name()
+                order.user_email = request.user.email
+                order.user_phone = user_profile.phone
+                order.save()
+            # Filter user's orders and set user's profile on orders to none
+            Order.objects.filter(user_profile=user_profile).update(user_profile=None)
+            # Delete the user's profile
+            user_profile.delete()
+            # Delete the user account
+            request.user.delete()
+            # Log the user out
+            logout(request)
+
+            messages.success(request, "Your profile has been deleted successfully.")
+            return redirect('home')
+        except Exception as e:
+            messages.error(request, "An error occurred while deleting your profile.")
+            return redirect('home')
 
     return render(request, 'profiles/delete_profile.html')
 

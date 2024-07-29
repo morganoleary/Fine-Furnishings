@@ -27,6 +27,12 @@ def checkout(request):
         if form.is_valid():
             order = form.save(commit=False)
             order.user_profile = user_profile
+
+            # Set user details
+            order.user_name = form.cleaned_data.get('full_name')
+            order.user_email = form.cleaned_data.get('email')
+            order.user_phone = form.cleaned_data.get('phone_number')
+
             order.delivery_charge = 30
 
             # Handle address

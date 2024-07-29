@@ -65,3 +65,15 @@ class OrderForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholders[field]
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
+    
+    def save(self, commit=True):
+        """
+        Override the save method to include user details in the Order model.
+        """
+        order = super().save(commit=False)
+        if commit:
+            order.user_name = self.cleaned_data['full_name']
+            order.user_email = self.cleaned_data['email']
+            order.user_phone = self.cleaned_data['phone_number']
+            order.save()
+        return order
