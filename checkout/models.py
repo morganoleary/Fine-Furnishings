@@ -71,4 +71,3 @@ class OrderItems(models.Model):
 
     def __str__(self):
         return f"Product ID: {self.product.product_id} on Order {self.order.order_number}"
-

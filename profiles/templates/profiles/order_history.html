@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta_description %}Access your saved order history for all purchases with Fine Furnishings furniture website. Log in to view your details for a stress-free shopping experience.{% endblock %}
+
+{% block search_bar %}
+{% endblock %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+    <div class="container mb-3">
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-8 col-sm-12 text-center">
+                <h2 class="text-center mb-5 text-white wishlist-text">
+                Order History
+                </h2>
+                {% if order_history %}
+                    <table class="text-white">
+                        <thead>
+                        <tr>
+                            <th>Order Number</th>
+                            <th>Order Date</th>
+                            <th>Items Purchased</th>
+                            <th>Total Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for order in orders %}
+                            <tr>
+                            <td>{{ order.order_number }}</td>
+                            <td>{{ order.order_date }}</td>
+                            <td>
+                                {% for item in order.order_items.all %}
+                                    <article class="card-text pb-3">
+                                    {{ item.product.name }}
+                                    {% if item.bedframe_size %} - Size
+                                    {{ item.bedframe_size|upper }}{% endif %}
+                                    </article>
+                                    <article class="card-text pb-3">
+                                    <strong>Quantity :</strong>
+                                    {{ item.quantity }}
+                                    </article>
+                                {% endfor %}
+                            </td>
+                            <td>{{ order.order_total }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                <p class="text-center text-white">You have no previous orders placed.</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-secondary">
+                            <a href="{% url 'products' %}" class="dropdown-item">Continue Shopping</a>
+                        </button>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

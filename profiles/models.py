@@ -17,6 +17,7 @@ class UserProfile(models.Model):
     def __str__(self):
         return f"{self.user_id}"
 
+
 class UserAddress(models.Model):
     """
     Model representing the authenticated user's address(es)

@@ -4,6 +4,7 @@ from django.contrib.auth import logout
 from django.contrib import messages
 from .models import UserProfile, UserAddress
 from products.models import Product
+from checkout.models import Order
 from .forms import UserProfileForm, UserAddressForm
 from django.forms import modelformset_factory
 
@@ -127,3 +128,18 @@ def delete_user_profile(request):
         return redirect('home')
 
     return render(request, 'profiles/delete_profile.html')
+
+
+@login_required
+def order_history(request):
+    """
+    View to render the user's order history.
+    """
+    user_profile = UserProfile.objects.get(user_id=request.user)
+    orders = Order.objects.filter(user_profile=user_profile)
+
+    context = {
+        'orders': orders
+    }
+
+    return render(request, 'profiles/order_history.html', context)

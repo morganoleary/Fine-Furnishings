@@ -139,6 +139,9 @@
                   <a class="nav-link {% if request.path == profiles_url %}active" aria-current="page{% endif %}" href="{% url 'user_profile' %}">Personal Details</a>
                 </li>
                 <li class="nav-item ml-lg-3">
+                  <a class="nav-link {% if request.path == profiles_url %}active" aria-current="page{% endif %}" href="{% url 'order_history' %}">Order History</a>
+                </li>
+                <li class="nav-item ml-lg-3">
                   <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                 </li>
                 {% else %}
