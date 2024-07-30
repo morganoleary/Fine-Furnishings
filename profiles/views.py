@@ -154,7 +154,7 @@ def order_history(request):
     View to render the user's order history.
     """
     user_profile = get_object_or_404(UserProfile, user_id=request.user)
-    orders = Order.objects.filter(user_profile=user_profile)
+    orders = Order.objects.filter(user_profile=user_profile).order_by('-order_date')
 
     context = {
         'orders': orders
