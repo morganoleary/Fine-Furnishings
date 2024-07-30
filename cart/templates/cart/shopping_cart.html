@@ -11,22 +11,22 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container text-white mb-3">
+    <div class="container text-white">
         <div class="row justify-content-center mt-3">
             <div class="col-md-8 col-sm-12 text-center">
-                <h1 class="text-center">My Shopping Cart</h1>
+                <h1 class="text-center wishlist-text">My Shopping Cart</h1>
                 <div class="d-flex justify-content-center mt-3 mb-5">
-                    <a href="{% url 'products' %}">
-                        <button>Continue Shopping</button>
-                    </a>
+                    <button type="submit" class="btn btn-secondary">
+                        <a href="{% url 'products' %}" class="dropdown-item">Continue Shopping</a>
+                    </button>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-8 col-sm-12 text-center">
+            <div class="col-md-12 col-sm-8 text-center">
                 {% if cart_items %}
                     <div class="table-responsive">
-                        <table class="table table-sm table-borderless">
+                        <table class="table table-borderless table-responsive-sm">
                             <thead class="text-white">
                                 <tr>
                                     <th scope="col">Items</th>
@@ -37,9 +37,9 @@
                                     <th scope="col">Total</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="table-responsive-sm">
                                 {% for item in cart_items %}
-                                    <tr class="flex-sm-row align-items-center">
+                                    <tr class="flex-sm-row align-items-center table-responsive-sm">
                                         <td class="p-3 w-25">
                                             <img class="img-fluid rounded"
                                             src="{{ item.product.image.url }}">
@@ -61,7 +61,7 @@
                                                 {{ item.product.product_id }}
                                             </p>
                                         </td>
-                                        <td class="py-3 w-25 text-white mr-3">
+                                        <td class="py-3 w-25 text-white mr-3 table-responsive-sm">
                                             <p class="my-0">
                                             €{{ item.product.price }}
                                             </p>
@@ -130,9 +130,9 @@
                                             <a class="update-link text-white">
                                             <small>Update</small></a>
                                         </td>
-                                        <td>
+                                        <td class="table-responsive-sm">
                                             <a class=
-                                            "btn btn-danger remove-product mt-2 ml-3 mr-3"
+                                            "btn btn-danger remove-product mt-2 ml-3 mr-3 table-responsive-sm"
                                             id="remove_{{ item.item_id }}"
                                             data-bedframe_size=
                                             "{{ item.size }}">
@@ -171,7 +171,7 @@
                                     <td colspan="5"
                                     class="text-right text-white">
                                         <a href="{% url 'checkout' %}"
-                                        class="btn btn-black rounded-0 btn-lg">
+                                        class="btn btn-outline-secondary rounded-2 btn-lg pr-3 pl-3">
                                             <span class=
                                             "text-uppercase text-white">
                                             Secure Checkout

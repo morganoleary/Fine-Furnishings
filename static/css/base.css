@@ -176,6 +176,10 @@ main {
   height: 2px;
 }
 
+.hr-color {
+  border-color: white;
+}
+
 /* Footer */
 footer {
   display: flex;
