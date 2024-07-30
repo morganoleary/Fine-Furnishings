@@ -17,21 +17,21 @@
     <div class="container mb-3">
         <div class="row justify-content-center mt-3">
             <div class="col-md-8 col-sm-12 text-center">
-                <h1 class="text-center text-white">
+                <h1 class="text-center text-white wishlist-text">
                 Thank you for your order!
                 </h1>
                 <p class="text-center text-white">
                 Please find your order confirmation & details below.
                 </p>
-                <div class="d-flex justify-content-center mt-3 mb-5">
-                    <a href="{% url 'products' %}">
-                        <button>Keep Shopping!</button>
-                    </a>
+                <div class="d-flex justify-content-center mt-md-3 mb-3">
+                    <button type="submit" class="btn btn-secondary">
+                        <a href="{% url 'products' %}" class="dropdown-item">Keep Shopping!</a>
+                    </button>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-8">
+            <div class="col-lg-8 mt-md-5 mb-5">
                 <div class="card mb-4 mb-lg-0">
                     <div class="card-body">
                         <h4 class="card-title text-center mb-4">
@@ -46,16 +46,13 @@
                                 <strong>Order Date :</strong>
                                 {{ order.order_date }}</article>
                                 {% for item in order.order_items.all %}
-                                    <article class="card-text pb-3">
-                                    <strong>Items Purchased :</strong>
-                                    {{ item.product.name }}
-                                    {% if item.bedframe_size %} - Size
-                                    {{ item.bedframe_size|upper }}{% endif %}
-                                    </article>
-                                    <article class="card-text pb-3">
-                                    <strong>Quantity :</strong>
-                                    {{ item.quantity }}
-                                    </article>
+                                    <div class="col-12 d-flex align-items-center mb-2">
+                                        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-thumbnail" style="max-width: 100px; margin-right: 10px;">
+                                        <div>
+                                            <p>{{ item.product.name }}{% if item.bedframe_size %} - Size {{ item.bedframe_size|upper }}{% endif %}</p>
+                                            <p>Quantity: {{ item.quantity }}</p>
+                                        </div>
+                                    </div>
                                 {% endfor %}
                             </div>
                             <div class="col-md-6 p-3">
@@ -64,14 +61,16 @@
                                 </article>
                                 {% for address in addresses %}
                                     <p>
-                                    {{ order.user_profile.user_id.first_name }}
-                                    {{ order.user_profile.user_id.last_name }}
+                                    {{ order.user_name }}
                                     </p>
                                     <p>
-                                    {{ address.address_name }}:
-                                        {{ address.street_address_1 }},
-                                        {{ address.town_city }},
-                                        {{ address.country }}
+                                    {{ order.user_phone }}
+                                    </p>
+                                    <p>
+                                    Address:<br>
+                                    {{ address.street_address_1 }},
+                                    {{ address.town_city }},
+                                    {{ address.country }}
                                     </p>
                                 {% endfor %}
                             </div>
