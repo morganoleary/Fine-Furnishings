@@ -67,13 +67,11 @@ body {
 }
 
 .category-block {
-  width: 300px;
-  height: 300px;
-  display: inline-block;
+  width: 100%;
+  display: block;
   margin: 1em;
   position: relative;
   text-align: center;
-  object-fit: contain;
 }
 
 .category-block img {

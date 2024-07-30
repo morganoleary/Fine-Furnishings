@@ -9,23 +9,23 @@
 {% block content %}
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-12 pt-5">
+            <div class="col-md-12 pt-3">
                 <img src="{% static 'images/cover-main-page.png' %}"
                 alt="Image of living room with green sofa"
                 class="img-fluid home-page-image">
             </div>
         </div>
     </div>
-    <div class="container top-padding">
-        <div class="row">
-            <div class="col-md-4 mb-3">
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-4 mb-3 d-flex justify-content-center">
                 <a href="{% url 'sofa_products' %}" class="category-block">
                     <img src="{% static 'images/cream-round-arm-sofa.png' %}"
                     class="card-img" alt="Cream Sofa - Sofas Category">
                     <span class="category-name">Sofas</span>
                 </a>
             </div>
-            <div class="col-md-4 mb-3">
+            <div class="col-12 col-md-4 mb-3 d-flex justify-content-center">
                 <a href="{% url 'bedroom_products' %}" class="category-block">
                     <img
                     src=
@@ -34,7 +34,7 @@
                     <span class="category-name">Bedroom</span>
                 </a>
             </div>
-            <div class="col-md-4 mb-3">
+            <div class="col-12 col-md-4 mb-3 d-flex justify-content-center">
                 <a href="{% url 'dining_products' %}" class="category-block">
                     <img
                     src=
