@@ -67,7 +67,18 @@ I used the color Red as it has been proven to boost online sales. While the site
 
 <summary>E-Commerce Business Model</summary>
 
-- Fine Furnishings uses a business to consumer (B2C) business model. This is a furniture company that provides quality furniture to customers throughout the island of Ireland. The value of the company's services is huge as it provides a better well-being to everyone's day-to-day living within their homes. The business supplies furniture for consumers, customers are able to make purchases of the furniture on the Fine Furnishings website and the company is able to process orders via the website to complete each order placed.
+- Fine Furnishings uses a business to consumer (B2C) direct sale business model. This is a furniture company that provides quality furniture to customers throughout the island of Ireland. The value of the company's services is huge as it provides a better well-being to everyone's day-to-day living within their homes. The business supplies furniture for consumers, customers are able to make purchases of the furniture on the Fine Furnishings website and the company is able to process orders via the website to complete each order placed.
+
+- Fine Furnishings aims to provide high-quality, unique furniture pieces and the target audience focuses on homeowners in Ireland seeking stylish furniture. 
+The store provides furniture in the following categories: 
+    - Dining room furniture: dining tables, chairs & bar stools
+    - Sofas: corner sofas, 3 seaters, 2 seaters, armchairs and occasional chairs
+    - Bedroom furniture: bedframes in all sizes, storage, desks and bedside tables
+
+- Customers are able to connect with the business through social media platforms, such as Facebook, as well as through the contact form to receive feedback from the company's customer service team.
+
+- Fine Furnishings will continue to grow and add products and interior furnishings to the site, with a focus on bettering the livlihood of our client base.
+
 
 </details>
 
