@@ -12,7 +12,7 @@ class UserProfile(models.Model):
     user_id = models.OneToOneField(
         User, on_delete=models.CASCADE, primary_key=True)
     phone = models.CharField(max_length=50)
-    wishlist = models.ManyToManyField(Product, blank=True)
+    wishlist = models.ManyToManyField(Product, blank=True, related_name='wishlist_profiles')
 
     def __str__(self):
         return f"{self.user_id}"
@@ -33,3 +33,14 @@ class UserAddress(models.Model):
 
     def __str__(self):
         return f"{self.address_name}: {self.street_address_1}, {self.town_city}, {self.country}"
+
+
+class Wishlist(models.Model):
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='wishlists')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ('user_profile', 'product')
+
+    def __str__(self):
+        return f"{self.user_profile.user_id.username}'s wishlist item: {self.product.name}"
