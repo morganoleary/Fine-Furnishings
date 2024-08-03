@@ -48,11 +48,11 @@
                             </article>
                         </div>
                         <div class="col-md-6">
-                            <article class="card-text">
-                            <strong>Delivery Address:</strong></article>
+                            <article class="card-text mb-3">
+                            <strong>Delivery Addresses :</strong></article>
                             {% for address in user_profile.addresses.all %}
                                 <p>
-                                {{ address.address_name }}:
+                                <em>{{ address.address_name }}</em> :
                                     {{ address.street_address_1 }},
                                     {{ address.town_city }},
                                     {{ address.country }}

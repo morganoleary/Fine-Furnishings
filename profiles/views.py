@@ -27,13 +27,21 @@ def user_profile(request):
             if form.is_valid() and address_formset.is_valid():
                 form.save()
                 addresses = address_formset.save(commit=False)
+
+                # Save new or updated addresses
                 for address in addresses:
                     address.user_profile = user_profile
                     address.save()
+
                 # Handle deletions of address
-                for address in address_formset.deleted_objects:
+                deleted_addresses = address_formset.deleted_objects
+                for address in deleted_addresses:
                     address.delete()
+
+                messages.success(request, 'Profile updated successfully.')
                 return redirect('user_profile')
+            else:
+                messages.error(request, 'Please correct the errors below.')
         else:
             initial_data = {
                 'first_name': request.user.first_name,
