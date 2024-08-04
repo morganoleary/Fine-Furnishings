@@ -15,6 +15,7 @@ class OrderForm(forms.ModelForm):
     county = forms.CharField(max_length=100, required=True)
     postcode = forms.CharField(max_length=20, required=True)
     country = forms.CharField(max_length=100, required=True)
+    address_choices = forms.ChoiceField(choices=[], required=False)
     
     class Meta:
         model = Order
@@ -22,24 +23,24 @@ class OrderForm(forms.ModelForm):
             'full_name',
             'email',
             'phone_number',
-            'street_address1',
-            'street_address2',
-            'town_or_city',
-            'county',
-            'postcode',
-            'country',
+            'address_choices',
         )
 
     def __init__(self, user_profile=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         if user_profile:
-            profile = user_profile.user_id
-            self.fields['full_name'].initial = f"{profile.first_name} {profile.last_name}"
-            self.fields['email'].initial = profile.email
+            user = user_profile.user_id
+            self.fields['full_name'].initial = f"{user.first_name} {user.last_name}"
+            self.fields['email'].initial = user.email
             self.fields['phone_number'].initial = user_profile.phone
             
+            # Populate user's saved address choices
             addresses = UserAddress.objects.filter(user_profile=user_profile)
+            address_choices = [(str(addr.id), f"{addr.street_address_1}, {addr.town_city}, {addr.county}") for addr in addresses]
+            self.fields['address_choices'].choices = [('', 'Select an address')] + address_choices
+
+            # Set initial values from the first saved address if available
             if addresses.exists():
                 address = addresses.first()
                 self.fields['street_address1'].initial = address.street_address_1
@@ -62,18 +63,46 @@ class OrderForm(forms.ModelForm):
         }
 
         for field in self.fields:
-            self.fields[field].widget.attrs['placeholder'] = placeholders[field]
-            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-            self.fields[field].label = False
+            if field != 'address_choices':
+                self.fields[field].widget.attrs['placeholder'] = placeholders[field]
+                self.fields[field].widget.attrs['class'] = 'stripe-style-input'
+                self.fields[field].label = False
     
     def save(self, commit=True):
         """
         Override the save method to include user details in the Order model.
         """
         order = super().save(commit=False)
+        order.user_name = self.cleaned_data['full_name']
+        order.user_email = self.cleaned_data['email']
+        order.user_phone = self.cleaned_data['phone_number']
+
         if commit:
-            order.user_name = self.cleaned_data['full_name']
-            order.user_email = self.cleaned_data['email']
-            order.user_phone = self.cleaned_data['phone_number']
+            order.save()
+            
+            # Handle address
+            address_id = self.cleaned_data.get('address_choices')
+            if address_id:
+                try:
+                    address = UserAddress.objects.get(id=address_id)
+                    order.address = address
+                except UserAddress.DoesNotExist:
+                    pass
+            else:
+                # Update address with the form data
+                address_data = {
+                    'street_address_1': self.cleaned_data['street_address1'],
+                    'street_address_2': self.cleaned_data['street_address2'],
+                    'town_city': self.cleaned_data['town_or_city'],
+                    'county': self.cleaned_data['county'],
+                    'post_code': self.cleaned_data['postcode'],
+                    'country': self.cleaned_data['country'],
+                }
+                user_address, created = UserAddress.objects.update_or_create(
+                    user_profile=order.user_profile,
+                    defaults=address_data,
+                )
+                order.address = user_address
+            
             order.save()
         return order

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
+from django.http import JsonResponse
 
 from .forms import OrderForm
 from .models import Order, OrderItems
@@ -36,20 +37,30 @@ def checkout(request):
             order.delivery_charge = 30
 
             # Handle address
-            address_data = {
-                'street_address_1': form.cleaned_data['street_address1'],
-                'street_address_2': form.cleaned_data['street_address2'],
-                'town_city': form.cleaned_data['town_or_city'],
-                'county': form.cleaned_data['county'],
-                'post_code': form.cleaned_data['postcode'],
-                'country': form.cleaned_data['country'],
-            }
+            address_id = form.cleaned_data.get('address_choices')
+            if address_id:
+                try:
+                    address = UserAddress.objects.get(id=address_id)
+                    order.address = address
+                except UserAddress.DoesNotExist:
+                    messages.error(request, 'Selected address does not exist.')
+                    return redirect(reverse('checkout'))
+            else:
+                address_data = {
+                    'street_address_1': form.cleaned_data['street_address1'],
+                    'street_address_2': form.cleaned_data['street_address2'],
+                    'town_city': form.cleaned_data['town_or_city'],
+                    'county': form.cleaned_data['county'],
+                    'post_code': form.cleaned_data['postcode'],
+                    'country': form.cleaned_data['country'],
+                }
 
-            user_address, created = UserAddress.objects.update_or_create(
-                user_profile=user_profile,
-                defaults=address_data,
-            )
-            order.address = user_address
+                user_address, created = UserAddress.objects.update_or_create(
+                    user_profile=user_profile,
+                    defaults=address_data,
+                )
+                order.address = user_address
+
             order.save()
 
             cart = request.session.get('cart', {})
@@ -105,8 +116,9 @@ def checkout(request):
             'phone_number': user_profile.phone,
         }
 
-        user_address = UserAddress.objects.filter(user_profile=user_profile).first()
-        if user_address:
+        user_addresses = UserAddress.objects.filter(user_profile=user_profile)
+        if user_addresses.exists():
+            user_address = user_addresses.first()
             initial_data.update({
                 'street_address1': user_address.street_address_1,
                 'street_address2': user_address.street_address_2,
@@ -115,7 +127,6 @@ def checkout(request):
                 'postcode': user_address.post_code,
                 'country': user_address.country,
             })
-
         form = OrderForm(initial=initial_data, user_profile=user_profile)
 
     if not stripe_public_key:
@@ -129,6 +140,27 @@ def checkout(request):
     }
 
     return render(request, template, context)
+
+
+def get_address(request, address_id):
+    """
+    View to get the user's saved addresses
+    """
+    try:
+        address = UserAddress.objects.get(id=address_id)
+        data = {
+            'street_address_1': address.street_address_1,
+            'street_address_2': address.street_address_2,
+            'town_city': address.town_city,
+            'county': address.county,
+            'post_code': address.post_code,
+            'country': address.country,
+        }
+        return JsonResponse(data)
+    except UserAddress.DoesNotExist:
+        return JsonResponse({'error': 'Address not found'}, status=404)
+    except UserAddress.MultipleObjectsReturned:
+        return JsonResponse({'error': 'Multiple addresses found'}, status=400)
 
 
 def order_confirmation(request, order_number):

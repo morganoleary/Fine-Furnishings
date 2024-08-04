@@ -105,7 +105,7 @@
                     Please fill out the form below to complete your order.
                     </p>
                     <form action="{% url 'checkout' %}" method="POST"
-                    id="payment-form">
+                    id="checkout-form">
                         {% csrf_token %}
                         <fieldset class="px-3 mb-3 text-white">
                             <legend
@@ -123,7 +123,12 @@
                             Delivery
                             </legend>
                             {{ order_form.phone_number | as_crispy_field }}
-                            {{ order_form.address }}
+                            <select id="id_address_choices" name="address_choices">
+                                <option value="">Select an address</option>
+                                {% for value, label in order_form.address_choices.field.choices %}
+                                    <option value="{{ value }}">{{ label }}</option>
+                                {% endfor %}
+                            </select>
                             {{ order_form.street_address1 | as_crispy_field }}
                             {{ order_form.street_address2 | as_crispy_field }}
                             {{ order_form.town_or_city | as_crispy_field }}
