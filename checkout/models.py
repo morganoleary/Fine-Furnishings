@@ -60,7 +60,7 @@ class OrderItems(models.Model):
     """
     order = models.ForeignKey(Order, null=False, blank=False, related_name='order_items', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.PROTECT)
-    bedframe_size = models.CharField(max_length=4, null=True, blank=True) # 3', 4', 4'6", 5', 6'
+    bedframe_size = models.CharField(max_length=10, null=True, blank=True) # 3', 4', 4'6", 5', 6'
     quantity = models.IntegerField(null=False, blank=False, default=0)
     order_items_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
 
