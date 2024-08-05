@@ -16,6 +16,7 @@ class OrderForm(forms.ModelForm):
     postcode = forms.CharField(max_length=20, required=True)
     country = forms.CharField(max_length=100, required=True)
     address_choices = forms.ChoiceField(choices=[], required=False)
+    address_name = forms.CharField(max_length=50, required=False)
     
     class Meta:
         model = Order
@@ -24,9 +25,17 @@ class OrderForm(forms.ModelForm):
             'email',
             'phone_number',
             'address_choices',
+            'address_name',
+            'street_address1',
+            'street_address2',
+            'town_or_city',
+            'county',
+            'postcode',
+            'country',
         )
 
     def __init__(self, user_profile=None, *args, **kwargs):
+        selected_address = kwargs.pop('selected_address', None)
         super().__init__(*args, **kwargs)
 
         if user_profile:
@@ -34,15 +43,12 @@ class OrderForm(forms.ModelForm):
             self.fields['full_name'].initial = f"{user.first_name} {user.last_name}"
             self.fields['email'].initial = user.email
             self.fields['phone_number'].initial = user_profile.phone
-            
-            # Populate user's saved address choices
-            addresses = UserAddress.objects.filter(user_profile=user_profile)
-            address_choices = [(str(addr.id), f"{addr.street_address_1}, {addr.town_city}, {addr.county}") for addr in addresses]
-            self.fields['address_choices'].choices = [('', 'Select an address')] + address_choices
 
-            # Set initial values from the first saved address if available
-            if addresses.exists():
-                address = addresses.first()
+            address_choices = [(address.id, address.address_name) for address in UserAddress.objects.filter(user_profile=user_profile)]
+            self.fields['address_choices'].choices = [('', 'Select an address')] + address_choices
+            
+            if selected_address:
+                address = UserAddress.objects.get(id=selected_address)
                 self.fields['street_address1'].initial = address.street_address_1
                 self.fields['street_address2'].initial = address.street_address_2
                 self.fields['town_or_city'].initial = address.town_city
@@ -54,6 +60,7 @@ class OrderForm(forms.ModelForm):
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
+            'address_name': 'Address Name',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
             'town_or_city': 'Town or City',
@@ -90,6 +97,7 @@ class OrderForm(forms.ModelForm):
                     pass
             else:
                 # Update address with the form data
+                address_name = self.cleaned_data['address_name']
                 address_data = {
                     'street_address_1': self.cleaned_data['street_address1'],
                     'street_address_2': self.cleaned_data['street_address2'],
@@ -100,6 +108,7 @@ class OrderForm(forms.ModelForm):
                 }
                 user_address, created = UserAddress.objects.update_or_create(
                     user_profile=order.user_profile,
+                    address_name=address_name,
                     defaults=address_data,
                 )
                 order.address = user_address

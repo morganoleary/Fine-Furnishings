@@ -46,6 +46,7 @@ def checkout(request):
                     messages.error(request, 'Selected address does not exist.')
                     return redirect(reverse('checkout'))
             else:
+                address_name = form.cleaned_data.get('address_name')
                 address_data = {
                     'street_address_1': form.cleaned_data['street_address1'],
                     'street_address_2': form.cleaned_data['street_address2'],
@@ -57,6 +58,7 @@ def checkout(request):
 
                 user_address, created = UserAddress.objects.update_or_create(
                     user_profile=user_profile,
+                    address_name=address_name,
                     defaults=address_data,
                 )
                 order.address = user_address
@@ -134,33 +136,13 @@ def checkout(request):
 
     template = 'checkout/checkout.html'
     context = {
+        'user_addresses': user_addresses,
         'order_form': form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret if intent else '',
     }
 
     return render(request, template, context)
-
-
-def get_address(request, address_id):
-    """
-    View to get the user's saved addresses
-    """
-    try:
-        address = UserAddress.objects.get(id=address_id)
-        data = {
-            'street_address_1': address.street_address_1,
-            'street_address_2': address.street_address_2,
-            'town_city': address.town_city,
-            'county': address.county,
-            'post_code': address.post_code,
-            'country': address.country,
-        }
-        return JsonResponse(data)
-    except UserAddress.DoesNotExist:
-        return JsonResponse({'error': 'Address not found'}, status=404)
-    except UserAddress.MultipleObjectsReturned:
-        return JsonResponse({'error': 'Multiple addresses found'}, status=400)
 
 
 def order_confirmation(request, order_number):

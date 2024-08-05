@@ -105,7 +105,7 @@
                     Please fill out the form below to complete your order.
                     </p>
                     <form action="{% url 'checkout' %}" method="POST"
-                    id="checkout-form">
+                    id="payment-form">
                         {% csrf_token %}
                         <fieldset class="px-3 mb-3 text-white">
                             <legend
@@ -125,8 +125,12 @@
                             {{ order_form.phone_number | as_crispy_field }}
                             <select id="id_address_choices" name="address_choices">
                                 <option value="">Select an address</option>
-                                {% for value, label in order_form.address_choices.field.choices %}
-                                    <option value="{{ value }}">{{ label }}</option>
+                                {% for address in user_addresses %}
+                                    <option value="{{ address.id }}">
+                                        {{ address.street_address_1 }}, {{ address.town_city }}  <!-- Adjust as needed -->
+                                    </option>
+                                {% empty %}
+                                    <option value="">No addresses available</option>
                                 {% endfor %}
                             </select>
                             {{ order_form.street_address1 | as_crispy_field }}
@@ -209,4 +213,46 @@
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
     {{ client_secret|json_script:"id_client_secret" }}
     <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Declare an empty array to hold address data
+            let addresses = [];
+
+            // Loop through user's saved addresses to populate the array
+            {% for address in user_addresses %}
+                addresses.push({
+                    id: "{{ address.id }}",
+                    street_address1: "{{ address.street_address_1 }}",
+                    street_address2: "{{ address.street_address_2 }}",
+                    town_or_city: "{{ address.town_city }}",
+                    county: "{{ address.county }}",
+                    postcode: "{{ address.post_code }}",
+                    country: "{{ address.country }}"
+                });
+            {% endfor %}
+
+            // Populate address fields based on selected address
+            function populateAddressFields(addressId) {
+                const address = addresses.find(addr => addr.id == addressId);
+                if (address) {
+                    document.querySelector('#id_street_address1').value = address.street_address1 || '';
+                    document.querySelector('#id_street_address2').value = address.street_address2 || '';
+                    document.querySelector('#id_town_or_city').value = address.town_or_city || '';
+                    document.querySelector('#id_county').value = address.county || '';
+                    document.querySelector('#id_postcode').value = address.postcode || '';
+                    document.querySelector('#id_country').value = address.country || '';
+                }
+            }
+
+            // Set up the event listener for the address_choices dropdown
+            const addressSelect = document.querySelector('#id_address_choices');
+            if (addressSelect) {
+                addressSelect.addEventListener('change', function() {
+                    const selectedAddressId = this.value;
+                    populateAddressFields(selectedAddressId);
+                });
+            }
+        });
+    </script>
+
 {% endblock %}
