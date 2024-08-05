@@ -153,7 +153,7 @@ def order_confirmation(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
     email = order.user_profile.user_id.email
     user_profile = order.user_profile
-    addresses = user_profile.addresses.all()
+    address = order.address
 
     messages.success(request, f'Order successfully processed! Your order number is {order_number}.')
 
@@ -165,6 +165,6 @@ def order_confirmation(request, order_number):
         'order': order,
         'order_number': order_number,
         'email': email,
-        'addresses': addresses,
+        'address': address,
     }
     return render(request, template, context)

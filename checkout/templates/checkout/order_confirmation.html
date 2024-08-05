@@ -59,7 +59,6 @@
                                 <article class="card-text pb-3">
                                 <strong>Delivery to:</strong>
                                 </article>
-                                {% for address in addresses %}
                                     <p>
                                     {{ order.user_name }}
                                     </p>
@@ -72,7 +71,6 @@
                                     {{ address.town_city }},
                                     {{ address.country }}
                                     </p>
-                                {% endfor %}
                             </div>
                         </div>
                     </div>
