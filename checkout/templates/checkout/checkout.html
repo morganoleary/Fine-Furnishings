@@ -127,7 +127,7 @@
                                 <option value="">Select an address</option>
                                 {% for address in user_addresses %}
                                     <option value="{{ address.id }}">
-                                        {{ address.street_address_1 }}, {{ address.town_city }}  <!-- Adjust as needed -->
+                                        {{ address.street_address_1 }}, {{ address.town_city }}, {{ address.post_code }}
                                     </option>
                                 {% empty %}
                                     <option value="">No addresses available</option>

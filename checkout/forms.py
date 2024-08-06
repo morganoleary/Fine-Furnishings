@@ -2,6 +2,11 @@ from django import forms
 from .models import Order
 from profiles.models import UserAddress, UserProfile
 
+# Define country choices with only Ireland ("IE")
+COUNTRY_CHOICES = [
+    ('IE', 'Ireland'),
+]
+
 class OrderForm(forms.ModelForm):
     """ 
     A form to allow the user to fill out their details during checkout
@@ -14,7 +19,7 @@ class OrderForm(forms.ModelForm):
     town_or_city = forms.CharField(max_length=100, required=True)
     county = forms.CharField(max_length=100, required=True)
     postcode = forms.CharField(max_length=20, required=True)
-    country = forms.CharField(max_length=100, required=True)
+    country = forms.ChoiceField(choices=COUNTRY_CHOICES, required=True)
     address_choices = forms.ChoiceField(choices=[], required=False)
     address_name = forms.CharField(max_length=50, required=False)
     
