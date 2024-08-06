@@ -37,6 +37,7 @@ class OrderInline(admin.TabularInline):
     can_delete = False
     verbose_name_plural = 'Orders'
     fields = ('order_number', 'order_date', 'delivery_charge', 'product_total', 'order_total')
+    ordering = ('-order_date',)
 
 # Inline admin for Wishlist
 class WishlistInline(admin.TabularInline):
