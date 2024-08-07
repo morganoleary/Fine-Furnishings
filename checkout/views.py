@@ -53,7 +53,6 @@ def checkout(request):
         form = OrderForm(data=request.POST, user_profile=user_profile)
         if form.is_valid():
             order = form.save(commit=False)
-
             order.user_profile = user_profile
 
             # Set user details
@@ -80,7 +79,7 @@ def checkout(request):
                     'town_city': form.cleaned_data['town_or_city'],
                     'county': form.cleaned_data['county'],
                     'post_code': form.cleaned_data['postcode'],
-                    'country': form.cleaned_data['country'],
+                    'country': form.cleaned_data['country'] or 'IE',
                 }
 
                 user_address, created = UserAddress.objects.update_or_create(

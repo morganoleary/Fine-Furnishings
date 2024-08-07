@@ -253,6 +253,14 @@
                     document.querySelector('#id_county').value = address.county || '';
                     document.querySelector('#id_postcode').value = address.postcode || '';
                     document.querySelector('#id_country').value = address.country || '';
+                } else {
+                    // Clear fields if no valid address is found
+                    document.querySelector('#id_street_address1').value = '';
+                    document.querySelector('#id_street_address2').value = '';
+                    document.querySelector('#id_town_or_city').value = '';
+                    document.querySelector('#id_county').value = '';
+                    document.querySelector('#id_postcode').value = '';
+                    document.querySelector('#id_country').value = '';
                 }
             }
 

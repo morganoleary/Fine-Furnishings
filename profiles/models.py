@@ -29,7 +29,7 @@ class UserAddress(models.Model):
     town_city = models.CharField(max_length=100)
     county = models.CharField(max_length=100)
     post_code = models.CharField(max_length=20)
-    country = models.CharField(max_length=100)
+    country = models.CharField(max_length=100, blank=False, null=False)
 
     def __str__(self):
         return f"{self.address_name}: {self.street_address_1}, {self.town_city}, {self.country}"

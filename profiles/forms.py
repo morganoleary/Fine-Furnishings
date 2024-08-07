@@ -46,3 +46,8 @@ class UserAddressForm(forms.ModelForm):
     class Meta:
         model = UserAddress
         fields = ['address_name', 'street_address_1', 'street_address_2', 'town_city', 'county', 'post_code', 'country']
+
+        # Set default country value
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.fields['country'].initial = 'IE'
