@@ -1,0 +1,25 @@
+Hi {{ order.user_name }}, 
+
+Thank you so much for shopping at Fine Furnishings! 
+
+Please find your order details below and reach out to us if you have any questions!
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.order_date }}
+
+Product Total: {{ order.product_total }}
+Delivery Fee: {{ order.delivery_charge }}
+Order Total: {{ order.order_total }}
+
+Your order will be delivered to:
+{{ address.street_address_1 }},
+{{ address.town_city }},
+{{ address.country }}
+
+The phone number we have on file is {{ order.user_phone }}.
+
+Thank you again for your order and if you have any questions.. don't be shy, reach out!
+You can email us at {{ contact_email }}.
+
+Have a great day!
+Fine Furnishings

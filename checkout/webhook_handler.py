@@ -1,4 +1,7 @@
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 
 from .models import Order, OrderItems
 from products.models import Product
@@ -8,16 +11,31 @@ import stripe
 import json
 import time
 
-import logging
-
-logger = logging.getLogger(__name__)
-
 # Webhook handler implemented with Boutique Ado Walkthrough - Stripe Part 10
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
     def __init__(self, request):
         self.request = request
+
+    def _send_confirmation_email(self, order):
+        """
+        Send the user a confirmation email
+        """
+        user_email = order.user_email
+        subject = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            {'order': order})
+        body = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_body.txt',
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+        
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [user_email]
+        )
 
     def handle_event(self, event):
         """
@@ -57,14 +75,6 @@ class StripeWH_Handler:
         attempt = 1
         while attempt <= 5:
             try:
-                # Debugging
-                logger.debug(f"Attempt {attempt}: Looking for address with details: "
-                             f"{shipping_details.address.line1}, "
-                             f"{shipping_details.address.line2}, "
-                             f"{shipping_details.address.city}, "
-                             f"{shipping_details.address.postal_code}, "
-                             f"{shipping_details.address.country}")
-                
                 address = UserAddress.objects.get(
                     street_address_1__iexact=shipping_details.address.line1,
                     street_address_2__iexact=shipping_details.address.line2,
@@ -84,22 +94,16 @@ class StripeWH_Handler:
                 order_exists = True
                 break
             except Order.DoesNotExist:
-                logger.debug(f"Order does not exist on attempt {attempt}.")
                 attempt += 1
                 time.sleep(1)
             except UserAddress.DoesNotExist:
-                logger.error(f"UserAddress matching query does not exist. "
-                             f"Details: {shipping_details.address.line1}, "
-                             f"{shipping_details.address.line2}, "
-                             f"{shipping_details.address.city}, "
-                             f"{shipping_details.address.postal_code}, "
-                             f"{shipping_details.address.country}")
                 break
+
         if order_exists:
+            self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database', status=200)
         else:
-            # order = None
             try:
                 address, created = UserAddress.objects.get_or_create(
                     street_address_1=shipping_details.address.line1,
@@ -108,18 +112,13 @@ class StripeWH_Handler:
                     post_code=shipping_details.address.postal_code,
                     country=shipping_details.address.country,
                 )
-                # Log if the address was created or retrieved
-                if created:
-                    logger.info(f"Created new address: {address}")
-                else:
-                    logger.info(f"Retrieved existing address: {address}")
 
                 # Find the user profile based on the email
                 user_profile = None
                 try:
                     user_profile = UserProfile.objects.get(user_id__email=billing_details.email)
                 except UserProfile.DoesNotExist:
-                    logger.error(f"UserProfile matching email {billing_details.email} does not exist.")
+                    pass
 
                 # Create order
                 order = Order.objects.create(
@@ -152,15 +151,14 @@ class StripeWH_Handler:
                                 )
                                 order_item.save()
                     except Product.DoesNotExist:
-                        logger.error(f"Product with ID {item_id} does not exist.")
                         continue
             except Exception as e:
-                logger.error(f'Error handling payment_intent.succeeded: {e}')
                 if order:
                     order.delete()
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
+        self._send_confirmation_email(order)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)
