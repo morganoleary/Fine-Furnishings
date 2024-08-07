@@ -12,14 +12,14 @@ Delivery Fee: {{ order.delivery_charge }}
 Order Total: {{ order.order_total }}
 
 Your order will be delivered to:
-{{ address.street_address_1 }},
-{{ address.town_city }},
-{{ address.country }}
+{{ order.address.street_address_1 }},
+{{ order.address.town_city }},
+{{ order.address.country }}
 
 The phone number we have on file is {{ order.user_phone }}.
 
 Thank you again for your order and if you have any questions.. don't be shy, reach out!
-You can email us at {{ contact_email }}.
+You can email us at finefurnishings@example.com.
 
 Have a great day!
 Fine Furnishings

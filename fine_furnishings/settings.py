@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '8000-morganolear-finefurnish-5tmqomrr3vx.ws.codeinstitute-ide.net', 'fine-furnishings-1e63b49cdd1f.herokuapp.com', 'dc7f-2001-bb6-9043-5b58-a425-69f6-fd69-5483.ngrok-free.app']
+ALLOWED_HOSTS = ['127.0.0.1', '8000-morganolear-finefurnish-n99lh3t71ud.ws.codeinstitute-ide.net', 'fine-furnishings-1e63b49cdd1f.herokuapp.com', 'dc7f-2001-bb6-9043-5b58-a425-69f6-fd69-5483.ngrok-free.app']
 
 
 # Application definition
