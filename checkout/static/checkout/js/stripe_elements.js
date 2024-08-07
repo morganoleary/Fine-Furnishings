@@ -80,7 +80,6 @@ document.addEventListener('DOMContentLoaded', function() {
                             line1: $.trim(form.street_address1.value),
                             line2: $.trim(form.street_address2.value),
                             city: $.trim(form.town_or_city.value),
-                            country: $.trim(form.country.value),
                         }
                     }
                 },
@@ -91,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         line1: $.trim(form.street_address1.value),
                         line2: $.trim(form.street_address2.value),
                         city: $.trim(form.town_or_city.value),
-                        country: $.trim(form.country.value),
                         postal_code: $.trim(form.postcode.value),
                     }
                 },

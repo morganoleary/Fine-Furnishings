@@ -46,10 +46,14 @@ def checkout(request):
     intent = None
     user_profile = request.user.userprofile  # Assuming user is logged in and has a profile
 
+    cart = request.session.get('cart', {})
+    user_addresses = []
+
     if request.method == 'POST':
         form = OrderForm(data=request.POST, user_profile=user_profile)
         if form.is_valid():
             order = form.save(commit=False)
+
             order.user_profile = user_profile
 
             # Set user details
@@ -86,6 +90,10 @@ def checkout(request):
                 )
                 order.address = user_address
 
+            # order.save()
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_cart = json.dumps(cart)
             order.save()
 
             cart = request.session.get('cart', {})
