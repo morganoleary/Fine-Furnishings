@@ -245,6 +245,42 @@ The store provides furniture in the following categories:
 
 </details>
 
+### Implementations for Resubmission
+
+<details>
+
+<summary>Resubmission Updates</summary>
+
+- Custom Models: A minimum a 3 custom models have been implemented. 
+    1. Contact form - to contact the business
+    2. Wishlist - to save items to user's profile
+    3. User Address - to save multiple addresses to user's profile
+
+- CRUD (passed): 
+On the front end, user's are able to register an account, edit their personal details to save to the account and delete their account successfully. 
+The admin dashboard allows the superuser to add, edit & delete products along with functionality to edit and delete user profiles and orders as well. In future, I plan to implement product editing and deleting on the site under a 'Product Management' page as in the walkthrough, but due to time constraints and implementing the necessary features for the pass criteria, this was not able to be implemented for this submission. 
+
+- (1.8) The navigation menu layout has been fixed and there are no issues with the overlap of the search bar. The hamburger menu is now appearing as it should on mobile devices as well.
+
+- The site's colour contrast has been updated so that content is legible to the maximum possible user base.
+
+- (3.2) Meta descriptions have been implemented into each HTML template to improve SEO.
+
+- Toasts have been implemented to provide better feedback to the user throughout their journey on the site.
+
+- Email confirmations have been implemented and are being sent to customers to confirm the user's email upon registering a new account/profile. 
+
+- Email confirmations have been implemented and are being sent to users to share an order confirmation upon a successful order being processed through Stripe. 
+
+- The user now has access to their order history when logged in. The user is now able to navigate to the "Order History" option in the menu to view all previous purchase details.
+
+- Stripe webhooks have been implemented to provide sufficient feedback when a purchase is made.
+
+
+
+
+</details>
+
 # Testing
 <details>
 
@@ -443,6 +479,18 @@ The buttons work as expected to navigate the user back to the home page OR to th
 
 <details>
 
+<summary>Resubmission - Added Features Testing</summary>
+
+#### Testing
+- 
+
+#### Bugs / Unfixed Bugs
+- 
+
+</details>
+
+<details>
+
 <summary>Bugs/Unfixed Bugs</summary>
 
 - Success messages are showing after the user navigates to a new page on the site. The message should be appearing on the page the user remains on or is redirected to, if called for. This will be fixed/updated in future features and was unfixed due to time constraints.
@@ -464,16 +512,45 @@ The buttons work as expected to navigate the user back to the home page OR to th
 
 Set up the workspace:
 1. Install gunicorn in workspace for Heroku deployment
+    - pip install gunicorn
 2. Add to requirements.txt and create Procfile
+    - pip freeze > requirements.txt
 3. In settings.py set DEBUG = False 
 4. Reconfigured Default file & Static file storage in settings.py to allow Cloudinary deployment with Heroku
 5. Added the Heroku app to the 'Allowed Hosts' in settings.py
 6. Ensured all secret keys were added to the env.py file & stored in the gitignore file
 7. Git add, commit and push changes to GitHub
+
 Deploy on Heroku:
+
 8. Create the app on Heroku and connect to GitHub project
-9. Set the Config Vars in the "Settings" Tab - this includes: CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET, CLOUDINARY_CLOUD_NAME, DATABASE_URL, SECRET_KEY, STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY
+9. Set the Config Vars in the "Settings" Tab - this includes: CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET, CLOUDINARY_CLOUD_NAME, DATABASE_URL, SECRET_KEY, STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY, STRIPE_WH_SECRET, EMAIL_HOST_PASS, EMAIL_HOST_USER 
 10. Navigate to the "Deploy" tab and scroll down to click on "Deploy Branch" in the "Manual deploy" section
+
+</details>
+
+<details>
+
+<summary>Steps to deploy locally </summary> 
+
+1. Ensure Python and Pip are installed
+2. If required - set up a virtual environment & activate
+    - pip install virtualenv
+    - virtualenv venv
+    - source venv/bin/activate
+3. Install the dependencies:
+    - pip install -r requirements.txt
+4. Apply migrations to set up the database:
+    - python manage.py migrate
+5. Create a superuser to access the admin:
+    - python manage.py createsuperuser
+6. If required, collect the static files:
+    - python manage.py collectstatic
+7. Configure Debug settings in settings.py
+    - For local to run, this should be set as:
+    DEBUG = True
+8. Run the server to view the project:
+    - python manage.py runserver
 
 </details>
 

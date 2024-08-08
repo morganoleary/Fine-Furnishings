@@ -89,7 +89,6 @@ def checkout(request):
                 )
                 order.address = user_address
 
-            # order.save()
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_cart = json.dumps(cart)

@@ -104,6 +104,7 @@ class StripeWH_Handler:
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database', status=200)
         else:
+            order = None
             try:
                 address, created = UserAddress.objects.get_or_create(
                     street_address_1=shipping_details.address.line1,
