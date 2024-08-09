@@ -283,18 +283,61 @@ The store provides furniture in the following categories:
 
 <summary>Resubmission Updated Features</summary>
 
-- The main navigation menu layout has been fixed so there is no overlap with the search bar. Updates to the home page layout have been made to ensure better quality spacing:
+1.  The main navigation menu layout has been fixed so there is no overlap with the search bar. Updates to the home page layout have been made to ensure better quality spacing:
 
 Mobile hamburger menu:
+
 ![Mobile menu updated](static/readme_images/mobile-menu-fixed.png)
 
 Tablet menu & home page:
+
 ![Home page layout](static/readme_images/layout-fixed.png)
 
 Desktop menu (when user is logged in):
+
 ![Desktop menu](static/readme_images/desktop-menu.png)
 
-- 
+2. When a new user registers for an account, they are sent a confirmation email to confirm the email address validity (example displayed using temp-mail.org)
+
+Register a new account:
+
+![Register new user](static/readme_images/register-new-user.png)
+
+- A message appears to alert the user to verify the email address:
+
+![Verify email](static/readme_images/verify-email.png)
+
+- An email is received with a link to verify:
+
+![Register email](static/readme_images/register-email.png)
+
+- The user is rerouted to the website, in a new window, to confirm their registration:
+
+![Confirm email on site](static/readme_images/site-confirm-email.png)
+
+- An alert confirms successful registration to the customer and reroutes to the login page:
+
+![Registration Success](static/readme_images/registration-success.png)
+
+3. A link to the user's Order History has been implemented, making sure it is possible to track a purchase from the buyer's side.
+
+- New User - No previous order history:
+
+![New user - Order history](static/readme_images/no-previous-order-hisotry.png)
+
+- Order History populated:
+
+![Order History populates](static/readme_images/order-history-populates.png)
+
+4. Order confirmation emails & Stripe webhooks for successful purchases:
+
+- For each successful order, the user is rerouted to the order confirmation page. In addition, an email confirmation has been implemented and sends an order confirmation email to the customer. 
+
+![Order confirmation email](static/readme_images/order-confirmation-email.png)
+
+- For each successful order, Stripe webhooks have been connected to provide better detail of payment intents:
+
+![Stripe webhooks](static/readme_images/stripe-webhook-success.png)
 
 </details>
 
@@ -499,13 +542,148 @@ The buttons work as expected to navigate the user back to the home page OR to th
 <summary>Resubmission - Updated Features Testing</summary>
 
 #### Testing
-- 
+- Registration of new account: 
+
+As listed in the above 'updated features', the registration of a new user is account is successful with an email confirmation. The user is then able to log into their new account and receives a success message once logged in:
+
+![Login success](static/readme_images/login-success-message.png)
+
+When all fields are not filled out correctly upon registration, the site alerts the user accordingly:
+
+![Error with registering](static/readme_images/error-alert-register.png)
+
+- User Profile:
+
+The 'Personal Details' link is only visible to logged in users. The user is able to navigate to this page to view their saved details, edit their details and add multiple addresses or delete their account. 
+
+![Edit details](static/readme_images/edit-save-details.png)
+
+I tried to submit the form without one of the required fields and there is a slight bug in how the site provides the error message. * See 'bugs' below.
+
+When the user updates their profile's personal details and fills out all the required fiels correctly, the form saves, the 'Personal Details' are updated as they should and the user receives a success message:
+
+![Profile details saved](static/readme_images/profile-save-success.png)
+
+The user's account profile details are also correctly updated on the admin dashboard as expected:
+
+![Admin user profile saved](static/readme_images/admin-user-addresses.png)
+
+If a user wants to save a second address, they can do so successfully by opening the edit profile modal and adding the address below the 1st. * See 'bugs' for slight future fix.
+
+![Add second address](static/readme_images/2nd-address-wrong-country.png)
+
+Should a user wish to delete their account/profile, they can do so successfully from the 'Personal Details' page:
+
+The user clicks 'Delete' and receives a warning before fully deleting the profile:
+
+![Deletion double check](static/readme_images/confirm-account-deletion.png)
+
+If the user decides to go ahead with the deletion, they are prompted with a success message and the admin dashboard is updated accordingly. The user's account is deleted along with the profile information, however all orders remain in the admin dashboard so that the business never loses record of order history:
+
+![Successful profile deletion](static/readme_images/profile-deleted.png)
+
+![Admin updated with deleted account](static/readme_images/orders-remain-admin.png)
+
+When a user is logged in, the wishlist works as expected to add, save and delete items from the wishlist with success messages. The page is updated as it should and items are saved to the user's profile on the admin dashboard for the next time they return to the site.
+
+![Wishlist items saved](static/readme_images/wishlist-item-save.png)
+
+![Wishlist item removed](static/readme_images/wishlist-item-removed.png)
+
+![Wishlist item added](static/readme_images/wishlist-item-added.png)
+
+![Admin wishlist](static/readme_images/admin-wishlist.png)
+
+- User's Order History:
+
+When a new user registers an account and they have no past orders yet, the page works as expected to provide a 'Continue Shopping' button. This button correctly routes the customer to the 'All Products' page to begin shopping.
+
+![All products page](static/readme_images/all-products.png)
+
+Once an order is placed, the user's order history is populated with order history details for each past purchase. * See 'bugs'. 
+
+
+- Purchasing journey:
+
+As the user begins shopping and adds a product to their shopping cart, they are rerouted to the shopping cart and provided a success message of the added product as expected:
+
+![Added to shopping cart](static/readme_images/added-to-cart.png)
+
+When a user updates the quantity or items in their cart, they are provided a success message with this update:
+
+![Updated cart](static/readme_images/updated-cart.png)
+
+When a bedframe is added to the shopping cart, the success message includes the bedframe size selected and the cart is updated with the correct quantities and sizes:
+
+![Bedframe cart update](static/readme_images/bedframe-size-alert.png)
+
+If an item (or multiple items) is removed from the cart, the page updates correctly and a success message confirms the user's choices:
+
+![Remove from cart](static/readme_images/remove-from-cart-message.png)
+
+As the user moves to the secure checkout page, their user details automatically fill out the form fields at checkout. The address also allows the user to choose between multiple saved addresses. 
+
+![User details at checkout](static/readme_images/secure-checkout-details-populate.png)
+
+Saved address dropdown: * See 'bugs' below.
+
+![Saved addresses](static/readme_images/select-address-dropdown.png)
+
+If a field is not correctly filled in or populated, the user receives an error message to fix:
+
+![Country field at checkout](static/readme_images/country-checkout-field-error.png)
+
+I tried filling out the country field from the error message when this wasn't populated correctly and even though Ireland is selected, the payment cannot be made and the order fails. * See 'bugs' below.
+
+The user must navigate out of the secure checkout page and return to the checkout to successfully place an order. This will be fixed in future implementations. However, if the user changes the address within the secure checkout and MANUALLY selects Ireland as the country field (this is correctly the only country option that should be available) to process the order, the order succeeds. 
+
+![Manually select country field](static/readme_images/fill-country-manually.png)
+
+The order succeeds with the selected address, however the saved address saves to the order even though the country should only be Ireland.
+
+![Order Success](static/readme_images/order-success.png)
+
+The user is correctly rerouted to an order confirmation page and an email confirmation is sent to the user's address saved to their profile. 
+
+![Email confirmation](static/readme_images/order-confirmation-email.png)
+
+Stripe webhooks are working as expected and the payment is confirmed succeeded:
+
+![Webhooks succeeded](static/readme_images/stripe-webhook-success.png)
+
+The user's order history is also updated with the most recent purchase. 
+* See 'bugs' below.
 
 #### Bugs / Unfixed Bugs
 - An overlay / spinner was implemented, however was not appearing as it should on the site. After working with tutor support and being unable to find a solution, I was advised that it would be best to remove this altogether. I plan to reimplement this successfully in future features.
 - The layout of the shopping cart on mobile devices will still be updated further in future, as the titles should appear in line with their relative details. The technical features of the shopping cart work as intended.
+
 ![Mobile shopping cart layout](static/readme_images/mobile-shopping-cart-layout.png)
-- There was an issue occurring that was causing a 500 error when a logged in user attempts to delete a user address from the edit profile modal. Unfortunately, I was unable to resolve this in time for resubmission, so I removed this option and gave the user an update to contact the business to edit or delete and address. The user is successfully able to delete their entire profile.
+
+- There was an issue occurring that was causing a 500 error when a logged in user attempts to delete a user address from the edit profile modal. Unfortunately, I was unable to resolve this in time for resubmission, so I removed this option and gave the user a message in the edit modal to contact the business to edit or delete an address. The user is, however, successfully able to delete their entire profile.
+- When editing the user profile, if the user does not fill out a required field, a message appears to the user correctly, however, the modal closes and the user cannot see or know what the issue is until the click 'edit' and go back into the edit profile modal. See below images:
+
+![Edit error message](static/readme_images/error-message-profile-fields.png)
+
+![Error within modal](static/readme_images/error-message-modal-open.png)
+
+- As the user is able to add multiple addresses to their profile, they are provided a Country field to fill out. This is not technically an issue as this could be the user's billing address, however, because the business primarily delivers within the island of Ireland, this field should really only be able to take 'Ireland' as a country or it should autofill so this doesn't have the chance to cause issues at checkout.
+
+- At checkout, if the user uses the 'Select an Address' dropdown, the fields populate with the changed address, however the country field does not populate. Ideally this field should populate only with Ireland as an option and will be fixed in future releases:
+
+![Address change](static/readme_images/change-address-bug.png)
+
+- When an order is attempted after filling in the country field from the previous country field not being populated correctly, the order will not process even though Ireland is selected and is correctly the only dropdown option:
+
+![Country field - can't process order](static/readme_images/cant-process-country-issue.png)
+
+- The user's order history is updated once an order is successful, however the order is duplicating and appears 3 times on the order history page as well as the admin dashboard. I was working with tutor support for an hour on this and they were unable to help me find a solution and advised that the code looked accurate and couldn't find any mistakes that would be duplicating the orders. Only one order confirmation email is received per order and it seems that the customer is only being charged once as well, but I was unable to find the solution before resubmission. This will be fixed in future:
+
+![Order History duplicates](static/readme_images/order-history-duplicates.png)
+
+![Admin site duplicate orders](static/readme_images/admin-duplicate-orders.png)
+
+
 
 </details>
 
@@ -655,7 +833,7 @@ Cloning a repository allows you to create a local copy of a repository on your m
 
 <summary>Acknowledgements</summary>
 
-- I would like to give a huge shout out to the tutor support team. Roman, Oisin & Roo were a great help while I ran into issues with implementing Cloudinary, git actions between GitPod & VS Code and issues deploying on Heroku with static files and Cloudinary.
+- I would like to give a huge shout out to the tutor support team. Roman, Oisin, Roo & Thomas were a great help while I ran into issues with implementing Cloudinary, git actions between GitPod & VS Code and issues deploying on Heroku with static files and Cloudinary.
 - I would like to thank my mentor, Narender, for his time and support on this project. As we were limited in meetings on my part, he continued to stay supportive and helped keep me positive through the stress! Thank you.
 - I would like to extend a huge thank you to Code Institute for this course. This has been an amazing opportunity that I never thought would be a part of my future and I am excited to continue my coding journey and begin my new career as a software developer! You have provided great resources throughout the last year and it has completely changed my life. Thank you so much for this opportunity.
 
