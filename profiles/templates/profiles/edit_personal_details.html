@@ -9,7 +9,8 @@
     {{ form.phone|as_crispy_field }}
 
     <!-- Edit Addresses -->
-    <h5 class="mt-4 mb-3">Addresses</h5>
+    <h5 class="mt-4 mb-3">Addresses</h5><span><small><em>To edit or delete an address, please contact us directly.</em></small></span>
+    <hr>
     {{ address_formset.management_form }}
     {% for form in address_formset %}
         <div class="address-form">
@@ -21,18 +22,8 @@
             {{ form.county|as_crispy_field }}
             {{ form.post_code|as_crispy_field }}
             {{ form.country|as_crispy_field }}
-            {% if form.instance.pk %}
-                <div class="form-check mb-3">
-                    <input type="checkbox" class="form-check-input"
-                    name="{{ form.prefix }}-DELETE"
-                    id="{{ form.prefix }}-DELETE">
-                    <label class="form-check-label"
-                    for="{{ form.prefix }}-DELETE">
-                    Delete Address Above
-                    </label>
-                    <hr>
-                </div>
-            {% endif %}
+            <hr>
+            <hr>
         </div>
     {% endfor %}
 

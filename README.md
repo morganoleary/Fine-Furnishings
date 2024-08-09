@@ -7,6 +7,9 @@ So many online experiences leave the user hesitating to make a purchase or stumb
 
 Our goal is to provide simple navigation of the website so that our customers can purchase quality furniture from a trustworthy business.
 
+### Deployed Site: 
+https://fine-furnishings-1e63b49cdd1f.herokuapp.com/
+
 # User Experience (UX)
 
 ## Project Planning
@@ -252,15 +255,13 @@ The store provides furniture in the following categories:
 <summary>Resubmission Updates</summary>
 
 - Custom Models: A minimum a 3 custom models have been implemented. 
-    1. Contact form - to contact the business
-    2. Wishlist - to save items to user's profile
-    3. User Address - to save multiple addresses to user's profile
+    1. Contact form - for a user to contact the business
+    2. Wishlist - to save items to the user's profile
+    3. User Address - to save multiple addresses to the user's profile
 
-- CRUD (passed): 
-On the front end, user's are able to register an account, edit their personal details to save to the account and delete their account successfully. 
-The admin dashboard allows the superuser to add, edit & delete products along with functionality to edit and delete user profiles and orders as well. In future, I plan to implement product editing and deleting on the site under a 'Product Management' page as in the walkthrough, but due to time constraints and implementing the necessary features for the pass criteria, this was not able to be implemented for this submission. 
+- CRUD: I passed this criteria in the first submission, but wanted to explain further - On the front end, user's are able to register an account, edit their personal details to save to the account and delete their account successfully. The admin dashboard allows the superuser to add, edit & delete products along with functionality to edit and delete user profiles and orders. - In future, I plan to implement product editing and deleting on the site under a 'Product Management' link/page as in the walkthrough. However, due to time constraints and running into some issues while implementing the necessary features for the pass criteria, I was not able to add the product admin feature at this time.
 
-- (1.8) The navigation menu layout has been fixed and there are no issues with the overlap of the search bar. The hamburger menu is now appearing as it should on mobile devices as well.
+- (1.8) The navigation menu layout has been fixed and there are no longer any issues with the overlap of the search bar. The hamburger menu is now appearing as it should on mobile devices as well.
 
 - The site's colour contrast has been updated so that content is legible to the maximum possible user base.
 
@@ -276,8 +277,24 @@ The admin dashboard allows the superuser to add, edit & delete products along wi
 
 - Stripe webhooks have been implemented to provide sufficient feedback when a purchase is made.
 
+</details>
 
+<details>
 
+<summary>Resubmission Updated Features</summary>
+
+- The main navigation menu layout has been fixed so there is no overlap with the search bar. Updates to the home page layout have been made to ensure better quality spacing:
+
+Mobile hamburger menu:
+![Mobile menu updated](static/readme_images/mobile-menu-fixed.png)
+
+Tablet menu & home page:
+![Home page layout](static/readme_images/layout-fixed.png)
+
+Desktop menu (when user is logged in):
+![Desktop menu](static/readme_images/desktop-menu.png)
+
+- 
 
 </details>
 
@@ -479,13 +496,16 @@ The buttons work as expected to navigate the user back to the home page OR to th
 
 <details>
 
-<summary>Resubmission - Added Features Testing</summary>
+<summary>Resubmission - Updated Features Testing</summary>
 
 #### Testing
 - 
 
 #### Bugs / Unfixed Bugs
-- 
+- An overlay / spinner was implemented, however was not appearing as it should on the site. After working with tutor support and being unable to find a solution, I was advised that it would be best to remove this altogether. I plan to reimplement this successfully in future features.
+- The layout of the shopping cart on mobile devices will still be updated further in future, as the titles should appear in line with their relative details. The technical features of the shopping cart work as intended.
+![Mobile shopping cart layout](static/readme_images/mobile-shopping-cart-layout.png)
+- There was an issue occurring that was causing a 500 error when a logged in user attempts to delete a user address from the edit profile modal. Unfortunately, I was unable to resolve this in time for resubmission, so I removed this option and gave the user an update to contact the business to edit or delete and address. The user is successfully able to delete their entire profile.
 
 </details>
 
