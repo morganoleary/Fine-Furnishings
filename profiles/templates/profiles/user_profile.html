@@ -141,4 +141,12 @@ aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
     </div>
 </div>
 
+{% if form.errors or address_formset.errors %}
+    <script>
+        $(document).ready(function() {
+            $('#editProfileModal').modal('show');
+        });
+    </script>
+{% endif %}
+
 {% endblock %}

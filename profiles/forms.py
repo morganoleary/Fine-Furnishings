@@ -51,3 +51,7 @@ class UserAddressForm(forms.ModelForm):
         def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
             self.fields['country'].initial = 'IE'
+
+        def clean(self):
+            cleaned_data = super().clean()
+            return cleaned_data

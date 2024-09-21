@@ -18,12 +18,12 @@ def user_profile(request):
     if request.user.is_authenticated:
         user_profile, created = UserProfile.objects.get_or_create(user_id=request.user)
         # Returns the address formset for the User Address model
-        AddressFormSet = modelformset_factory(UserAddress, form=UserAddressForm, extra=1, can_delete=True, max_num=5)
+        AddressFormSet = modelformset_factory(UserAddress, form=UserAddressForm, extra=0, can_delete=True, max_num=5)
 
         if request.method == 'POST':
             form = UserProfileForm(request.POST, instance=user_profile)
             address_formset = AddressFormSet(request.POST, queryset=user_profile.addresses.all())
-
+                    
             if form.is_valid() and address_formset.is_valid():
                 form.save()
                 addresses = address_formset.save(commit=False)
@@ -32,15 +32,21 @@ def user_profile(request):
                 for address in addresses:
                     address.user_profile = user_profile
                     address.save()
+                    messages.success(request, 'Profile updated successfully.')
 
                 # Handle deletions of address
                 deleted_addresses = address_formset.deleted_objects
                 for address in deleted_addresses:
-                    address.delete()
+                    # Check if address is linked to any orders
+                    if Order.objects.filter(address=address).exists():
+                        messages.error(request, f"The address {address.address_name} is linked to an order and cannot be deleted.")
+                    else:
+                        address.delete()
+                        messages.success(request, 'Address deleted successfully.')
 
-                messages.success(request, 'Profile updated successfully.')
-                return redirect('user_profile')
+                return redirect('user_profile')  # Only redirect if everything is valid
             else:
+                # If the form or formset is invalid, show the errors on the same page
                 messages.error(request, 'Please correct the errors below.')
         else:
             initial_data = {
@@ -131,8 +137,6 @@ def delete_user_profile(request):
 
     if request.method == 'POST':
         try:
-            # Retain addresses but remove from user's profile
-            user_profile.addresses.all().update(user_profile=None)
             # Store necessary user details in orders before deleting user
             orders = Order.objects.filter(user_profile=user_profile)
             for order in orders:
@@ -142,6 +146,9 @@ def delete_user_profile(request):
                 order.save()
             # Filter user's orders and set user's profile on orders to none
             Order.objects.filter(user_profile=user_profile).update(user_profile=None)
+            # Remove addresses from user's profile
+            user_profile.addresses.all().update(user_profile=None)
+
             # Delete the user's profile
             user_profile.delete()
             # Delete the user account
