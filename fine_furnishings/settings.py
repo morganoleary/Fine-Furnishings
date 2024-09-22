@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '8000-morganolear-finefurnish-v1a8d6hfejz.ws.codeinstitute-ide.net', 'fine-furnishings-1e63b49cdd1f.herokuapp.com', 'dc7f-2001-bb6-9043-5b58-a425-69f6-fd69-5483.ngrok-free.app']
 

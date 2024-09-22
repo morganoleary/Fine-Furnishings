@@ -25,6 +25,9 @@ class Order(models.Model):
     original_cart = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
+    class Meta:
+        unique_together = ('user_profile', 'order_number')
+
     def _generate_order_number(self):
         """
         Generate a random, unique order number using UUID
@@ -65,6 +68,9 @@ class OrderItems(models.Model):
     bedframe_size = models.CharField(max_length=10, null=True, blank=True) # 3', 4', 4'6", 5', 6'
     quantity = models.IntegerField(null=False, blank=False, default=0)
     order_items_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+
+    class Meta:
+        unique_together = ('order', 'product')
 
     def save(self, *args, **kwargs):
         """
