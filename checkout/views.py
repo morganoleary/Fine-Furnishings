@@ -52,6 +52,14 @@ def checkout(request):
     if request.method == 'POST':
         form = OrderForm(data=request.POST, user_profile=user_profile)
         if form.is_valid():
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            # Check if an order with the same stripe_pid already exists
+            existing_order = Order.objects.filter(stripe_pid=pid).first()
+            if existing_order:
+                messages.error(request, 'This order has already been processed.')
+                return redirect(reverse('order_confirmation', args=[existing_order.order_number]))
+
+            # Create order but don't save until payment is confirmed
             order = form.save(commit=False)
             order.user_profile = user_profile
 
@@ -61,6 +69,8 @@ def checkout(request):
             order.user_phone = form.cleaned_data.get('phone_number')
 
             order.delivery_charge = 30
+            order.stripe_pid = pid
+            order.original_cart = json.dumps(cart)
 
             # Handle address
             address_id = form.cleaned_data.get('address_choices')
@@ -89,76 +99,89 @@ def checkout(request):
                 )
                 order.address = user_address
 
-            pid = request.POST.get('client_secret').split('_secret')[0]
-            order.stripe_pid = pid
-            order.original_cart = json.dumps(cart)
-            order.save()
+            try:
+                # Save the order after the address is confirmed
+                order.save()
 
-            cart = request.session.get('cart', {})
-            for item_id, product_data in cart.items():
-                try:
-                    product = Product.objects.get(id=item_id)
-                    if isinstance(product_data, int):
-                        order_item = OrderItems(
-                            order=order,
-                            product=product,
-                            quantity=product_data,
-                        )
-                        order_item.save()
-                    else:
-                        for size, quantity in product_data['bedframes_by_size'].items():
+                # Create order items
+                for item_id, product_data in cart.items():
+                    try:
+                        product = Product.objects.get(id=item_id)
+                        if isinstance(product_data, int):
                             order_item = OrderItems(
                                 order=order,
                                 product=product,
-                                quantity=quantity,
-                                bedframe_size=size,
+                                quantity=product_data,
                             )
                             order_item.save()
-                except Product.DoesNotExist:
-                    messages.error(request, (
-                        "One of the products in your shopping cart wasn't found in our database. "
-                        "Please contact us for assistance!")
-                    )
-                    order.delete()
-                    return redirect(reverse('cart'))
+                        else:
+                            for size, quantity in product_data['bedframes_by_size'].items():
+                                order_item = OrderItems(
+                                    order=order,
+                                    product=product,
+                                    quantity=quantity,
+                                    bedframe_size=size,
+                                )
+                                order_item.save()
 
-            request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('order_confirmation', args=[order.order_number]))
+                    except Product.DoesNotExist:
+                        messages.error(request, (
+                            "One of the products in your shopping cart wasn't found in our database. "
+                            "Please contact us for assistance!")
+                        )
+                        order.delete()
+                        return redirect(reverse('cart'))
+
+                # Clear cart after successful order processing
+                if 'cart' in request.session:
+                    del request.session['cart']
+
+                request.session['save_info'] = 'save-info' in request.POST
+                return redirect(reverse('order_confirmation', args=[order.order_number]))
+
+            except Product.DoesNotExist:
+                messages.error(request, (
+                    "One of the products in your shopping cart wasn't found in our database. "
+                    "Please contact us for assistance!")
+                )
+                order.delete()
+                return redirect(reverse('cart'))
         else:
             messages.error(request, 'There was an error with your order. Please double check your information.')
-    else:
-        cart = request.session.get('cart', {})
-        if not cart:
-            messages.error(request, 'Your cart is empty!')
-            return redirect(reverse('products'))
 
-        current_cart = cart_contents(request)
-        total = current_cart['order_total']
-        stripe_total = round(total * 100)
-        stripe.api_key = stripe_secret_key
-        intent = stripe.PaymentIntent.create(
-            amount=stripe_total,
-            currency=settings.STRIPE_CURRENCY,
-        )
+    # Check if the cart is empty
+    cart = request.session.get('cart', {})
+    if not cart:
+        messages.error(request, 'Your cart is empty!')
+        return redirect(reverse('products'))
 
-        initial_data = {
-            'full_name': request.user.get_full_name(),
-            'email': request.user.email,
-            'phone_number': user_profile.phone,
-        }
+    current_cart = cart_contents(request)
+    total = current_cart['order_total']
+    stripe_total = round(total * 100)
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
 
-        user_addresses = UserAddress.objects.filter(user_profile=user_profile)
-        if user_addresses.exists():
-            user_address = user_addresses.first()
-            initial_data.update({
-                'street_address1': user_address.street_address_1,
-                'street_address2': user_address.street_address_2,
-                'town_or_city': user_address.town_city,
-                'county': user_address.county,
-                'postcode': user_address.post_code,
-                'country': user_address.country,
-            })
-        form = OrderForm(initial=initial_data, user_profile=user_profile)
+    initial_data = {
+        'full_name': request.user.get_full_name(),
+        'email': request.user.email,
+        'phone_number': user_profile.phone,
+    }
+
+    user_addresses = UserAddress.objects.filter(user_profile=user_profile)
+    if user_addresses.exists():
+        user_address = user_addresses.first()
+        initial_data.update({
+            'street_address1': user_address.street_address_1,
+            'street_address2': user_address.street_address_2,
+            'town_or_city': user_address.town_city,
+            'county': user_address.county,
+            'postcode': user_address.post_code,
+            'country': user_address.country,
+        })
+    form = OrderForm(initial=initial_data, user_profile=user_profile)
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. Did you forget to set it in your environment?')

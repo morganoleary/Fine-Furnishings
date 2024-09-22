@@ -23,7 +23,7 @@ class Order(models.Model):
     user_email = models.EmailField(blank=True, null=True)
     user_phone = models.CharField(max_length=50, blank=True, null=True)
     original_cart = models.TextField(null=False, blank=False, default='')
-    stripe_pid = models.CharField(max_length=254, unique=True, null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
     class Meta:
         unique_together = ('user_profile', 'order_number')

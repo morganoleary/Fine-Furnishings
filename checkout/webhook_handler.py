@@ -71,7 +71,7 @@ class StripeWH_Handler:
         # Ensure country field is set to "IE"
         shipping_details.address.country = "IE"
 
-        # Added check to prevent duplicate orders
+        # Prevent duplicate orders
         if Order.objects.filter(stripe_pid=pid).exists():
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Order already processed',
