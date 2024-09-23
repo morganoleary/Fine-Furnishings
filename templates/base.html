@@ -115,7 +115,7 @@
             <div class="col-sm"></div>
             <div class="ml-lg-5">
               <ul class="navbar-nav align-items-center ml-lg-5">
-                <li class="nav-item ml-md-3 mr-md-3">
+                <li class="nav-item mr-md-3">
                   <a class="{% if total %}text-secondary font-weight-bold{% else %}text-dark{% endif %}nav-link" href="{% url 'cart' %}">
                     <div class="text-center">
                       <div class="col-sm">
@@ -133,20 +133,20 @@
                 </li>
                 {% if user.is_authenticated %}
                   {% if request.user.is_superuser %}
-                  <li class="nav-item ml-lg-3"></li>
+                  <li class="nav-item"></li>
                     <a class="nav-link" href="{% url 'admin:index' %}">Admin Panel</a>
                   </li>
                   {% endif %}
-                <li class="nav-item ml-lg-3">
+                <li class="nav-item ml-lg-2">
                   <a class="nav-link" href="{% url 'user_wishlist' %}">My Wishlist</a>
                 </li>
-                <li class="nav-item ml-lg-3">
+                <li class="nav-item ml-lg-2">
                   <a class="nav-link {% if request.path == profiles_url %}active" aria-current="page{% endif %}" href="{% url 'user_profile' %}">Personal Details</a>
                 </li>
-                <li class="nav-item ml-lg-3">
+                <li class="nav-item ml-lg-2">
                   <a class="nav-link {% if request.path == profiles_url %}active" aria-current="page{% endif %}" href="{% url 'order_history' %}">Order History</a>
                 </li>
-                <li class="nav-item ml-lg-3">
+                <li class="nav-item ml-lg-2">
                   <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                 </li>
                 {% else %}
