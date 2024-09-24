@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category
+from .forms import ProductForm
 
 # The all_products view code was implemented with the help of the 
 # Boutique Ado project walkthrough to implement the search bar's functionality
@@ -74,3 +75,24 @@ def dining_products(request):
     products = Product.objects.filter(categories__name__iexact='dining').distinct()
     context = {'products': products, 'category': 'Dining'}
     return render(request, 'products/products.html', context)
+
+
+def add_product(request):
+    """ Add a product to the store """
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            product = form.save()
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:
+        form = ProductForm()
+        
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
