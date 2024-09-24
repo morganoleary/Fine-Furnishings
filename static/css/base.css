@@ -53,6 +53,16 @@ body {
   font-size: medium;
 }
 
+.navbar {
+  position: relative;
+  z-index: 100;
+}
+
+.nav-item .dropdown-menu {
+  position: absolute;
+  z-index: 500;
+}
+
 .header-text {
   color: black;
 }
@@ -102,6 +112,8 @@ main {
 .search-bar {
   margin-top: 165px;
   max-width: 50%;
+  position: relative;
+  z-index: 1001;
 }
 
 .products-container {
@@ -165,7 +177,7 @@ main {
   position: fixed;
   top: 72px;
   right: 15px;
-  z-index: 9999999999999999;
+  z-index: 99;
 }
 
 .custom-toast {

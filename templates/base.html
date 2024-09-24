@@ -57,7 +57,7 @@
               <li class="nav-item ml-lg-3 mr-lg-3">
                   <a class="nav-link" href="{% url 'products' %}">All Products</a>
               </li>
-              <li class="nav-item ml-lg-3 mr-lg-3">
+              <li class="nav-item dropdown ml-lg-3 mr-lg-3">
                 <a class="nav-link dropdown-toggle dropdown-arrow" href="#" id="sofa-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sofas</a>
                 <ul class="dropdown-menu ml-5 mr-5" aria-labelledby="sofa-link">
                     <li class="nav-item ml-md-3 mr-md-3 dropdown">
@@ -77,7 +77,7 @@
                     </li>
                 </ul>
               </li>
-              <li class="nav-item ml-lg-3 mr-lg-3">
+              <li class="nav-item dropdown ml-lg-3 mr-lg-3">
                 <a class="nav-link dropdown-toggle dropdown-arrow" href="#" id="bedroom-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bedroom</a>
                 <ul class="dropdown-menu ml-5" aria-labelledby="sofa-link">
                     <li class="nav-item ml-md-3 mr-md-3 dropdown">
@@ -94,7 +94,7 @@
                     </li>
                 </ul>
               </li>
-              <li class="nav-item ml-lg-3 mr-lg-3">
+              <li class="nav-item dropdown ml-lg-3 mr-lg-3">
                   <a class="nav-link dropdown-toggle dropdown-arrow" href="#" id="dining-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dining</a>
                   <ul class="dropdown-menu ml-5" aria-labelledby="dining-link">
                       <li class="nav-item ml-md-3 mr-md-3 dropdown">
@@ -133,8 +133,16 @@
                 </li>
                 {% if user.is_authenticated %}
                   {% if request.user.is_superuser %}
-                  <li class="nav-item"></li>
-                    <a class="nav-link" href="{% url 'admin:index' %}">Admin Panel</a>
+                  <li class="nav-item dropdown ml-lg-3 mr-lg-3">
+                    <a class="nav-link dropdown-toggle dropdown-arrow" href="#" id="admin-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin Panel</a>
+                    <ul class="dropdown-menu ml-5" aria-labelledby="admin-link">
+                      <li class="nav-item ml-md-3 mr-md-3 dropdown">
+                        <a href="{% url 'admin:index' %}" class="dropdown-item">Admin Home</a>
+                      </li>
+                      <li class="nav-item ml-md-3 mr-md-3 dropdown">
+                        <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
+                      </li>
+                    </ul>
                   </li>
                   {% endif %}
                 <li class="nav-item ml-lg-2">
