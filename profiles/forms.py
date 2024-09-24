@@ -42,15 +42,24 @@ class UserAddressForm(forms.ModelForm):
     """
     Form for updating user profile address(es).
     """
+    COUNTRY_CHOICES = [
+        ('Ireland', 'Ireland'),
+    ]
+
+    country = forms.ChoiceField(choices=COUNTRY_CHOICES, initial='Ireland')
 
     class Meta:
         model = UserAddress
         fields = ['address_name', 'street_address_1', 'street_address_2', 'town_city', 'county', 'post_code', 'country']
+        widgets = {
+            'country': forms.Select(attrs={'readonly': 'readonly'}),
+        }
 
         # Set default country value
         def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
             self.fields['country'].initial = 'IE'
+            self.fields['country'].widget.attrs['disabled'] = True
 
         def clean(self):
             cleaned_data = super().clean()

@@ -19,7 +19,7 @@ class OrderForm(forms.ModelForm):
     town_or_city = forms.CharField(max_length=100, required=True)
     county = forms.CharField(max_length=100, required=True)
     postcode = forms.CharField(max_length=20, required=True)
-    country = forms.ChoiceField(choices=COUNTRY_CHOICES, required=True)
+    country = forms.ChoiceField(choices=COUNTRY_CHOICES, required=True, widget=forms.Select(attrs={'readonly': 'readonly'}))
     address_choices = forms.ChoiceField(choices=[], required=False)
     address_name = forms.CharField(max_length=50, required=False)
     
@@ -59,7 +59,8 @@ class OrderForm(forms.ModelForm):
                 self.fields['town_or_city'].initial = address.town_city
                 self.fields['county'].initial = address.county
                 self.fields['postcode'].initial = address.post_code
-                self.fields['country'].initial = address.country
+                self.fields['country'].initial = 'IE'
+                self.fields['country'].widget.attrs['disabled'] = True
 
         placeholders = {
             'full_name': 'Full Name',
