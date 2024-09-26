@@ -53,16 +53,6 @@ body {
   font-size: medium;
 }
 
-.navbar {
-  position: relative;
-  z-index: 100;
-}
-
-.nav-item .dropdown-menu {
-  position: absolute;
-  z-index: 500;
-}
-
 .header-text {
   color: black;
 }
@@ -112,8 +102,12 @@ main {
 .search-bar {
   margin-top: 165px;
   max-width: 50%;
-  position: relative;
-  z-index: 1001;
+  position: fixed;
+  z-index: 1000;
+}
+
+.dropdown-menu {
+  position: absolute;
 }
 
 .products-container {

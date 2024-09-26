@@ -40,7 +40,7 @@
     <header class="container-fluid header-color fixed-top">
       <!-- Title Row -->
       <div class="row title-row">
-        <div class="col-12 text-left ml-3 mt-3">
+        <div class="col-12 text-left ml-3 mt-3 pb-1">
           <a class="navbar-brand" href="{% url 'home' %}">
             <h2 class="header-text title-name">Fine Furnishings</h2>
           </a>
@@ -114,7 +114,7 @@
               </ul>
             <div class="col-sm"></div>
             <div class="ml-lg-5">
-              <ul class="navbar-nav align-items-center ml-lg-5">
+              <ul class="navbar-nav align-items-center">
                 <li class="nav-item mr-md-3">
                   <a class="{% if total %}text-secondary font-weight-bold{% else %}text-dark{% endif %}nav-link" href="{% url 'cart' %}">
                     <div class="text-center">
