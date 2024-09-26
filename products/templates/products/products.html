@@ -7,37 +7,54 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container products-container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
-            {% for product in products %}
-            <div class="col mb-4">
-                <div class="card h-100">
-                    {% if product.image %}
-                    <a href="{% url 'product_detail' product.id %}">
-                        <img src="{{ product.image.url }}"
-                        class="card-img" alt="{{ product.name }}">
-                    </a>
-                    {% else %}
-                    <a href="{% url 'product_detail' product.id %}">
-                        <img
-                        src="{% static 'images/coming-soon-placeholder-image.png' %}"
-                        class="card-img" alt="{{ product.name }}">
-                    </a>
-                    {% endif %}
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            {{ product.name }}
-                            <a href="{% url 'add_to_wishlist' product.id %}">
-                                <img src="{% static 'wishlist-heart.ico' %}"
-                                alt="Wishlist Heart icon">
-                            </a>
-                        </h5>
-                        <p class="card-text">Price: €{{ product.price }}</p>
-                        <p class="card-text">{{ product.description }}</p>
-                    </div>
+
+<!-- Messages block -->
+{% if messages %}
+  <div class="container">
+      {% for message in messages %}
+          {{ message }}
+      {% endfor %}
+      </div>
+  </div>
+{% endif %}
+
+<div class="container products-container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
+        {% for product in products %}
+        <div class="col mb-4">
+            <div class="card h-100">
+                {% if product.image %}
+                <a href="{% url 'product_detail' product.id %}">
+                    <img src="{{ product.image.url }}"
+                    class="card-img" alt="{{ product.name }}">
+                </a>
+                {% else %}
+                <a href="{% url 'product_detail' product.id %}">
+                    <img
+                    src="{% static 'images/coming-soon-placeholder-image.png' %}"
+                    class="card-img" alt="{{ product.name }}">
+                </a>
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{ product.name }}
+                        <a href="{% url 'add_to_wishlist' product.id %}">
+                            <img src="{% static 'wishlist-heart.ico' %}"
+                            alt="Wishlist Heart icon">
+                        </a>
+                    </h5>
+                    <p class="card-text">Price: €{{ product.price }}</p>
+                    <p class="card-text">{{ product.description }}</p>
                 </div>
+                {% if request.user.is_superuser %}
+                    <small class="ml-3 pb-3 text-center">
+                        <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                    </small>
+                {% endif %}
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
+</div>
 {% endblock %}

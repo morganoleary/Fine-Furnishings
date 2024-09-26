@@ -7,6 +7,17 @@
 {% endblock %}
 
 {% block content %}
+
+<!-- Messages block -->
+{% if messages %}
+  <div class="container">
+      {% for message in messages %}
+          {{ message }}
+      {% endfor %}
+      </div>
+  </div>
+{% endif %}
+
     <div class="container products-container text-white pb-5">
         <div class="col-12 text-center">
             <h1 class="display-6">{{ product.name }}</h1>
@@ -112,6 +123,12 @@
                     <input type="hidden" name="redirect_url"
                     value="{{ request.path }}">
                 </form>
+                {% if request.user.is_superuser %}
+                    <small class="ml-3 pt-3">
+                        <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                    </small>
+                {% endif %}
             </div>
         </div>
         <div class="row mt-4 justify-content-center">
