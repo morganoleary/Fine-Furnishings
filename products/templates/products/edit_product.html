@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta_description %}Product Admin Page - allows authorized and logged in website administrators to edit an existing product.{% endblock %}
+
+{% block search_bar %}
+{% endblock %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+    {% if not user.is_authenticated %}
+        <script type="text/javascript">
+            window.location.href =
+            "{% url 'account_login' %}?next={% url 'checkout' %}";
+        </script>
+    {% else %}
+        <div class="container text-white mb-3">
+            <div class="row justify-content-center mt-md-3">
+                <div class="col-md-8 col-sm-12 text-center">
+                    <hr>
+                    <h1 class="text-center text-white wishlist-text">Product Management</h1>
+                    <h4 class="text-center text-white">Edit Product</h4>
+                    <hr>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-12 text-center">
+                    <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form | crispy }}
+                        <div class="text-right">
+                            <a class="btn btn-outline-secondary text-white rounded-2" href="{% url 'products' %}">Cancel</a>
+                            <button class="btn btn-secondary rounded-2" type="submit">Update Product</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    {% endif %}
+{% endblock %}
