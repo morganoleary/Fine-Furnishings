@@ -171,7 +171,7 @@ main {
   position: fixed;
   top: 72px;
   right: 15px;
-  z-index: 99;
+  z-index: 9999;
 }
 
 .custom-toast {

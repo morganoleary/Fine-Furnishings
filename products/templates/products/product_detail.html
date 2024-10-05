@@ -8,16 +8,6 @@
 
 {% block content %}
 
-<!-- Messages block -->
-{% if messages %}
-  <div class="container">
-      {% for message in messages %}
-          {{ message }}
-      {% endfor %}
-      </div>
-  </div>
-{% endif %}
-
     <div class="container products-container text-white pb-5">
         <div class="col-12 text-center">
             <h1 class="display-6">{{ product.name }}</h1>
