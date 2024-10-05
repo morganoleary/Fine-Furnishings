@@ -36,7 +36,7 @@ https://fine-furnishings-1e63b49cdd1f.herokuapp.com/
 
 <summary>Wireframes - Justinmind</summary>
 
-- The wireframes for this project were created on the Justinmind local development environment for MacOS. Due to the time constraints for completing this project, I did not have the time to implement all device sizes for each page's wireframes. The mockups for these pages were used as a guide for the project as I continued to style more and adjust the project during project creation and coding.
+- The wireframes for this project were created on the Justinmind local development environment for MacOS. Due to the time constraints for completing this project, I did not have the time to implement all device sizes for each page's wireframes. The mockups for these pages were used as a guide for the project as I continued to style more and adjust the pages during project creation and coding.
 
 ![Home Page Mobile](static/readme_images/wf-home-page-mobile.png)
 ![Home Page Tablet](static/readme_images/wf-home-page-tablet.png)
@@ -59,7 +59,7 @@ https://fine-furnishings-1e63b49cdd1f.herokuapp.com/
 <summary>Design</summary>
 
 - Using the color Red - psychology of color
-I used the color Red as it has been proven to boost online sales. While the site has a red overall color, I created a more muted version to keep the site classy and more elegant for a more peaceful shopping experience. More information on this was found at [Crazy Egg](https://www.crazyegg.com/blog/colors-proven-to-boost-sales/).
+I used the color Red as it has been proven to boost online sales. While the site has an overall red color, I created a more muted version to keep the site classy and more elegant for a more peaceful shopping experience. More information on this was found at [Crazy Egg](https://www.crazyegg.com/blog/colors-proven-to-boost-sales/).
 - The content of the project was created by myself. I found the images and created the descriptions, pricing, etc. on all products. The content from the FAQs page is also created by me as an example of what I would like to see from a furniture store if I were the consumer.
 
 </details>
@@ -225,7 +225,12 @@ The store provides furniture in the following categories:
 - The Admin Dashboard is fully functional for the site owner to navigate through user accounts - including email addresses, personal details, wishlist items, saved addresses (see more in bugs on addresses) & orders placed. The admin dashboard also includes a place for the site owner to add, update and delete, products, product details and product categories. A section is also included to store contact requests from the site's contact request form.
 
 ![Admin Dashboard](static/readme_images/admin-site.png)
+______________
 
+- ADMIN PRODUCT CRUD - update the above section with new images & these added features!!!!!!!!!!!!!!!!!
+- The user's order confirmation is stored in the user's 'Order History' on their individual profile, and the user has access to this from the navbar when logged in.
+- Stripe Webhook handlers and email confirmations have been implemented to give the user better feedback during the checkout process.
+________________
 
 #### External Links in Footer
 
@@ -242,8 +247,6 @@ The store provides furniture in the following categories:
 
 - In future features, the site's home page will contain a Google Map for the company's location. 
 - In future features, an About Us page will be implemented to give the user more information about the company.
-- In future developments, the user's order confirmation will be stored in the user's 'Order History' on their individual profile, and they will have access to this from the navbar when logged in. This was not implemented due to time constraints on project submission.
-- In future developments of this project, I will implement Stripe Webhook handlers and email confirmations to give the user better feedback on their checkout system. This was not implemented due to time constraints.
 - In future features, the site will have a section for company reviews to help showcase the company's reputation and drive new users to the site. This would be implemented with a link to a Trustpilot review page in the footer as well. 
 
 </details>
@@ -259,13 +262,15 @@ The store provides furniture in the following categories:
     2. Wishlist - to save items to the user's profile
     3. User Address - to save multiple addresses to the user's profile
 
-- CRUD: I passed this criteria in the first submission, but wanted to explain further - On the front end, user's are able to register an account, edit their personal details to save to the account and delete their account successfully. The admin dashboard allows the superuser to add, edit & delete products along with functionality to edit and delete user profiles and orders. - In future, I plan to implement product editing and deleting on the site under a 'Product Management' link/page as in the walkthrough. However, due to time constraints and running into some issues while implementing the necessary features for the pass criteria, I was not able to add the product admin feature at this time.
+- CRUD: 
+    1. On the front end, user's are able to register an account, edit their personal details to save to the account and delete their account successfully. 
+    2. When the superuser is logged in, the Admin dashboard can be easily accessed from the menu. From the Admin dropdown, this also provides a link that allows the superuser to add a product. Superusers are able to edit & delete products from the UI instead of being required to exit the site and navigate to the admin dashboard.
 
-- (1.8) The navigation menu layout has been fixed and there are no longer any issues with the overlap of the search bar. The hamburger menu is now appearing as it should on mobile devices as well.
+- The navigation menu layout has been fixed and there are no longer any issues with the overlap of the search bar. The hamburger menu is now appearing as it should on mobile devices as well.
 
 - The site's colour contrast has been updated so that content is legible to the maximum possible user base.
 
-- (3.2) Meta descriptions have been implemented into each HTML template to improve SEO.
+- Meta descriptions have been implemented into each HTML template to improve SEO.
 
 - Toasts have been implemented to provide better feedback to the user throughout their journey on the site.
 
@@ -273,7 +278,7 @@ The store provides furniture in the following categories:
 
 - Email confirmations have been implemented and are being sent to users to share an order confirmation upon a successful order being processed through Stripe. 
 
-- The user now has access to their order history when logged in. The user is now able to navigate to the "Order History" option in the menu to view all previous purchase details.
+- The user now has access to their order history when logged in. The user is able to navigate to the "Order History" option in the menu to view all previous purchase details.
 
 - Stripe webhooks have been implemented to provide sufficient feedback when a purchase is made.
 
@@ -373,8 +378,13 @@ Going through each page is causing the same errors - I am fixing an lines that a
 ![p-linter-checkout](static/readme_images/plinter-checkout.png)
 
 - **LightHouse** Report:
-The lighthouse report was checked and although performance is marked at a 56, the SEO and accessibility ratings are much better. On this project, I made sure to resize all my images to make them smaller and speed up site speed and feel this is a good report for the level of understanding I have. Unfortunately, there is no time to look into the performance rating more, but this will be further investigated in future features to ensure I am putting out the best work possible.
-![Lighthouse Report](static/readme_images/lighthouse-report.png)
+The lighthouse report was checked on my deployed site and each area has greatly improved since my first submission of this project. 
+
+Testing Mobile:
+![Lighthouse Report - Mobile](static/readme_images/lighthouse-report-mobile.png)
+
+Testing Desktop:
+![Lighthouse Report - Desktop](static/readme_images/lighthouse-report-desktop.png)
 
 </details>
 
@@ -382,85 +392,198 @@ The lighthouse report was checked and although performance is marked at a 56, th
 
 <summary>Manual Testing</summary>
 
-#### Testing the Home page & Navigation Bar:
+### Testing the Home page & Navigation Bar:
 
-- Expected: Upon loading the home page and navigating to this page from different pages throughout the site, the navigation bar, images, search bar, category blocks and footer are all expected to be visibly apealing and functional. 
+- Expected: Upon loading the home page as well as navigating to this page from different pages throughout the site, the navigation bar, images, search bar, category blocks and footer are all expected to be visibly apealing and functional. 
 - Testing: While testing the page, I ensured to log in and log out of the site to make sure all home page and navigation features are working as expected. All images are populating and links are working correctly in all areas of the home page. 
-- Outcome: The navigation bar populates correctly depending on if the user is logged in or logged out. 
+- Outcome: The navigation bar populates correctly depending on if the user is logged in or logged out. The design of the home page is visually appealing and offers simple navigation. 
 
-Logged out menu:
+Logged out menu - no user profile options are available:
+
 ![Logged out menu](static/readme_images/test-logged-out-menu.png)
-Logged in menu:
+
+Logged in menu - user profile options available:
+
 ![Logged in menu](static/readme_images/test-logged-in-menu.png)
-The screenshot below shows that the category blocks on the home page navigate to the correct categories. There is a bug (see bugs) where the success message of logging in/out appears on the next page the user navigates to. 
-![Bug success message](static/readme_images/bug-success-message.png)
-As you can see, the category blocks are navigating to the correct page from the home page:
+
+Admin/Superuser logged in menu - provides the additional admin dropdown options in the menu:
+
+![Superuser logged in menu](static/readme_images/superuser-logged-in-menu.png)
+
+The category blocks on the home page are navigating to the correct page from the home page:
+
+![Category blocks working](static/readme_images/homepage-category-blocks.png)
+
 ![Category blocks working](static/readme_images/category-block.png)
 
-#### Testing the Register, Login & Logout functions with Wishlists & Personal Details:
+
+### Testing the Register, Login & Logout functions:
 
 - Expected: When a user clicks on the register button, they will be prompted to register their details for a new account. A user who already has an account should be able to use their store username/email and password to login to the site with no issues. When a logged in user is ready to log out, they will be able to do so with no issues and will be prompted to confirm their log out request. 
-- Testing: While testing the registration button, I tried to break the registrations by not providing all the requested details. 
+- Testing: While testing the registration button, I tried to break the registrations by purposely leaving out requested details. 
 - Outcome: For registrations, users are taken to a page to add their details and double check both the email and passwords are correct before registering. They are not allowed to register without completing all fields:
 
+#### Registration
+
+Empty field test - does not allow the user to register without completing all required fields:
+
 ![Regsitration test](static/readme_images/register-test.png)
-The same success message applies here (see bugs) as the user should be shown a message of successful registration at the top of the page.
+
+The user receives a prompt to verify their email address:
+
+![Verify email](static/readme_images/verify-email.png)
+
+An email is then received to verify the user's email address (temp-mail was used for this test):
+
+![Confirmation of email address email](static/readme_images/confirm-address-email.png)
+
+The user is then rerouted to the site to confirm their email:
+
+![Confirmation of email on site](static/readme_images/email-confirmation.png)
+
+A success message appears of the confirmed email & the user is redirected to the log in page: 
+
+![Successful confirmation of email](static/readme_images/confirmed-email-success.png)
+
+#### Login
+
+When the user logs in with the newly registered account, a successful login message appears with the updated user profile menu options:
+
+![Login Success](static/readme_images/login-success.png)
+
+When a user decides to log out, they are prompted to confirm before doing so:
+
+#### Logout
+
+![Verify Logout](static/readme_images/sign-out-confirmation.png)
+
+A success message is shown upon a user being logged out:
+
+![Successful Logout](static/readme_images/logout-success-message.png)
+
+###  Testing Wishlists & Personal Details - including Multiple Addresses:
 
 - Expected: For new users, the personal details and wishlist menu options appear but the content should be empty.
 - Testing: I registered a new account and navigated to both the wishlist page and personal details pages to ensure all are working properly. I added details to the personal details page and saved. I added products to the wishlist a saved. 
-- Outcome: The personal details page only populates the new user's email as expected and upon adding more details, the user can see their updates once clicking 'save'. There is a bug with the user address field (see bugs) as in future developments, I want the user to be able to save multiple addresses, however, only one address appears and saves at a time. The wishlist works as expected and is empty until products are added. Slight styling issues will be fixed in future. 
+- Outcome: The personal details page only populates the new user's email as expected and upon adding more details, the user can see their updates once clicking 'save'. The wishlist works as expected and is empty until products are added.
 
-Empty when first navigating to 'Personal Details':
+#### Personal Details
+
+The user's details are empty when first navigating to 'Personal Details':
+
 ![New user details](static/readme_images/personal-details-new.png)
-Completed when new user adds details:
+
+##### Multiple Addresses
+
+When the profile modal first opens, the user is able to add their basic details and can choose to 'Add Address' if they wish:
+
+![Edit Address Modal](static/readme_images/edit-profile-modal-add-address.png)
+
+If all required fields are not completed, the user will receive an error message to correct the errors:
+
+![Add address - missing details](static/readme_images/add-address-missing-field.png)
+
+- There is a bug here, where if the user forgets a field and is prompted to fix the error, even when the user fixes the error, the form will not save. The user must exit the modal or delete the address being added and start over. This will be fixed in future iterations.
+
+When the address is filled in correctly, the country field autopopulates to 'Ireland' as expected, as this is the only country allowed for this business:
+
+![Country field populates](static/readme_images/country-populates.png)
+
+A success message appears to confirm the saved details and the user's information is saved while populating the profile page once the user adds new details:
+
 ![New details saved](static/readme_images/new-details-saved.png)
+
+The user is able to add multiple addresses with different names:
+
+![Add multiple addresses](static/readme_images/add-multiple-addresses.png)
+
+Addresses are able to be deleted when they are not connected to a user's order. The user is prompted to confirm they want to delete an address and this will be deleted once the user 'saves changes':
+
+![Confirm address deletion](static/readme_images/delete-address-confirmation.png)
+
+A success message is shown when an address is deleted and the user's profile is updated accordingly:
+
+![Address Deleted](static/readme_images/address-deleted-success.png)
+
+#### Wishlist
+
 The wishlist is empty when a user first registers:
+
 ![Empty wishlist](static/readme_images/new-user-wishlist-empty.png)
-Products added to wishlist:
+
+Products are able to be added to the wishlist with a success message for each added product:
+
 ![Wishlist products added](static/readme_images/wishlist-added-products.png)
 
-- Expected: When a user is ready to log out, they should receive a confirmation pop-up to confirm logging out. 
-- Testing: As a logged in user, I clicked the logout button in the menu. 
-- Outcome: A pop up modal appears for the customer to confirm logging out and the menu resets as no user is logged in anymore
+Products are able to be deleted within the wishlist. A message appears to confirm that the product was removed and the wishlist is updated accordingly:
 
-![Sign out confirmation](static/readme_images/sign-out-confirmation.png)
-When logging back in as this newly registered user, all personal details and wishlist items are saved. 
+![Wishlist remove product](static/readme_images/wishlist-item-removed.png)
 
-#### Testing the FAQs page:
+The user profile details save to the user's account. When a user logs out and logs back in, all the user's personal details and wishlist items are saved correctly. 
+
+### Testing the FAQs page:
 
 - Expected: The FAQs page should be accessible and a working link in the footer of all pages. 
-- Testing: I tested to ensure the FAQs page worked whether a user is logged in or logged out. I tested each dropdown menu to make sure each is populating the answer correctly and I test the link to the contact page from the FAQs page. 
+- Testing: I tested to ensure the FAQs page worked whether a user is logged in or logged out. I tested each dropdown menu to make sure each is populating the answer correctly and I tested the link to the contact page from the FAQs page. 
 - Outcome: The FAQs page works as expected, all dropdown choices work and the link to the contact page redirects the user to the Contact Form page.
 
 ![FAQs test](static/readme_images/faqs-test.png)
 
-#### Testing the Contact Us page:
+### Testing the Contact Us page:
 
 - Expected: The Contact Us page should be accessible from the footer to both logged in and logged out users. The form should require users to fill out all required fields. The submit button should be clickable and send the contact form to the admin site. A success message should appear to the user that the message has been sent. 
 - Testing: I navigated to the contact page as both a logged in and logged out user. I tried submitting a form that did not have all fields filled out. I submitted a completed form and checked that the form was reflected on the admin panel.
-- Outcome: The contact page is accessible to all users from the footer, the FAQs page and the 404 page. The form will not allow a user to submit without completing all required fields. Once submitted, the contact request form is documented on the admin dashboard. There is a success message bug here where the success message is visible upon submitting the form but the styling is off and does not look appealing to the user. This will be fixed in future developments. 
+- Outcome: The contact page is accessible to all users from the footer, the FAQs page and the 404 page. The form will not allow a user to submit without completing all required fields. Once submitted, the user receives a success message and the contact request is documented on the admin dashboard.
+
+Empty field test:
 
 ![Test contact](static/readme_images/test-contact.png)
+
+Success message for successful contact form sent:
+
 ![Contact success message](static/readme_images/contact-success-message.png)
+
+The Admin dashboard updates and receives the contact form message:
+
 ![Admin contact received](static/readme_images/admin-contact.png)
 
-#### Testing the footer links:
+### Testing the footer links:
 
 - Expected: The footer links for social media and external sites are expected to open in a new window. 
 - Testing: I clicked on each link - Facebook, Instagram, psychology of design blog and the disposal site. 
 - Outcome: All links worked properly and opened in separate windows:
 
+##### Footer links:
+
 ![Footer links working](static/readme_images/test-footer-links.png)
+
+Example: Psychology of Design link opens in new window:
+
+![Pyschology of design link](static/readme_images/psychology-of-design-link.png)
+
+Example: Kollect disposal link opens in new window:
+
+![Kollect link](static/readme_images/kollect-disposal-link.png)
+
+##### Mailchimp
 
 - Expected: The Mailchimp newsletter signup form works and registers the new email address on the businesses Mailchimp account. 
 - Testing: I tried to submit the form without adding an email. I submitted an accurate email into the form. 
 - Outcome: The form cannot be submitted without an email address being entered. Once submitted with a correct email, the form shows the success and the new email is registerd on the Mailchimp account.
 
+Empty field test:
+
 ![Mailchimp field required](static/readme_images/mailchimp-field-required.png)
+
+Signup success message:
+
 ![Mailchimp signup success](static/readme_images/mailchimp-signup-success.png)
+
+The mailchimp account is updated with the new email:
+
 ![Mailchimp updated account](static/readme_images/mailchimp-account.png)
 
-#### Testing the product search pages, product details pages and search bar.
+### Testing the product search pages, product details pages and search bar.
 
 - Expected: The product category pages should be accessible from the navigation menu dropdown options and filter correctly to the products selected. 
 - Testing: I tested all links in the main navigation menu to ensure they opened to the filtered categories. 
@@ -507,7 +630,7 @@ Products from cart added to checkout page:
 - Testing: As a logged in user, I tried updating the details on the checkout form and added Stripe test card details to submit the order. I tried using the 'Update Cart' button to go back to the cart. I tried submitting the payment with details not added to the form. 
 - Outcome: From following the above steps and add the items to the cart to proceed to checkout. I was not able to submit the checkout form without all required details input. There is a styling bug here in the Stripe card input field that I did not have time to fix before submission (see bugs). This will be more visually appealing and clear to the user in future developments.
 
-As I was logged in and updated the form fiels again, I clicked the chouckout button and it gave me a Server 500 error. I am not sure if this is because I edited the form on the checkout page, but the payment was showing as succeeded on the Stripe events dashboard (I just couldn't see the confirmation page for the order placed). Navigating back to the cart with the 'update cart' button worked and after refreshing the page, going back to checkout and submitting the payment again (without) updating the form, the server still showed a 500 error, yet the payment succeeded on Stripe. 
+As I was logged in and updated the form fields again, I clicked the chouckout button and it gave me a Server 500 error. I am not sure if this is because I edited the form on the checkout page, but the payment was showing as succeeded on the Stripe events dashboard (I just couldn't see the confirmation page for the order placed). Navigating back to the cart with the 'update cart' button worked and after refreshing the page, going back to checkout and submitting the payment again (without) updating the form, the server still showed a 500 error, yet the payment succeeded on Stripe. 
 
 I logged out and logged back in as the last newly registered user I had created, added new items to the cart (including a bedframe with size selected), and was able to checkout sucessfully and was sent to the order confirmation page. 
 
@@ -704,79 +827,188 @@ The user's order history is also updated with the most recent purchase.
 </details>
 
 # Deployment
-<details>
 
+<details>
 <summary>Steps taken to deploy on Heroku</summary>
 
-Set up the workspace:
-1. Install gunicorn in workspace for Heroku deployment
-    - pip install gunicorn
-2. Add to requirements.txt and create Procfile
-    - pip freeze > requirements.txt
-3. In settings.py set DEBUG = False 
-4. Reconfigured Default file & Static file storage in settings.py to allow Cloudinary deployment with Heroku
-5. Added the Heroku app to the 'Allowed Hosts' in settings.py
-6. Ensured all secret keys were added to the env.py file & stored in the gitignore file
-7. Git add, commit and push changes to GitHub
+### Set up the workspace:
+1. **Install gunicorn** in the workspace for Heroku deployment:
+ ```bash
+ pip install gunicorn
+ ```
+2. **Update `requirements.txt`**:
+ - Freeze installed packages to `requirements.txt` to ensure all dependencies are tracked:
+ ```bash
+ pip freeze > requirements.txt
+ ```
+3. **Create a `Procfile`**:
+ - This file tells Heroku how to run your app. Add the following line to a new file named `Procfile`:
+ ```bash
+ web: gunicorn fine_furnishings.wsgi:application
+ ```
 
-Deploy on Heroku:
+4. **Modify `settings.py`**:
+ - Set `DEBUG = False` for production to disable debugging mode in deployment.
 
-8. Create the app on Heroku and connect to GitHub project
-9. Set the Config Vars in the "Settings" Tab - this includes: CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET, CLOUDINARY_CLOUD_NAME, DATABASE_URL, SECRET_KEY, STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY, STRIPE_WH_SECRET, EMAIL_HOST_PASS, EMAIL_HOST_USER 
-10. Navigate to the "Deploy" tab and scroll down to click on "Deploy Branch" in the "Manual deploy" section
+5. **Configure Static Files and Media Storage**:
+ - Ensure you have proper static and media file configurations for deployment with Heroku. For example, using **Cloudinary**:
+ ```python
+ # settings.py
+ CLOUDINARY_STORAGE = {
+ 'CLOUDINARY_CLOUD_NAME': 'dab35wlwh',
+ 'CLOUDINARY_API_KEY': 'your-cloudinary-api-key',
+ 'CLOUDINARY_API_SECRET': 'your-cloudinary-api-secret',
+ }
+
+ STATIC_URL = '/static/'
+ STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+ MEDIA_URL = '/media/'
+ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+ ```
+ - Add your **Heroku app URL** to the `ALLOWED_HOSTS`:
+ ```python
+ ALLOWED_HOSTS = ['fine-furnishings-1e63b49cdd1f.herokuapp.com', 'localhost']
+ ```
+
+6. **Securely Manage Secrets**:
+ - Ensure all sensitive keys (e.g., `SECRET_KEY`, API keys) are stored in **environment variables** (not hardcoded in `settings.py`):
+ - Add these keys to `env.py` (or use **Heroku's Config Vars**) and ensure `env.py` is in `.gitignore`.
+
+7. **Git Add, Commit, and Push**:
+ - Once changes are made, ensure you commit and push them to GitHub:
+ ```bash
+ git add .
+ git commit -m "Prepare for Heroku deployment"
+ git push
+ ```
+
+
+### **Deploy on Heroku**:
+
+8. **Create the App on Heroku**:
+ - In the Heroku Dashboard, click "New" > "Create new app" and follow the prompts.
+
+9. **Connect the GitHub Repository**:
+ - Under the "Deploy" tab, link your Heroku app to the GitHub repository that contains your code.
+
+10. **Set Config Vars** in the "Settings" Tab:
+ - In the **Config Vars** section, add the following:
+ - `CLOUDINARY_API_KEY`
+ - `CLOUDINARY_API_SECRET`
+ - `CLOUDINARY_CLOUD_NAME`
+ - `DATABASE_URL`
+ - `SECRET_KEY`
+ - `STRIPE_PUBLIC_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_WH_SECRET`
+ - `EMAIL_HOST_USER`, `EMAIL_HOST_PASS`
+ 
+ Ensure all sensitive information is kept secure by using Config Vars, not hardcoding them.
+
+11. **Run Database Migrations** (if needed):
+ - Navigate to the **Heroku CLI** and run:
+ ```bash
+ heroku run python manage.py migrate
+ ```
+
+12. **Collect Static Files**:
+ - You may need to collect static files to ensure proper delivery:
+ ```bash
+ heroku run python manage.py collectstatic --noinput
+ ```
+
+13. **Deploy the App**:
+ - In the **Deploy** tab, scroll down to the "Manual deploy" section and click **Deploy Branch** to deploy the main branch.
+
+14. **Test the Deployment**:
+ - After deployment, visit your app's URL and ensure it works as expected. Test different parts of the application for any errors.
+
+</details>
+
+
+<details>
+<summary>Steps to deploy locally</summary>
+
+1. **Ensure Python and Pip are Installed**:
+ - Install the latest versions of both if not already installed.
+
+2. **Set up a Virtual Environment**:
+ - If needed, create and activate a virtual environment to isolate your dependencies:
+ ```bash
+ pip install virtualenv
+ virtualenv venv
+ source venv/bin/activate
+ ```
+
+3. **Install Dependencies**:
+ - Install the required dependencies from the `requirements.txt`:
+ ```bash
+ pip install -r requirements.txt
+ ```
+
+4. **Apply Database Migrations**:
+ - Run migrations to set up the local database:
+ ```bash
+ python manage.py migrate
+ ```
+
+5. **Create a Superuser**:
+ - Create a superuser account to access the admin dashboard:
+ ```bash
+ python manage.py createsuperuser
+ ```
+
+6. **Collect Static Files**:
+ - If required, collect static files for the local environment:
+ ```bash
+ python manage.py collectstatic
+ ```
+
+7. **Configure Debug Settings**:
+ - In `settings.py`, set `DEBUG = True` to enable debugging mode for local development.
+
+8. **Run the Local Server**:
+ - Start the local development server:
+ ```bash
+ python manage.py runserver
+ ```
+ 
+ Open your browser and go to `http://127.0.0.1:8000/` to view the project.
 
 </details>
 
 <details>
-
-<summary>Steps to deploy locally </summary> 
-
-1. Ensure Python and Pip are installed
-2. If required - set up a virtual environment & activate
-    - pip install virtualenv
-    - virtualenv venv
-    - source venv/bin/activate
-3. Install the dependencies:
-    - pip install -r requirements.txt
-4. Apply migrations to set up the database:
-    - python manage.py migrate
-5. Create a superuser to access the admin:
-    - python manage.py createsuperuser
-6. If required, collect the static files:
-    - python manage.py collectstatic
-7. Configure Debug settings in settings.py
-    - For local to run, this should be set as:
-    DEBUG = True
-8. Run the server to view the project:
-    - python manage.py runserver
-
-</details>
-
-<details>
-
 <summary>Fork Repository</summary>
 
-Forking a repository allows you to create a copy to GitHub, and any changes made will not affect the original repository:
+1. **Navigate to the Repository**:
+ - On GitHub, go to the repository page you want to fork.
 
-- Within GitHub, navigate to the repository page you are going to fork
-- Click "Fork" on the top right corner of the page
-- Wait for the copy to be created and you are then redirected to the forked repository
+2. **Click the Fork Button**:
+ - In the top-right corner of the page, click **Fork**.
+
+3. **Create a Copy**:
+ - Wait for the forked repository to be created. Then you will be redirected to your new fork.
 
 </details>
 
 <details>
-
 <summary>Clone Repository</summary>
 
-Cloning a repository allows you to create a local copy of a repository on your machine:
+1. **Navigate to the Repository**:
+ - On GitHub, open the repository page you want to clone.
 
-- Within GitHub, navigate to the repository you are wanting to clone
-- Click the green "<>Code" button
-- Within the "Local" tab, copy the HTTPS url
-- In your IDE, open Git Bash and type in 'git clone' followed by the pasted url just copied from GitHub. Ex: git clone https://example.com/repository/project
-- The clone has been created on your local machine
+2. **Copy the HTTPS URL**:
+ - Click the green **<>Code** button and copy the URL from the **HTTPS** tab.
+
+3. **Clone in Git Bash**:
+ - In your terminal (Git Bash), run the following command with the copied URL:
+ ```bash
+ git clone https://github.com/morganoleary/Fine-Furnishings.git
+ ```
+
+4. **Check Your Local Clone**:
+ - Navigate to the cloned directory and start working with your local copy.
 
 </details>
+
 
 # Credits
 
@@ -835,7 +1067,7 @@ Cloning a repository allows you to create a local copy of a repository on your m
 <summary>Acknowledgements</summary>
 
 - I would like to give a huge shout out to the tutor support team. Roman, Oisin, Roo & Thomas were a great help while I ran into issues with implementing Cloudinary, git actions between GitPod & VS Code and issues deploying on Heroku with static files and Cloudinary.
-- I would like to thank my mentor, Narender, for his time and support on this project. As we were limited in meetings on my part, he continued to stay supportive and helped keep me positive through the stress! Thank you.
+- I would like to thank my mentor, Narender, for his time and support on this project. As we were limited in meetings, he continued to stay supportive and helped keep me positive through the stress! Thank you.
 - I would like to extend a huge thank you to Code Institute for this course. This has been an amazing opportunity that I never thought would be a part of my future and I am excited to continue my coding journey and begin my new career as a software developer! You have provided great resources throughout the last year and it has completely changed my life. Thank you so much for this opportunity.
 
 </details>
