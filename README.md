@@ -381,7 +381,7 @@ Mailchimp account updated:
 
 ![404 page](static/readme_images/custom-404.png)
 
-- The Admin Dashboard is fully functional for the site owner to navigate through user accounts - including email addresses, personal details, wishlist items, saved addresses (see more in bugs on addresses) & orders placed. The admin dashboard also includes a place for the site owner to add, update and delete, products, product details and product categories. A section is also included to store contact requests from the site's contact request form.
+- The Admin Dashboard is fully functional for the site owner to navigate through user accounts - including email addresses, personal details, wishlist items, saved addresses & orders placed. The admin dashboard also includes a place for the site owner to add, update and delete, products, product details and product categories. A section is also included to store contact requests from the site's contact request form.
 
 ![Admin Dashboard](static/readme_images/admin-site.png)
 
@@ -453,37 +453,56 @@ ________________
 
 - **HTML** of each page on the deployed site was checked with [W3C-Markup Validation Service](https://validator.w3.org/#validate_by_input):
 All pages were tested with no errors. The only warnings showing are from the script text for the footer Mailchimp newsletter signup javascript code. As these were only warnings, I thought it would be best to leave the code as is since this was taken direcly from Mailchimp's instructions:
+
 ![HTML validation](static/readme_images/w3c-html.png)
+
 ![HTML mailchimp error](static/readme_images/w3c-mailchimp-error.png)
 
 - **CSS** of the deployed site was checked with [W3C-The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) and no errors were found:
+
 ![CSS validation](static/readme_images/css-validator.png)
 
 - **Javascript** of the deployed site was checked with [JSHint](https://jshint.com/):
+
 On the Product app's quantity_input_script.html a few warning were listed, however when the template literatls were changed to regular '' (to remove the error) the functionality of the quantity selector did not work. This was implemented using the Boutique Ado walkthrough:
+
 ![JSHhint quantity](static/readme_images/jshint.png)
+
 On the Checkout app's stripe_elements.js, a few warnings were thrown, but the code is working perfectly. This was implemented with the help of the Boutiqe Ado walkthrough.
+
 ![JSHint checkout stripe](static/readme_images/jshint-checkout.png)
+
 On the Cart app's shopping_cart.html, the javascript at the bottom of the file was checked with minor warnings. This was implemented using the Boutique Ado walkthrough:
+
 ![JSHint shopping cart](static/readme_images/jshint-cart.png)
 
 - **Python** was checked with the [CI Python Linter](https://pep8ci.herokuapp.com/)
+
 As I was checking the Python code of the base.html file - the checker was throwing many errors of missing whitespace and unexpected indentations on all lines. From going through this course and following along with the content, I have matched the expected indentations and have continued coding the same way and have never had these issues. I have fixed all lines that are too long, but did not want to change the code and remove all indentations as that would make everything messy and unreadable.
+
 ![Python linter](static/readme_images/plinter-basehtml.png)
+
 Going through each page is causing the same errors - I am fixing an lines that are too long and any lines that have trailing white space, but I can not fix all the missing white space around operator and take out all the indentations as that will muddle the code and is far too time consuming with the submissiong deadline. I would like to know if this is a fluke in the linter? Here are some examples:
+
 ![p-linter-404](static/readme_images/plinter-404.png)
+
 ![p-linter-wishlist](static/readme_images/plinter-wishlist.png)
+
 ![p-linter-home](static/readme_images/plinter-home.png)
+
 ![p-linter-contact](static/readme_images/plinter-contact.png)
+
 ![p-linter-checkout](static/readme_images/plinter-checkout.png)
 
 - **LightHouse** Report:
 The lighthouse report was checked on my deployed site and each area has greatly improved since my first submission of this project. 
 
 Testing Mobile:
+
 ![Lighthouse Report - Mobile](static/readme_images/lighthouse-report-mobile.png)
 
 Testing Desktop:
+
 ![Lighthouse Report - Desktop](static/readme_images/lighthouse-report-desktop.png)
 
 </details>
