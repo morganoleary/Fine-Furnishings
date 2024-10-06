@@ -403,7 +403,7 @@ Edit product button on each product tile:
 
 Edit & Delete buttons accessible on each product detail page:
 
-![CRUD buttons on product page](static/readme_images/product-edit-button.png)
+![CRUD buttons on product page](static/readme_images/crud-buttons-product-detail-page.png)
 
 Product delete button on the edit page of a product:
 
@@ -414,6 +414,15 @@ Warning before deletion of a product:
 ![Deleting a product warning](static/readme_images/test-delete-product-warning.png)
 
 - Stripe Webhook handlers and email confirmations have been implemented to give the user better feedback during the checkout process.
+
+Stripe Webhook:
+
+![Stripe webhook](static/readme_images/stripe-succeed.png)
+
+Order confirmation email:
+
+![Confirmation email](static/readme_images/order-email-confirmation.png)
+
 ________________
 
 #### External Links in Footer
@@ -506,6 +515,7 @@ The category blocks on the home page are navigating to the correct page from the
 ![Category blocks working](static/readme_images/homepage-category-blocks.png)
 
 The bedroom products appear when the 'Bedroom' block is clicked:
+
 ![Category blocks working](static/readme_images/category-block.png)
 
 
@@ -592,6 +602,10 @@ The user is able to add multiple addresses with different names:
 Addresses are able to be deleted when they are not connected to a user's order. The user is prompted to confirm they want to delete an address and this will be deleted once the user 'saves changes':
 
 ![Confirm address deletion](static/readme_images/delete-address-confirmation.png)
+
+As expected, an address cannot be deleted if it is associated with a user order:
+
+![Address cannot be deleted](static/readme_images/address-cannot-be-deleted.png)
 
 A success message is shown when an address is deleted and the user's profile is updated accordingly:
 
