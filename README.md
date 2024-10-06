@@ -325,6 +325,10 @@ Mobile - Order Confirmation:
 
 ![Mobile order confirmation](static/readme_images/m-order-confirmation.png)
 
+- The user's order is stored in the user's 'Order History' on their individual profile, and the user has access to this from the navbar when logged in.
+
+![Order history](static/readme_images/order-history.png)
+
 - FAQs page - this page can be found in the footer of the site and provides dropdown questions and answers for frequently asked questions the business is expecting a user to ask. This page also provides a link to the contact form page in case a user's question is not answered in the FAQs provided.
 
 ![FAQ page](static/readme_images/faqs-test.png)
@@ -380,10 +384,35 @@ Mailchimp account updated:
 - The Admin Dashboard is fully functional for the site owner to navigate through user accounts - including email addresses, personal details, wishlist items, saved addresses (see more in bugs on addresses) & orders placed. The admin dashboard also includes a place for the site owner to add, update and delete, products, product details and product categories. A section is also included to store contact requests from the site's contact request form.
 
 ![Admin Dashboard](static/readme_images/admin-site.png)
-______________
 
-- ADMIN PRODUCT CRUD - update the above section with new images & these added features!!!!!!!!!!!!!!!!!
-- The user's order confirmation is stored in the user's 'Order History' on their individual profile, and the user has access to this from the navbar when logged in.
+- ADMIN PRODUCT CRUD - When the superuser is logged in, the Admin dashboard can be easily accessed from the menu. From the Admin dropdown, this also provides a link that allows the superuser to add a product. Superusers are able to edit & delete products from the UI instead of being required to exit the site and navigate to the admin dashboard. The deletion of a product provides a warning before deleting the product to ensure deletions are not accidental.
+
+Add product menu dropdown option:
+
+![Menu - add product](static/readme_images/menu-add-product.png)
+
+Adding a product page:
+
+![Add product 1](static/readme_images/add-product-1.png)
+
+![Add product 2](static/readme_images/add-product-2.png)
+
+Edit product button on each product tile:
+
+![Edit product button](static/readme_images/product-edit-button.png)
+
+Edit & Delete buttons accessible on each product detail page:
+
+![CRUD buttons on product page](static/readme_images/product-edit-button.png)
+
+Product delete button on the edit page of a product:
+
+![Deleting a product button](static/readme_images/product-delete-button.png)
+
+Warning before deletion of a product:
+
+![Deleting a product warning](static/readme_images/test-delete-product-warning.png)
+
 - Stripe Webhook handlers and email confirmations have been implemented to give the user better feedback during the checkout process.
 ________________
 
@@ -817,6 +846,45 @@ The buttons work as expected to navigate the user back to the home page OR to th
 
 ![Test 404](static/readme_images/custom-404.png)
 
+### Testing the Admin Product CRUD:
+
+- Expected: Only logged in superusers and admin have access to the admin UI. Logged in admin should be able to add a new product, edit existing products and delete existing products. A warning should appear when deleting a product to ensure this action is not a mistake.
+- Testing: When logged out, I tried navigating to the admin UI by adjusting the urls to access the product CRUD options on the UI. When logged in as the super user, I added a new product successfully. I also attempted to add a new product with a missing required field. I used the edit button on both the product search pages, as well as the product detail page, in order to edit a product and save the changes. I deleted a product to ensure the warning modal appeared.
+- Outcome: From following the above tests, I was able to add a new product and when a field was missing, it correctly warned me to fill in the missing field. I was able to navigate to the edit page on the product and product detail pages. I was able to delete a product successfully after confirming the deletion in the pop up modal. The admin product CRUD cannot be accessed by using the correct urls and by doing so this takes the user to the sign in page. 
+
+Adding a product works successfully:
+
+![Add product 1](static/readme_images/test-crud-add-1.png)
+
+![Add product 2](static/readme_images/test-crud-add-2.png)
+
+A product cannot be added with a missing field:
+
+![Add product missing field](static/readme_images/test-add-product-missing-field.png)
+
+When a product is added successfully, a message appears and the user is navigated to the new product detail page:
+
+![Added product success](static/readme_images/test-add-product-success.png)
+
+Upon clicking the 'edit' button, the user is taken to the edit page to make changes:
+
+![Edit a product page](static/readme_images/test-editing-product.png)
+
+When the admin clicks 'update product', the product is updated successfully with a success message:
+
+![Edit product success](static/readme_images/test-edited-product-success.png)
+
+A warning appears before deleting a product:
+
+![Deleting a product warning](static/readme_images/test-delete-product-warning.png)
+
+Upon deleting a product, a success message appears:
+
+![Delete product success](static/readme_images/test-product-deleted-success.png)
+
+A user is not able to enter the Admin UI to access the product CRUD abilities when not a logged in superuser:
+
+![URL CRUD test](static/readme_images/crud-url-test.png)
 
 </details>
 
@@ -1050,6 +1118,7 @@ The buttons work as expected to navigate the user back to the home page OR to th
 - [Seobility - Meta Description](https://www.seobility.net/en/wiki/Meta_Description?utm_id=8783357192_87472061486&utm_source=google&utm_medium=cpc&utm_cid=8783357192&utm_agid=87472061486&utm_campaign=geoEN-Wiki&utm_dev=c&utm_devicemodel=&utm_mt=p&utm_term=meta%20description&gad_source=1&gclid=CjwKCAjw74e1BhBnEiwAbqOAjJcEmDVRAzc9jjXaEWVd6gRPL_EEVM71JSMEC9f2e-j1pcTF37Zv0RoCBJIQAvD_BwE) was used to research implementing meta descriptions for each page of the site. The [snippet generator](https://www.seobility.net/en/serp-snippet-generator/?url=&platform=desktop) was used to check that the meta descriptions created are viewed well on desktop and mobile previews.
 - The [Boutique Ado Walkthrough content on Toasts](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+3/courseware/eb05f06e62c64ac89823cc956fcd8191/9b257df92c9e4149bf90203b6c5ae1af/) and the [Bootstrap Documentation](https://getbootstrap.com/docs/4.6/components/toasts/) were used to implement toasts and messages into my project. 
 - Implementing 'unique_together' to the order and order items model was added to fix the order duplication error. [This Django documentation](https://docs.djangoproject.com/en/5.1/ref/models/options/#unique-together) helped to fix the order duplication error.
+- The Boutique Ado walkthrough project was utilized to implement the product CRUD capabilities for the admin/superuser.
 
 </details>
 
@@ -1084,7 +1153,7 @@ The buttons work as expected to navigate the user back to the home page OR to th
 
 <summary>Acknowledgements</summary>
 
-- I would like to give a huge shout out to the tutor support team. Roman, Oisin, Roo & Thomas were a great help while I ran into issues with implementing Cloudinary, git actions between GitPod & VS Code and issues deploying on Heroku with static files and Cloudinary.
+- I would like to give a huge shout out to the tutor support team. Sarah, Roman, Oisin, Roo & Thomas were a great help while I ran into issues with implementing Cloudinary, git actions between GitPod & VS Code and issues deploying on Heroku with static files and Cloudinary.
 - I would like to thank my mentor, Narender, for his time and support on this project. As we were limited in meetings, he continued to stay supportive and helped keep me positive through the stress! Thank you.
 - I would like to extend a huge thank you to Code Institute for this course. This has been an amazing opportunity that I never thought would be a part of my future and I am excited to continue my coding journey and begin my new career as a software developer! You have provided great resources throughout the last year and it has completely changed my life. Thank you so much for this opportunity.
 
