@@ -75,6 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             line1: $.trim(form.street_address1.value),
                             line2: $.trim(form.street_address2.value),
                             city: $.trim(form.town_or_city.value),
+                            country: $.trim(form.country.value),
+                            state: $.trim(form.county.value),
                         }
                     }
                 },
@@ -85,18 +87,31 @@ document.addEventListener('DOMContentLoaded', function() {
                         line1: $.trim(form.street_address1.value),
                         line2: $.trim(form.street_address2.value),
                         city: $.trim(form.town_or_city.value),
+                        country: $.trim(form.country.value),
                         postal_code: $.trim(form.postcode.value),
+                        state: $.trim(form.county.value),
                     }
                 },
             }).then(function(result) {
                 if (result.error) {
+                    console.log(result.error)
                     var errorDiv = document.getElementById('card-errors');
-                    var html = `
+                    if (result.error.message.includes("billing")) {
+                        var html = `
                         <span class="icon" role="alert">
-                        <i class="fas fa-times"></i>
+                            <i class="fas fa-times"></i>
                         </span>
-                        <span>${result.error.message}</span>`;
-                    $(errorDiv).html(html);
+                        <span>"Please fill out all address fields."</span>
+                    `;
+                    $(errorDiv).html(html);              
+                    } else {
+                        var html = `
+                            <span class="icon" role="alert">
+                            <i class="fas fa-times"></i>
+                            </span>
+                            <span>${result.error.message}</span>`;
+                        $(errorDiv).html(html);
+                    }
                     card.update({ 'disabled': false});
                     $('#submit-button').attr('disabled', false);
                 } else {

@@ -89,7 +89,7 @@ The store provides furniture in the following categories:
 
 <summary>SEO Implementations</summary>
 
-- Descriptive meta tags & keywords were used throughout the site. In particular, the product descriptions and image file names. More keywords and meta tags will be used in future as the site content will bulk up about the business. 
+- Descriptive meta tags & keywords are used throughout the site. In particular, the product descriptions and image file names. More keywords and meta tags will be used in future as the site content will bulk up about the business. 
 - [sitemap.xml](https://www.xml-sitemaps.com/) was used to create and add the sitemap.xml file to the root directory.
 - A robots.txt was added to the root directory of the project.
 
@@ -251,100 +251,7 @@ ________________
 
 </details>
 
-### Implementations for Resubmission
 
-<details>
-
-<summary>Resubmission Updates</summary>
-
-- Custom Models: A minimum a 3 custom models have been implemented. 
-    1. Contact form - for a user to contact the business
-    2. Wishlist - to save items to the user's profile
-    3. User Address - to save multiple addresses to the user's profile
-
-- CRUD: 
-    1. On the front end, user's are able to register an account, edit their personal details to save to the account and delete their account successfully. 
-    2. When the superuser is logged in, the Admin dashboard can be easily accessed from the menu. From the Admin dropdown, this also provides a link that allows the superuser to add a product. Superusers are able to edit & delete products from the UI instead of being required to exit the site and navigate to the admin dashboard.
-
-- The navigation menu layout has been fixed and there are no longer any issues with the overlap of the search bar. The hamburger menu is now appearing as it should on mobile devices as well.
-
-- The site's colour contrast has been updated so that content is legible to the maximum possible user base.
-
-- Meta descriptions have been implemented into each HTML template to improve SEO.
-
-- Toasts have been implemented to provide better feedback to the user throughout their journey on the site.
-
-- Email confirmations have been implemented and are being sent to customers to confirm the user's email upon registering a new account/profile. 
-
-- Email confirmations have been implemented and are being sent to users to share an order confirmation upon a successful order being processed through Stripe. 
-
-- The user now has access to their order history when logged in. The user is able to navigate to the "Order History" option in the menu to view all previous purchase details.
-
-- Stripe webhooks have been implemented to provide sufficient feedback when a purchase is made.
-
-</details>
-
-<details>
-
-<summary>Resubmission Updated Features</summary>
-
-1.  The main navigation menu layout has been fixed so there is no overlap with the search bar. Updates to the home page layout have been made to ensure better quality spacing:
-
-Mobile hamburger menu:
-
-![Mobile menu updated](static/readme_images/mobile-menu-fixed.png)
-
-Tablet menu & home page:
-
-![Home page layout](static/readme_images/layout-fixed.png)
-
-Desktop menu (when user is logged in):
-
-![Desktop menu](static/readme_images/desktop-menu.png)
-
-2. When a new user registers for an account, they are sent a confirmation email to confirm the email address validity (example displayed using temp-mail.org)
-
-Register a new account:
-
-![Register new user](static/readme_images/register-new-user.png)
-
-- A message appears to alert the user to verify the email address:
-
-![Verify email](static/readme_images/verify-email.png)
-
-- An email is received with a link to verify:
-
-![Register email](static/readme_images/register-email.png)
-
-- The user is rerouted to the website, in a new window, to confirm their registration:
-
-![Confirm email on site](static/readme_images/site-confirm-email.png)
-
-- An alert confirms successful registration to the customer and reroutes to the login page:
-
-![Registration Success](static/readme_images/registration-success.png)
-
-3. A link to the user's Order History has been implemented, making sure it is possible to track a purchase from the buyer's side.
-
-- New User - No previous order history:
-
-![New user - Order history](static/readme_images/no-previous-order-hisotry.png)
-
-- Order History populated:
-
-![Order History populates](static/readme_images/order-history-populates.png)
-
-4. Order confirmation emails & Stripe webhooks for successful purchases:
-
-- For each successful order, the user is rerouted to the order confirmation page. In addition, an email confirmation has been implemented and sends an order confirmation email to the customer. 
-
-![Order confirmation email](static/readme_images/order-confirmation-email.png)
-
-- For each successful order, Stripe webhooks have been connected to provide better detail of payment intents:
-
-![Stripe webhooks](static/readme_images/stripe-webhook-success.png)
-
-</details>
 
 # Testing
 <details>
@@ -414,6 +321,7 @@ The category blocks on the home page are navigating to the correct page from the
 
 ![Category blocks working](static/readme_images/homepage-category-blocks.png)
 
+The bedroom products appear when the 'Bedroom' block is clicked:
 ![Category blocks working](static/readme_images/category-block.png)
 
 
@@ -465,7 +373,7 @@ A success message is shown upon a user being logged out:
 
 - Expected: For new users, the personal details and wishlist menu options appear but the content should be empty.
 - Testing: I registered a new account and navigated to both the wishlist page and personal details pages to ensure all are working properly. I added details to the personal details page and saved. I added products to the wishlist a saved. 
-- Outcome: The personal details page only populates the new user's email as expected and upon adding more details, the user can see their updates once clicking 'save'. The wishlist works as expected and is empty until products are added.
+- Outcome: The personal details page only populates the new user's email as expected and upon adding more details, the user can see their updates once clicking 'save'. The wishlist works as expected and is empty until products are added. When products are added, they are saved to the user's profile on the admin dashboard.
 
 #### Personal Details
 
@@ -520,6 +428,8 @@ Products are able to be deleted within the wishlist. A message appears to confir
 ![Wishlist remove product](static/readme_images/wishlist-item-removed.png)
 
 The user profile details save to the user's account. When a user logs out and logs back in, all the user's personal details and wishlist items are saved correctly. 
+
+![Admin wishlist](static/readme_images/admin-wishlist.png)
 
 ### Testing the FAQs page:
 
@@ -585,227 +495,172 @@ The mailchimp account is updated with the new email:
 
 ### Testing the product search pages, product details pages and search bar.
 
+#### Categories
+
 - Expected: The product category pages should be accessible from the navigation menu dropdown options and filter correctly to the products selected. 
 - Testing: I tested all links in the main navigation menu to ensure they opened to the filtered categories. 
 - Outcome: All product categories work correctly from the dropdown and filter the products whether the user selects 'all products', 'all sofas', 'all bedroom', 'all dining' and their respective subcategories. 
 
+Test dropdown category 'Bedside Tables':
+
 ![Bedside tables category](static/readme_images/bedside-table-category.png)
+
+Test dropdown category 'Bar Stools':
+
 ![Barstool category](static/readme_images/barstool-category.png)
+
+#### Search Bar
 
 - Expected: The search bar should filter through all products if the search criteria exists within the product name or description. 
 - Testing: I searched for colors and products within the database. I also searched for products that I know do not exist as well as searching for the plural of 'tables' etc. 
-- Outcome: The products are filtered correctly when the search criteria exists, however when searching for the plural of a word, the search does not work (see bugs). This search criteria will be further expanded in future and especially as more products are added to the shop.
+- Outcome: The products are filtered correctly when the search criteria exists, however (**`BUG`**) when searching for the plural of a word, the search does not work. This search criteria will be further expanded in future and especially as more products are added to the shop.
+
+Test search criteria 'blue':
 
 ![Search blue](static/readme_images/search-blue.png)
+
+Test search criteria 'tables' (**`BUG`**):
+
 ![Search plural](static/readme_images/search-tables.png)
+
 The search for 'chair' correctly populates any 'sofa' chair or 'dining' chair on the site:
+
 ![Search chair](static/readme_images/search-chair.png)
+
+#### Product Detail Page
 
 - Expected: Each product should have a product detail page the is accessible by clicking on the individual products from the filtered category pages. The product detail page should include the name of the product, the option to add the item to the wishlist, the price, the product id, a quantity selector, the option to add the product to the cart to purchase, an image, a description and dimensions for the chosen product. Bedframes should have size options available in a dropdown to choose 3', 4', 4'6", 5' & 6'
 - Testing: All products have been tested to ensure each product contains the relevant details. I added the products to the wishlist to ensure the heart icon link is working. I increased and decreased the quantities and added the item to the basket. For bedframes, I added different sized to the cart. 
 - Outcome: All products are able to be added to the wishlist (when a user is logged in) and the products can be added to the cart. The quantity selector works correctly and the user cannot choose below 1 or above 50. Bedframes have size selectors and the correct size gets added to the cart. 
 
+Product page test:
+
 ![Product page test](static/readme_images/pp-test.png)
+
+Bedframe size changed & quantity updated test:
+
 ![Bedframe size test](static/readme_images/bedframe-test.png)
 
 
-#### Testing the shopping cart:
+### Testing the shopping cart:
 
-- Expected: Only a logged in user can add items to the cart. Within the cart the user should be able to adjust quantities of products, remove products entirely and navigate to the checkout page. The total of the order should adjust with each change and be reflected on the cart icon in the menu as well. Delivery should be automatically added to the product total.
-- Testing: I tried adding a product to the cart when not logged in. When logged in, I added products to the cart, including a bedframe with a specified size. I tested the quantity selector on the cart and deleted an item from the cart. I navigated to the checkout page. 
-- Outcome: When not logged in, the user is redirected to the log in page to either log in or register a new account. Selected quantities of an item transferred correclty to the cart. Bedframes and select sizes transferred correctly to the cart. I was able to delete items and adjust quantities of items in the cart. I was able to navigate to the checkout page from the cart. Product totals were adjusted correctly with the changes and the delivery charge was added before navigating to checkout.
+- Expected: Any user, logged in or not can add items to the cart. Within the cart the user should be able to adjust quantities of products, remove products entirely and navigate to the checkout page. The total of the order should adjust with each change and be reflected on the cart icon in the menu as well. Delivery should be automatically added to the product total.
+- Testing: I tried adding a product to the cart when not logged in and when logged in, I added products to the cart, including a bedframe with a specified size. I tested the quantity selector on the cart and deleted an item from the cart. I navigated to the checkout page. 
+- Outcome: When not logged in, the user is able to add items to the cart, but if they try to navigate to the checkout page, the user is redirected to the log in page to either log in or register a new account. Selected quantities of an item transferred correctly to the cart. Bedframes and select sizes transferred correctly to the cart. I was able to delete items and adjust quantities of items in the cart. I was able to navigate to the checkout page from the cart. Product totals were adjusted correctly with the changes and the delivery charge was added before navigating to checkout.
 
 Items added to cart with quantities and sizes:
+
 ![Items added to cart](static/readme_images/items-added-to-cart.png)
+
 Item deleted from cart:
+
 ![Deleted item](static/readme_images/cart-deleted-item.png)
-Quantity of chairs adjusted in cart:
+
+Quantity of sofa adjusted correctly in cart:
+
 ![Quantity adjusted in cart](static/readme_images/cart-adjust-quantity.png)
-Products from cart added to checkout page:
+
+Products added to cart and then navigating to the checkout page:
+
+1. When a user is not logged, they are redirected to login and not the checkout - 
+
+![Logged out - go to checkout](static/readme_images/logged-out-go-to-checkout.png)
+
+2. When a user is logged in, they are directed to the checkout page with the items included in the cart - 
+
 ![Cart transfer to checkout](static/readme_images/go-to-checkout.png)
 
-#### Testing the secure checkout page:
+### Testing the secure checkout page:
 
 - Expected: Only logged in users can navigate to the checkout. The products and order summary total will carry over from the user's cart. Any saved details will be autopopulated in the checkout form. A Stripe card input will be available for the user to checkout and a note with the amount to be charged will be clearly visible. The user will be able to submit the payment OR navigate back to the cart to make changes to the order before purchasing. 
-- Testing: As a logged in user, I tried updating the details on the checkout form and added Stripe test card details to submit the order. I tried using the 'Update Cart' button to go back to the cart. I tried submitting the payment with details not added to the form. 
-- Outcome: From following the above steps and add the items to the cart to proceed to checkout. I was not able to submit the checkout form without all required details input. There is a styling bug here in the Stripe card input field that I did not have time to fix before submission (see bugs). This will be more visually appealing and clear to the user in future developments.
+- Testing: As a logged in user, I tried updating the details on the checkout form and added Stripe test card details to submit the order. I tried using the 'Update Cart' button to go back to the cart. I tried submitting the payment with missing details to make sure the payment/order does not go through. 
+- Outcome: From following the above steps and adding the items to the cart to proceed to checkout, the correct items and pricing carried over to the checkout page. I was not able to submit the checkout form without all required details filled out and a message appears to the user to complete the form fully. I logged out and logged back in as the last newly registered user I had created, added new items to the cart (including a bedframe with size selected), and was able to checkout sucessfully and was sent to the order confirmation page. 
 
-As I was logged in and updated the form fields again, I clicked the chouckout button and it gave me a Server 500 error. I am not sure if this is because I edited the form on the checkout page, but the payment was showing as succeeded on the Stripe events dashboard (I just couldn't see the confirmation page for the order placed). Navigating back to the cart with the 'update cart' button worked and after refreshing the page, going back to checkout and submitting the payment again (without) updating the form, the server still showed a 500 error, yet the payment succeeded on Stripe. 
+Once nagivated to checkout, the logged in user's details autopopulate in the checkout form:
 
-I logged out and logged back in as the last newly registered user I had created, added new items to the cart (including a bedframe with size selected), and was able to checkout sucessfully and was sent to the order confirmation page. 
+![Details populated](static/readme_images/saved-details.png)
 
-Checkout field required:
+Checkout field required - if a field is missing, the form will not be submitted:
+
 ![Field required](static/readme_images/checkout-field-required.png)
-Stripe test card details added:
+
+Stripe test card details added - the amount to be charged is clearly visible in bright yellow to warn the customer before submitting their payment:
+
 ![Test card](static/readme_images/test-card-details.png)
-Upon successful checkout, the confirmation page appeared with the order details:
+
+Upon successful checkout, the confirmation page appears with the order details:
+
 ![Order success confirmation](static/readme_images/order-confirmation-success.png)
-Upon successful checkout, the Stripe events were updated with the successful payment. As you can see, there were no failed payments for the previous order attempted (before logging out and back in). This is the first time I had this issue.
+
+Upon successful checkout, the Stripe events were updated with the successful payment. No charge was attempted on Stripe previously when the field was missing and only succeeded when the form was fully completed:
+
 ![Stripe Success](static/readme_images/stripe-succeed.png)
-I was able to click the 'keep shopping' button to navigate back to all products. Here you can see another example of the bug (see bugs) with the success message not appearing until the next page is rendered. This will be fixed in future developments:
-![Keep shopping](static/readme_images/keep-shopping-success-message.png)
-The admin panel was updated with the new order details
+
+From the order confirmation page, I was able to click the 'keep shopping' button to navigate back to all products:
+
+![Keep shopping](static/readme_images/keep-shopping.png)
+
+The admin panel was updated with the new order details:
+
+1. Order added to 'Orders' - 
+
 ![Order updated on Admin](static/readme_images/admin-order-updated.png)
+
+2. Order details correct within order - 
+
 ![Admin order details](static/readme_images/admin-order-details-updated.png)
 
-I went logged out and back in again and attempted a few more checkouts that were all successful. I updated the checkout form fields with no issues. From the above 'server 500' error, I was not able to replicate the error againa and everything is working as expected.
-![checkout fields changed](static/readme_images/change-checkout-fields.png)
+-----------
+(**`BUG FIXED`**) Previously, there was an error where orders were being placed and duplicate orders were created, causing a major bug in the checkout process. This has been solved by implementing 'unique_together' on the model as well as updating the stripe_elements.js file. The issue was occurring because the OrderForm requires that the 'country' field be completed for checkout, however the stripe_elements_js did not require this. So when the user selects a different address from the dropdown and the country field does not populate, if the user tries to submit the order without completelin that field, the form tells the user there is an error, while Stripe didn't stop the payment from going through, causing duplicate orders to be placed. This has been fixed by adding the 'country' field to the required fields that Stripe looks for, so IF the field is not completed, Stripe will NOT process the payment and Stripe will throw an error for this. 
+
+-------------
+#### Testing checkout with missing country field
+
+I logged out and back in again and attempted a few more checkouts that were all successful. There is a small (**`BUG`**) when the user selects a different address from the dropdown at checkout. The fields populate all except for the country field. However, this does not create any issues to being able to complete an order once the field is filled out. When the order is attempted, the user receives an error message. If the user selects an address from the dropdown but fills in the country field, by selecting the Ireland option, the order will go through successfully. The country field is populating Ireland ONLY successfully as this business only delivers within Ireland. 
+
+If an address is selected from the dropdown of user addresses, the country field does not automatically populate:
+
+![dropdown address selected - country missing](static/readme_images/change-checkout-fields.png)
+
+An error appears to let the user know they need to fill out all address fields:
+
+![Country missing error message](static/readme_images/country-missing-error-form.png)
+
+Once the form is filled in correctly, the order succeeds and leads the user to the confirmation page - no duplicate order is created:
+
 ![fields updated success](static/readme_images/fields-updated-success.png)
+
+### Testing the Order History:
+
+- Expected: Only logged in users can navigate to the order history page. The order history page should populate the specifc user's previous orders so they can monitor their purchases. The orders should appear in the user's orders on the admin dashboard as well.
+- Testing: As a logged in user, I navigated to the Order History page. I investigated the admin dashboard to ensure orders were appearing on the user's account.
+- Outcome: The order history page correctly populated the user's orders that were previously placed on the site. The admin dashboard has correct records of the user's previous order history as well. 
+
+The logged in user's order history page was populated with orders:
+
+![Order history populated](static/readme_images/order-history-populated.png)
+
+A logged out user does not have access to the 'Order History' page:
+
+![Logged out menu options](static/readme_images/test-logged-out-menu.png)
+
+Orders are populated on the admin dashboard:
+
+1. Admin dashboard - Orders updated correctly:
+
+![Orders updated](static/readme_images/orders-updated.png)
+
+2. Admin dashboard - User's Profile updated with orders:
+
+![User profile orders](static/readme_images/user-profile-orders.png)
+
+### Testing the custom 404 page:
 
 The 404 page was also tested by typing random letters after the deployed url and appears correctly. 
 
 The buttons work as expected to navigate the user back to the home page OR to the contact us page to submit a query:
+
 ![Test 404](static/readme_images/test-404.png)
-
-
-</details>
-
-<details>
-
-<summary>Resubmission - Updated Features Testing</summary>
-
-#### Testing
-- Registration of new account: 
-
-As listed in the above 'updated features', the registration of a new user is account is successful with an email confirmation. The user is then able to log into their new account and receives a success message once logged in:
-
-![Login success](static/readme_images/login-success-message.png)
-
-When all fields are not filled out correctly upon registration, the site alerts the user accordingly:
-
-![Error with registering](static/readme_images/error-alert-register.png)
-
-- User Profile:
-
-The 'Personal Details' link is only visible to logged in users. The user is able to navigate to this page to view their saved details, edit their details and add multiple addresses or delete their account. 
-
-![Edit details](static/readme_images/edit-save-details.png)
-
-I tried to submit the form without one of the required fields and there is a slight bug in how the site provides the error message. * See 'bugs' below.
-
-When the user updates their profile's personal details and fills out all the required fiels correctly, the form saves, the 'Personal Details' are updated as they should and the user receives a success message:
-
-![Profile details saved](static/readme_images/profile-save-success.png)
-
-The user's account profile details are also correctly updated on the admin dashboard as expected:
-
-![Admin user profile saved](static/readme_images/admin-user-addresses.png)
-
-If a user wants to save a second address, they can do so successfully by opening the edit profile modal and adding the address below the 1st. * See 'bugs' for slight future fix.
-
-![Add second address](static/readme_images/2nd-address-wrong-country.png)
-
-Should a user wish to delete their account/profile, they can do so successfully from the 'Personal Details' page:
-
-The user clicks 'Delete' and receives a warning before fully deleting the profile:
-
-![Deletion double check](static/readme_images/confirm-account-deletion.png)
-
-If the user decides to go ahead with the deletion, they are prompted with a success message and the admin dashboard is updated accordingly. The user's account is deleted along with the profile information, however all orders remain in the admin dashboard so that the business never loses record of order history:
-
-![Successful profile deletion](static/readme_images/profile-deleted.png)
-
-![Admin updated with deleted account](static/readme_images/orders-remain-admin.png)
-
-When a user is logged in, the wishlist works as expected to add, save and delete items from the wishlist with success messages. The page is updated as it should and items are saved to the user's profile on the admin dashboard for the next time they return to the site.
-
-![Wishlist items saved](static/readme_images/wishlist-item-save.png)
-
-![Wishlist item removed](static/readme_images/wishlist-item-removed.png)
-
-![Wishlist item added](static/readme_images/wishlist-item-added.png)
-
-![Admin wishlist](static/readme_images/admin-wishlist.png)
-
-- User's Order History:
-
-When a new user registers an account and they have no past orders yet, the page works as expected to provide a 'Continue Shopping' button. This button correctly routes the customer to the 'All Products' page to begin shopping.
-
-![All products page](static/readme_images/all-products.png)
-
-Once an order is placed, the user's order history is populated with order history details for each past purchase. * See 'bugs'. 
-
-
-- Purchasing journey:
-
-As the user begins shopping and adds a product to their shopping cart, they are rerouted to the shopping cart and provided a success message of the added product as expected:
-
-![Added to shopping cart](static/readme_images/added-to-cart.png)
-
-When a user updates the quantity or items in their cart, they are provided a success message with this update:
-
-![Updated cart](static/readme_images/updated-cart.png)
-
-When a bedframe is added to the shopping cart, the success message includes the bedframe size selected and the cart is updated with the correct quantities and sizes:
-
-![Bedframe cart update](static/readme_images/bedframe-size-alert.png)
-
-If an item (or multiple items) is removed from the cart, the page updates correctly and a success message confirms the user's choices:
-
-![Remove from cart](static/readme_images/remove-from-cart-message.png)
-
-As the user moves to the secure checkout page, their user details automatically fill out the form fields at checkout. The address also allows the user to choose between multiple saved addresses. 
-
-![User details at checkout](static/readme_images/secure-checkout-details-populate.png)
-
-Saved address dropdown: * See 'bugs' below.
-
-![Saved addresses](static/readme_images/select-address-dropdown.png)
-
-If a field is not correctly filled in or populated, the user receives an error message to fix:
-
-![Country field at checkout](static/readme_images/country-checkout-field-error.png)
-
-I tried filling out the country field from the error message when this wasn't populated correctly and even though Ireland is selected, the payment cannot be made and the order fails. * See 'bugs' below.
-
-The user must navigate out of the secure checkout page and return to the checkout to successfully place an order. This will be fixed in future implementations. However, if the user changes the address within the secure checkout and MANUALLY selects Ireland as the country field (this is correctly the only country option that should be available) to process the order, the order succeeds. 
-
-![Manually select country field](static/readme_images/fill-country-manually.png)
-
-The order succeeds with the selected address, however the saved address saves to the order even though the country should only be Ireland.
-
-![Order Success](static/readme_images/order-success.png)
-
-The user is correctly rerouted to an order confirmation page and an email confirmation is sent to the user's address saved to their profile. 
-
-![Email confirmation](static/readme_images/order-confirmation-email.png)
-
-Stripe webhooks are working as expected and the payment is confirmed succeeded:
-
-![Webhooks succeeded](static/readme_images/stripe-webhook-success.png)
-
-The user's order history is also updated with the most recent purchase. 
-* See 'bugs' below.
-
-#### Bugs / Unfixed Bugs
-- An overlay / spinner was implemented, however was not appearing as it should on the site. After working with tutor support and being unable to find a solution, I was advised that it would be best to remove this altogether. I plan to reimplement this successfully in future features.
-- The layout of the shopping cart on mobile devices will still be updated further in future, as the titles should appear in line with their relative details. The technical features of the shopping cart work as intended.
-
-![Mobile shopping cart layout](static/readme_images/mobile-shopping-cart-layout.png)
-
-- There was an issue occurring that was causing a 500 error when a logged in user attempts to delete a user address from the edit profile modal. Unfortunately, I was unable to resolve this in time for resubmission, so I removed this option and gave the user a message in the edit modal to contact the business to edit or delete an address. The user is, however, successfully able to delete their entire profile.
-- When editing the user profile, if the user does not fill out a required field, a message appears to the user correctly, however, the modal closes and the user cannot see or know what the issue is until the click 'edit' and go back into the edit profile modal. See below images:
-
-![Edit error message](static/readme_images/error-message-profile-fields.png)
-
-![Error within modal](static/readme_images/error-message-modal-open.png)
-
-- As the user is able to add multiple addresses to their profile, they are provided a Country field to fill out. This is not technically an issue as this could be the user's billing address, however, because the business primarily delivers within the island of Ireland, this field should really only be able to take 'Ireland' as a country or it should autofill so this doesn't have the chance to cause issues at checkout.
-
-- At checkout, if the user uses the 'Select an Address' dropdown, the fields populate with the changed address, however the country field does not populate. Ideally this field should populate only with Ireland as an option and will be fixed in future releases:
-
-![Address change](static/readme_images/change-address-bug.png)
-
-- When an order is attempted after filling in the country field from the previous country field not being populated correctly, the order will not process even though Ireland is selected and is correctly the only dropdown option:
-
-![Country field - can't process order](static/readme_images/cant-process-country-issue.png)
-
-- The user's order history is updated once an order is successful, however the order is duplicating and appears 3 times on the order history page as well as the admin dashboard. I was working with tutor support for an hour on this and they were unable to help me find a solution and advised that the code looked accurate and couldn't find any mistakes that would be duplicating the orders. Only one order confirmation email is received per order and it seems that the customer is only being charged once as well, but I was unable to find the solution before resubmission. This will be fixed in future:
-
-![Order History duplicates](static/readme_images/order-history-duplicates.png)
-
-![Admin site duplicate orders](static/readme_images/admin-duplicate-orders.png)
-
 
 
 </details>
@@ -814,15 +669,23 @@ The user's order history is also updated with the most recent purchase.
 
 <summary>Bugs/Unfixed Bugs</summary>
 
-- Success messages are showing after the user navigates to a new page on the site. The message should be appearing on the page the user remains on or is redirected to, if called for. This will be fixed/updated in future features and was unfixed due to time constraints.
-- I wanted the user to be able to save multiple addresses to their user profile and select a specific address when placing an order. Maybe they save a 'Home' address, 'Office' address, etc. Unfortunately, I implemented the model correctly with the Address name and the form allows for a second address to be added, however in future fixes, this will work correctly as any added addresses are not saved to the profile or admin panel. This was not fixed due to time constraints with submission.
+
 - The search bar works as it should, however I noticed that a user is unable to search for the multiple description of an item such as 'tables' or 'sofas' and only the singular works. In future implementations I will learn more on how to expand the search criteria.
-- On mobile screens, the search bar remains in place when the hamburger menu is expanded. This should be hidden behind the menu on mobile devices. 
-- There are some styling issues between device sizes that have not been fixed as I ran out of time for submission. 
-- On the checkout page, the Stripe card input is not styled correctly and I struggled to find a solution as I did not want the background to be the dark red but a card instead to match the rest of the form fields. This will be fixed in future developments.
+
 - On the checkout page, the order summary is below the payment input on mobile screens. In future, the order summary will come before the user can submit a payment. 
-- The python validatore showed quite a few errors of missing spaces and unexpected indentations, however I don't believe these things are actually meant to be updated? Documented in the Validator testing portion above. There were a few lines of code that were marked as too long, but as the lines contain functions and class strings, to my knowledge, there is no simple fix for this. In future I will look further in these lines marked "too long" and will learn how to negate the warning. Due to time constraints, I did not have enough time to fix these for submission.
-- I accidentally deployed the project with debug set to True after fixing the minor spacing issues from validator testing. I'm not sure if this is a huge issue as long as the submissed version has debug set to 'False' so I wanted to be sure to document that I understand this was an incorrect action.
+
+- The python validator showed quite a few errors of missing spaces and unexpected indentations, however I don't believe these things are actually meant to be updated? Documented in the Validator testing portion above. There were a few lines of code that were marked as too long, but as the lines contain functions and class strings, to my knowledge, there is no simple fix for this. In future I will look further in these lines marked "too long" and will learn how to negate the warning. Due to time constraints, I did not have enough time to fix these for submission.
+
+- At checkout, if the user uses the 'Select an Address' dropdown, the fields populate with the changed address, however the country field does not populate. Ideally this field should populate only with Ireland as an option and will be fixed in future releases. The user receives an error and the checkout works correctly when the user manually fills out the field.
+
+![Address change](static/readme_images/change-address-bug.png)
+
+
+- An overlay / spinner was implemented, however was not appearing as it should on the site. After working with tutor support and being unable to find a solution, I was advised that it would be best to remove this altogether. I plan to reimplement this successfully in future features.
+
+- The layout of the shopping cart on mobile devices will be updated further in future, as the titles should appear in line with their relative details. The technical features of the shopping cart work as intended.
+
+![Mobile shopping cart layout](static/readme_images/mobile-shopping-cart-layout.png)
 
 </details>
 
