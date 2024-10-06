@@ -115,45 +115,124 @@ The store provides furniture in the following categories:
 
 - Home page - this page was created to draw the users attention to a calm yet exciting color of site as well as an eye-catching image of the possibilities when shopping on this site.
 
+Desktop:
+
 ![Home Page Desktop](static/readme_images/d-home-page.png)
+
+Tablet:
+
 ![Home Page Tablet](static/readme_images/t-home-page.png)
+
+Mobile:
+
 ![Home Page Mobile](static/readme_images/m-home-page-content.png)
 
 - Home page product category blocks were added on the home page to allow users to navigate to specific furniture categories instead of using the navbar or search bar. This was first implemented with the idea that the home page will eventually contain much more content so that as the user scrolls through, they don't have the need of scrolling back to the top to search for products.
 
+Desktop:
+
 ![Home Page Category Blocks Desktop](static/readme_images/d-home-page-category-blocks.png)
+
+Tablet:
+
+![Home Page Category Blocks Tablet](static/readme_images/t-home-page-category-blocks.png)
+
+Mobile:
+
 ![Home Page Category Blocks Mobile](static/readme_images/m-home-page-category-blocks.png)
 
 - Navbar - the navbar was designed for an easy user experience. On desktop and tablet, the text remains for easy navigation and on dropdown this shrinks to a hamburger menu with the same dropdown options. 
 
-![Navbar Desktop & Tablet](static/readme_images/d-navbar.png)
+Desktop:
+
+![Navbar Desktop](static/readme_images/d-navbar.png)
+
+Tablet:
+
+![Navbar Tablet](static/readme_images/t-navbar.png)
+
+Mobile:
+
 ![Mobile Navbar Closed](static/readme_images/m-navbar-closed.png)
+
 ![Mobile Navbar Open](static/readme_images/m-navbar-open.png)
 
 - User login/registration was implemented using Django AllAuth. These links can easily be found in the main navigation bar of the site on all pages.
 
+Desktop Login:
+
 ![User Login/SignIn](static/readme_images/d-user-login.png)
+
+Desktop Registration:
+
 ![User Registration](static/readme_images/d-user-registration.png)
 
-- When a user logs in or registers a new account, the menu options change to provide the user with a link to their personal wishlist, their personal details and a logout option.
+Tablet Login:
 
-![Logged in Menu Options](static/readme_images/logged-in-menu-options.png)
+![User login tablet](static/readme_images/t-signin.png)
+
+Tablet Registration:
+
+![User registration tablet](static/readme_images/t-register.png)
+
+Mobile Login:
+
+![User login mobile](static/readme_images/m-signin.png)
+
+Mobile Registration:
+
+![User registration mobile](static/readme_images/m-register.png)
+
+- When a user logs in or registers a new account, the menu options change to provide the user with a link to their personal wishlist, their personal details, order history and a logout option. When the admin/superuser is logged in, an additional 'Admin' option is available.
+
+Logged out menu:
+
+![Logged out menu](static/readme_images/test-logged-out-menu.png)
+
+User logged in menu:
+
+![Logged in menu](static/readme_images/test-logged-in-menu.png)
+
+Admin/Superuser logged in menu:
+
+![Superuser logged in menu](static/readme_images/superuser-logged-in-menu.png)
 
 - User Wishlist - this page can only be accessed when a user is logged in. If a user tries to add a product to the wishlist, they are prompted to register an account or login. On this page, the user can either navigate into each product page to read more and add to their cart, or delete the item from their wishlist.
 
+Desktop Wishlist:
+
 ![Wishlist Desktop](static/readme_images/d-wishlist.png)
+
+Tablet Wishlist:
+
 ![Wishlist Tablet](static/readme_images/t-wishlist.png)
+
+Mobile Wishlist:
+
 ![Wishlist Mobile](static/readme_images/m-wishlist.png)
 
 - User Personal Details - this page can only be accessed by a logged in user and autopopulates any saved details the user has previously added that is stored on the admin panel. From this page, the user has the option to edit their details and save or delete their account. 
 
+Desktop - Personal Details:
+
 ![Personal Details Desktop](static/readme_images/d-personal-details.png)
+
+Tablet - Personal Details:
+
 ![Personal Details Tablet](static/readme_images/t-personal-details.png)
+
+Mobile - Personal Details:
+
 ![Personal Details Mobile](static/readme_images/m-personal-details.png)
 
-- Edit personal details - this modal pop up gives the user the option to add a second delivery address to save to their account if they wish. The save button is found at the bottom of the modal **see in bugs section of readme - the multiple address function is not working 100% and while a user can enter a second address, this does not yet save correctly.
+- Edit personal details - When the 'Edit' button is clicked, a modal pop up gives the user the option to add multiple delivery addresses to save to their account if they wish. Addresses are able to be deleted when they are not attached to a user's order history.
+
+Edit Modal:
 
 ![Edit Personal Details](static/readme_images/edit-profile-1.png)
+
+Add address option, Delete address option & Save button:
+
 ![Edit Personal Details - Save](static/readme_images/edit-profile-2.png)
 
 - Delete account - from the personal details page, the user is able to delete their account. A pop up modal is in place to have the user verify this action should be completed before proceeding with deletion.
@@ -162,61 +241,137 @@ The store provides furniture in the following categories:
 
 - Product Search Bar - the search bar can be found on all product pages of the site and allows users to filter searches if the word is found in the name of the product or within the description. Further search criteria to be expanded in the future.
 
-![Search Bar Desktop](static/readme_images/d-search-bar.png)
-![Search Bar Mobile](static/readme_images/m-search-bar.png)
+Desktop - Search Bar:
+
+![Search Bar Desktop](static/readme_images/d-navbar.png)
+
+Tablet - Search Bar:
+
+![Search Bar Tablet](static/readme_images/t-navbar.png)
+
+Mobile - Search Bar:
+
+![Search Bar Mobile](static/readme_images/m-navbar-closed.png)
 
 - Product Categories & Filtered pages - the navbar provides an "All Products" option to view all products on the page as well as the three main categories of "Sofas" "Bedroom" and "Dining" that provide dropdown menus to filter each category further to specific types of items. Users are able to add items to their wishlist from these product pages.
 
+Desktop - Category dropdown:
+
 ![Product Categories Desktop](static/readme_images/product-categories-navbar.png)
+
+Armchair category selected:
+
 ![Product Categories Filtered](static/readme_images/product-categories-armchairs.png)
+
+Mobile - Category dropdown:
+
 ![Product Categories Mobile Dropdown](static/readme_images/product-categories-mobile.png)
 
 - Product Detail page for each product - each product contains the following details: Name, Image, option to add to wishlist, Price, Product ID, Quantity Selector, Add to Cart option, Description and Dimensions. Bedframes also have a Size selector option of 3', 4', 4'6", 5' and 6', as well as all sizes of dimensions listed.
 
+Desktop Product Details page:
+
 ![Product Details - 1](static/readme_images/d-pd-1.png)
+
 ![Product Details - 2](static/readme_images/d-pd-2.png)
+
+Bedframe with size selector - Product Details page:
+
 ![Product Details - bedframe](static/readme_images/d-pd-bedframe.png)
+
+Tablet Product Details page:
+
 ![Tablet Product Details](static/readme_images/t-pd.png)
+
+Mobile Product Details page:
+
 ![Mobile Product Details](static/readme_images/m-pd.png)
 
 - Shopping Cart page to view before purchasing - this page allows the user to view the products added to the basket and adjust items and quantities before continuing to checkout to purchase. Within the cart, the user is able to delete items from the cart as well as adjust quantities and see the price adjust with the changes.
 
 ![Cart - 1](static/readme_images/cart-1.png)
+
 ![Cart - 2](static/readme_images/cart-2.png)
 
-- Secure Checkout page for the user to checkout with Stripe - the checkout page provides the user with an Order Summary of what they are about to purchase, a form to fill in any details - if not already suppled in the personal details page - and a card input to pay securely with Stripe's payment system. **see bugs for the incorrect layout on mobile screens, in future developments the order summary will be visible before checkout is possible.
+- Secure Checkout page for the user to checkout with Stripe - the checkout page provides the user with an Order Summary of what they are about to purchase, a form to fill in any details - if not already supplied in the personal details page - and a card input to pay securely with Stripe's payment system.
+
+Desktop Checkout:
 
 ![Checkout - 1](static/readme_images/checkout-1.png)
+
 ![Checkout - 2](static/readme_images/checkout-2.png)
+
+Mobile Checkout:
+
 ![Checkout Mobile - 1](static/readme_images/m-checkout-1.png)
+
 ![Checkout Mobile -2](static/readme_images/m-checkout-2.png)
+
+Stripe Payment Success:
+
 ![Stripe payment success](static/readme_images/stripe-payment-succeed.png)
 
 - Order Confirmation - upon a successful purchase, the user is taken to an order confirmation page to show their order number and details. At this stage, the cart is emptied and the balance reverts to 0.
 
+Desktop - Order Confirmation:
+
 ![Order Confirmation](static/readme_images/order-confirmation.png)
 
-- FAQs page - this page can be found in the footer of the site and provides dropdown questions and answers for frequently asked questions the business is expecting a user to ask. This page also provides a link to the contact form page in case a user's question is not answered in the FAQs provided.
-- Logout - this option is only available to logged in users. When clicked, the user receives a prompt to ensure the user wants to continue logging out.
+Tablet - Order Confirmation:
 
-![Logout](static/readme_images/logout.png)
-![FAQs](static/readme_images/faqs.png)
+![Tablet order confirmation](static/readme_images/t-order-confirmation.png)
+
+Mobile - Order Confirmation:
+
+![Mobile order confirmation](static/readme_images/m-order-confirmation.png)
+
+- FAQs page - this page can be found in the footer of the site and provides dropdown questions and answers for frequently asked questions the business is expecting a user to ask. This page also provides a link to the contact form page in case a user's question is not answered in the FAQs provided.
+
+![FAQ page](static/readme_images/faqs-test.png)
 
 - Contact Us page - this page can be found in the footer of the site and can be accessed by both registered & unregistered users. The form requires fields to be field out before it can be submitted and provides a dropdown for the possible reasons a user may be sending a query to the business: General Queries, Return an Order, Complaints & Feedback.
 
 ![Contact Form - 1](static/readme_images/contact-form-1.png)
+
 ![Contact Form - 2](static/readme_images/contact-form-2.png)
+
+- Logout - this option is only available to logged in users. When clicked, the user receives a prompt to ensure the user wants to continue logging out.
+
+Desktop:
+
+![Logout](static/readme_images/logout.png)
+
+Tablet:
+
+![Tablet logout](static/readme_images/t-logout.png)
+
+Mobile:
+
+![Mobile logout](static/readme_images/m-logout.png)
 
 - Footer links - the footer is visible on all pages of the site and provides links to the following: FAQs page, Contact Us page, Social medial links for Facebook & Instagram (opening in a separate window), two external site links and a newsletter signup form:
 
+Desktop:
+
 ![Footer Desktop](static/readme_images/d-footer.png)
+
+Tablet:
+
 ![Footer Tablet](static/readme_images/t-footer.png)
+
+Mobile:
+
 ![Footer Mobile](static/readme_images/m-footer.png)
 
 - Mailchimp Subscription form working to store contact emails on Mailchimp:
 
-![Mailchimp Mobile](static/readme_images/m-mailchimp.png)
-![Mailchimp - successful emails added](static/readme_images/mailchimp-success.png)
+Mailchimp success message:
+
+![Mailchimp signup success](static/readme_images/mailchimp-signup-success.png)
+
+Mailchimp account updated:
+
+![Mailchimp updated account](static/readme_images/mailchimp-account.png)
 
 - A custom 404 page has been created - this page includes a link back to the home page OR to the contact form for the user to send any queries about why a certain page was not found.
 
@@ -239,7 +394,7 @@ ________________
 
 </details>
 
-## Future Implementations
+### Future Implementations
 
 <details>
 
@@ -299,7 +454,9 @@ Testing Desktop:
 
 <summary>Manual Testing</summary>
 
-### Testing the Home page & Navigation Bar:
+<details>
+
+<summary>Testing the Home page & Navigation Bar:</summary>
 
 - Expected: Upon loading the home page as well as navigating to this page from different pages throughout the site, the navigation bar, images, search bar, category blocks and footer are all expected to be visibly apealing and functional. 
 - Testing: While testing the page, I ensured to log in and log out of the site to make sure all home page and navigation features are working as expected. All images are populating and links are working correctly in all areas of the home page. 
@@ -660,7 +817,7 @@ The 404 page was also tested by typing random letters after the deployed url and
 
 The buttons work as expected to navigate the user back to the home page OR to the contact us page to submit a query:
 
-![Test 404](static/readme_images/test-404.png)
+![Test 404](static/readme_images/custom-404.png)
 
 
 </details>
