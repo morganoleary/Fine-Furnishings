@@ -454,9 +454,7 @@ Testing Desktop:
 
 <summary>Manual Testing</summary>
 
-<details>
-
-<summary>Testing the Home page & Navigation Bar:</summary>
+### Testing the Home page & Navigation Bar:
 
 - Expected: Upon loading the home page as well as navigating to this page from different pages throughout the site, the navigation bar, images, search bar, category blocks and footer are all expected to be visibly apealing and functional. 
 - Testing: While testing the page, I ensured to log in and log out of the site to make sure all home page and navigation features are working as expected. All images are populating and links are working correctly in all areas of the home page. 
